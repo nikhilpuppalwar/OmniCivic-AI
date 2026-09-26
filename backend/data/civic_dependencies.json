@@ -1,0 +1,127 @@
+{
+  "description": "Causal dependency graph for civic infrastructure issues. Edges represent 'can_cause' relationships with confidence weights.",
+  "dependencies": {
+    "WATER_LEAKAGE": {
+      "can_cause": [
+        {"target": "ROAD_DAMAGE", "confidence": 0.85, "mechanism": "Prolonged water seepage weakens road sub-base and surface layers"},
+        {"target": "WATERLOGGING", "confidence": 0.75, "mechanism": "Accumulated leaked water pools in low-lying areas"},
+        {"target": "SEWAGE_OVERFLOW", "confidence": 0.40, "mechanism": "Excess water can overwhelm nearby sewage lines"}
+      ],
+      "caused_by": ["DRAINAGE_PROBLEM", "SEWAGE_OVERFLOW"],
+      "severity_amplifier": 1.2,
+      "time_to_cascade_hours": 48,
+      "infrastructure_keywords": ["pipe", "water main", "supply line", "valve", "junction"]
+    },
+    "ROAD_DAMAGE": {
+      "can_cause": [
+        {"target": "POTHOLE", "confidence": 0.90, "mechanism": "Damaged road surface deteriorates into potholes under traffic load"},
+        {"target": "WATERLOGGING", "confidence": 0.35, "mechanism": "Uneven damaged surface creates water collection points"}
+      ],
+      "caused_by": ["WATER_LEAKAGE", "WATERLOGGING", "DRAIN_BLOCKAGE"],
+      "severity_amplifier": 1.1,
+      "time_to_cascade_hours": 72,
+      "infrastructure_keywords": ["road surface", "asphalt", "concrete", "sub-base", "tar"]
+    },
+    "POTHOLE": {
+      "can_cause": [
+        {"target": "WATERLOGGING", "confidence": 0.50, "mechanism": "Deep potholes collect and retain rainwater"},
+        {"target": "ROAD_DAMAGE", "confidence": 0.30, "mechanism": "Potholes expand and cause further surface damage"}
+      ],
+      "caused_by": ["ROAD_DAMAGE", "WATER_LEAKAGE", "WATERLOGGING"],
+      "severity_amplifier": 1.0,
+      "time_to_cascade_hours": 120,
+      "infrastructure_keywords": ["road", "surface", "cavity", "depression"]
+    },
+    "WATERLOGGING": {
+      "can_cause": [
+        {"target": "ROAD_DAMAGE", "confidence": 0.70, "mechanism": "Standing water penetrates road layers causing structural weakness"},
+        {"target": "SEWAGE_OVERFLOW", "confidence": 0.45, "mechanism": "Excess surface water can back up into sewage systems"},
+        {"target": "GARBAGE_OVERFLOW", "confidence": 0.30, "mechanism": "Floating debris accumulates at waterlogged points"}
+      ],
+      "caused_by": ["WATER_LEAKAGE", "DRAIN_BLOCKAGE", "DRAINAGE_PROBLEM", "POTHOLE"],
+      "severity_amplifier": 1.3,
+      "time_to_cascade_hours": 24,
+      "infrastructure_keywords": ["standing water", "flooding", "low-lying", "ponding"]
+    },
+    "DRAIN_BLOCKAGE": {
+      "can_cause": [
+        {"target": "WATERLOGGING", "confidence": 0.90, "mechanism": "Blocked drains prevent water outflow causing surface accumulation"},
+        {"target": "GARBAGE_OVERFLOW", "confidence": 0.60, "mechanism": "Blocked drains cause waste backup and overflow at drain mouths"},
+        {"target": "SEWAGE_OVERFLOW", "confidence": 0.55, "mechanism": "Blockage diverts flow into connected sewage lines"}
+      ],
+      "caused_by": ["GARBAGE_OVERFLOW"],
+      "severity_amplifier": 1.2,
+      "time_to_cascade_hours": 12,
+      "infrastructure_keywords": ["drain", "nullah", "culvert", "grating", "manhole"]
+    },
+    "DRAINAGE_PROBLEM": {
+      "can_cause": [
+        {"target": "WATERLOGGING", "confidence": 0.85, "mechanism": "Inadequate drainage capacity leads to surface water retention"},
+        {"target": "WATER_LEAKAGE", "confidence": 0.30, "mechanism": "Drainage pressure can damage adjacent water supply pipes"},
+        {"target": "SEWAGE_OVERFLOW", "confidence": 0.50, "mechanism": "Drainage failure causes cross-contamination with sewage lines"}
+      ],
+      "caused_by": ["DRAIN_BLOCKAGE"],
+      "severity_amplifier": 1.15,
+      "time_to_cascade_hours": 36,
+      "infrastructure_keywords": ["drainage", "capacity", "gradient", "outfall", "stormwater"]
+    },
+    "GARBAGE_OVERFLOW": {
+      "can_cause": [
+        {"target": "DRAIN_BLOCKAGE", "confidence": 0.75, "mechanism": "Loose garbage enters and blocks nearby drain inlets"},
+        {"target": "SEWAGE_OVERFLOW", "confidence": 0.25, "mechanism": "Solid waste can block sewage access points"}
+      ],
+      "caused_by": ["DRAIN_BLOCKAGE", "WATERLOGGING"],
+      "severity_amplifier": 1.0,
+      "time_to_cascade_hours": 48,
+      "infrastructure_keywords": ["waste", "bin", "dump", "collection point", "debris"]
+    },
+    "SEWAGE_OVERFLOW": {
+      "can_cause": [
+        {"target": "WATERLOGGING", "confidence": 0.60, "mechanism": "Sewage overflow adds to surface water volume"},
+        {"target": "WATER_LEAKAGE", "confidence": 0.20, "mechanism": "Sewage pressure can damage adjacent water supply infrastructure"}
+      ],
+      "caused_by": ["DRAIN_BLOCKAGE", "DRAINAGE_PROBLEM", "WATERLOGGING"],
+      "severity_amplifier": 1.4,
+      "time_to_cascade_hours": 6,
+      "infrastructure_keywords": ["sewage", "manhole", "STP", "septic", "effluent"]
+    },
+    "BROKEN_STREETLIGHT": {
+      "can_cause": [
+        {"target": "EXPOSED_WIRES", "confidence": 0.65, "mechanism": "Damaged streetlight housing can expose internal wiring"}
+      ],
+      "caused_by": [],
+      "severity_amplifier": 1.0,
+      "time_to_cascade_hours": 168,
+      "infrastructure_keywords": ["lamp", "pole", "bulb", "fixture", "lighting"]
+    },
+    "EXPOSED_WIRES": {
+      "can_cause": [],
+      "caused_by": ["BROKEN_STREETLIGHT"],
+      "severity_amplifier": 1.5,
+      "time_to_cascade_hours": 0,
+      "infrastructure_keywords": ["wire", "cable", "electrical", "insulation", "junction box"]
+    }
+  },
+  "scenario_chains": {
+    "scenario_1": {
+      "title": "Water Infrastructure Cascade",
+      "chain": ["WATER_LEAKAGE", "ROAD_DAMAGE", "POTHOLE", "WATERLOGGING"],
+      "expected_confidence": 0.84
+    },
+    "scenario_2": {
+      "title": "Drainage-Waste Cycle",
+      "chain": ["DRAIN_BLOCKAGE", "WATERLOGGING", "GARBAGE_OVERFLOW"],
+      "expected_confidence": 0.78
+    },
+    "scenario_3": {
+      "title": "Electrical Safety Hazard",
+      "chain": ["BROKEN_STREETLIGHT", "EXPOSED_WIRES"],
+      "expected_confidence": 0.65
+    },
+    "scenario_4": {
+      "title": "Recurring Pothole Failure",
+      "chain": ["POTHOLE", "ROAD_DAMAGE"],
+      "expected_confidence": 0.72
+    }
+  }
+}

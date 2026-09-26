@@ -1,0 +1,1070 @@
+{
+  "logs": [
+    {
+      "timestamp": "2026-09-03T08:26:14+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: False)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.25,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:14+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: False)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.45,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:14+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: False)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.3,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:14+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: True)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.3,
+        "set_active": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:15+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_DELETED",
+      "provider": "groq",
+      "operator_action": "Deleted credentials for provider 'groq'. Auto-fallback triggered: True",
+      "details": {
+        "deleted_provider": "groq",
+        "auto_reset_to_mock": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:15+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "openai",
+      "operator_action": "Saved configuration for provider 'openai' (Model: gpt-4o-mini, Set Active: True)",
+      "details": {
+        "model": "gpt-4o-mini",
+        "temperature": 0.3,
+        "set_active": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:23+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "ACTIVE_PROVIDER_CHANGED",
+      "provider": "mock",
+      "operator_action": "Switched active LLM provider from 'openai' to 'mock'",
+      "details": {
+        "previous_provider": "openai",
+        "new_provider": "mock"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:39+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: False)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.25,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:39+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: False)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.45,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:40+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: False)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.3,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:40+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: True)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.3,
+        "set_active": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:40+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_DELETED",
+      "provider": "groq",
+      "operator_action": "Deleted credentials for provider 'groq'. Auto-fallback triggered: True",
+      "details": {
+        "deleted_provider": "groq",
+        "auto_reset_to_mock": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:40+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "openai",
+      "operator_action": "Saved configuration for provider 'openai' (Model: gpt-4o-mini, Set Active: True)",
+      "details": {
+        "model": "gpt-4o-mini",
+        "temperature": 0.3,
+        "set_active": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:26:48+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "ACTIVE_PROVIDER_CHANGED",
+      "provider": "mock",
+      "operator_action": "Switched active LLM provider from 'openai' to 'mock'",
+      "details": {
+        "previous_provider": "openai",
+        "new_provider": "mock"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:27:05+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: False)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.25,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:27:05+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: False)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.45,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:27:05+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: False)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.3,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:27:05+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: True)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.3,
+        "set_active": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:27:05+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_DELETED",
+      "provider": "groq",
+      "operator_action": "Deleted credentials for provider 'groq'. Auto-fallback triggered: True",
+      "details": {
+        "deleted_provider": "groq",
+        "auto_reset_to_mock": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:27:05+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "openai",
+      "operator_action": "Saved configuration for provider 'openai' (Model: gpt-4o-mini, Set Active: True)",
+      "details": {
+        "model": "gpt-4o-mini",
+        "temperature": 0.3,
+        "set_active": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:27:20+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "ACTIVE_PROVIDER_CHANGED",
+      "provider": "mock",
+      "operator_action": "Switched active LLM provider from 'openai' to 'mock'",
+      "details": {
+        "previous_provider": "openai",
+        "new_provider": "mock"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:36:54+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: False)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.25,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:36:54+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: False)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.45,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:36:54+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: False)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.3,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:36:54+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: llama-3.3-70b-versatile, Set Active: True)",
+      "details": {
+        "model": "llama-3.3-70b-versatile",
+        "temperature": 0.3,
+        "set_active": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:36:54+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_DELETED",
+      "provider": "groq",
+      "operator_action": "Deleted credentials for provider 'groq'. Auto-fallback triggered: True",
+      "details": {
+        "deleted_provider": "groq",
+        "auto_reset_to_mock": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:36:54+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "openai",
+      "operator_action": "Saved configuration for provider 'openai' (Model: gpt-4o-mini, Set Active: True)",
+      "details": {
+        "model": "gpt-4o-mini",
+        "temperature": 0.3,
+        "set_active": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:37:03+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "ACTIVE_PROVIDER_CHANGED",
+      "provider": "mock",
+      "operator_action": "Switched active LLM provider from 'openai' to 'mock'",
+      "details": {
+        "previous_provider": "openai",
+        "new_provider": "mock"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:39:08+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: FAIL - model_not_found)",
+      "details": {
+        "latency_ms": 1921,
+        "model": "gemini-2.0-flash",
+        "status": "error",
+        "error": "Model Not Found (HTTP 404): The model string is invalid or unavailable for gemini. (This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.)"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:39:17+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: FAIL - model_not_found)",
+      "details": {
+        "latency_ms": 1768,
+        "model": "gemini-2.5-flash",
+        "status": "error",
+        "error": "Model Not Found (HTTP 404): The model string is invalid or unavailable for gemini. (This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.)"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:39:29+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: FAIL - model_not_found)",
+      "details": {
+        "latency_ms": 1977,
+        "model": "gemini-2.5-pro",
+        "status": "error",
+        "error": "Model Not Found (HTTP 404): The model string is invalid or unavailable for gemini. (This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API.)"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:39:37+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: FAIL - model_not_found)",
+      "details": {
+        "latency_ms": 1994,
+        "model": "gemini-2.0-flash-lite",
+        "status": "error",
+        "error": "Model Not Found (HTTP 404): The model string is invalid or unavailable for gemini. (This model models/gemini-2.0-flash-lite is no longer available. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API.)"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:43:35+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "groq",
+      "operator_action": "Saved configuration for provider 'groq' (Model: deepseek-r1-distill-llama-70b, Set Active: False)",
+      "details": {
+        "model": "deepseek-r1-distill-llama-70b",
+        "temperature": 0.3,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:44:05+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: PASS, Latency: 5355ms)",
+      "details": {
+        "latency_ms": 5355,
+        "model": "gemini-3.8-flash",
+        "status": "success"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T08:44:07+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "gemini",
+      "operator_action": "Saved configuration for provider 'gemini' (Model: gemini-3.8-flash, Set Active: True)",
+      "details": {
+        "model": "gemini-3.8-flash",
+        "temperature": 0.3,
+        "set_active": true
+      }
+    },
+    {
+      "timestamp": "2026-09-03T09:11:58+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: PASS, Latency: 3277ms)",
+      "details": {
+        "latency_ms": 3277,
+        "model": "gemini-3.8-flash",
+        "status": "success"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T09:35:59+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: FAIL - network_error)",
+      "details": {
+        "latency_ms": 3701,
+        "model": "gemini-3.8-flash",
+        "status": "error",
+        "error": "HTTP 503 Error from gemini: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+      }
+    },
+    {
+      "timestamp": "2026-09-03T09:38:08+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: FAIL - model_not_found)",
+      "details": {
+        "latency_ms": 2294,
+        "model": "gemini-2.0-flash",
+        "status": "error",
+        "error": "Model Not Found (HTTP 404): The model string is invalid or unavailable for gemini. (This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.)"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T09:38:16+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: FAIL - model_not_found)",
+      "details": {
+        "latency_ms": 2124,
+        "model": "gemini-2.5-flash",
+        "status": "error",
+        "error": "Model Not Found (HTTP 404): The model string is invalid or unavailable for gemini. (This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.)"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T09:38:18+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: FAIL - model_not_found)",
+      "details": {
+        "latency_ms": 2128,
+        "model": "gemini-1.5-flash",
+        "status": "error",
+        "error": "Model Not Found (HTTP 404): The model string is invalid or unavailable for gemini. (models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.)"
+      }
+    },
+    {
+      "agent": "PERCEPTION_AGENT",
+      "decision": "Classified as EXPOSED_WIRES, CRITICAL severity",
+      "evidence_used": [
+        "Image analysis: exposed_wire_01.jpg",
+        "Citizen report: CIV-2026-1051",
+        "Visual: Observed defect matching category: exposed wires",
+        "Visual: Observed severity level assessed as critical",
+        "Visual: Visual validation matches known demographic seeds"
+      ],
+      "confidence": 0.94,
+      "recommended_action": "Proceed to clustering for related reports in the area",
+      "timestamp": "2026-09-03T09:38:21.766538+05:30"
+    },
+    {
+      "agent": "CLUSTERING_AGENT",
+      "decision": "Found 0 related reports in cluster",
+      "evidence_used": [
+        "Search radius: 180.0m",
+        "Time window: 7 days",
+        "Center: (19.0760, 72.8780)",
+        "Cluster radius: 0m"
+      ],
+      "confidence": 0.5,
+      "recommended_action": "File as independent complaint",
+      "timestamp": "2026-09-03T09:38:21.795034+05:30"
+    },
+    {
+      "agent": "PERCEPTION_AGENT",
+      "decision": "Classified as EXPOSED_WIRES, CRITICAL severity",
+      "evidence_used": [
+        "Image analysis: exposed_wire_01.jpg",
+        "Citizen report: CIV-2026-1051",
+        "Visual: Observed defect matching category: exposed wires",
+        "Visual: Observed severity level assessed as critical",
+        "Visual: Visual validation matches known demographic seeds"
+      ],
+      "confidence": 0.94,
+      "recommended_action": "Proceed to clustering for related reports in the area",
+      "timestamp": "2026-09-03T09:38:22.852738+05:30"
+    },
+    {
+      "agent": "CLUSTERING_AGENT",
+      "decision": "Found 0 related reports in cluster",
+      "evidence_used": [
+        "Search radius: 180.0m",
+        "Time window: 7 days",
+        "Center: (19.0760, 72.8780)",
+        "Cluster radius: 0m"
+      ],
+      "confidence": 0.5,
+      "recommended_action": "File as independent complaint",
+      "timestamp": "2026-09-03T09:38:22.878590+05:30"
+    },
+    {
+      "agent": "INCIDENT_DETECTION_AGENT",
+      "decision": "INDEPENDENT_COMPLAINTS",
+      "evidence_used": [
+        "Cluster size: 1 reports",
+        "Unique issue types: 1 (EXPOSED_WIRES)",
+        "Same-type reports: 1"
+      ],
+      "confidence": 0.5,
+      "recommended_action": "File as independent complaint",
+      "timestamp": "2026-09-03T09:38:24.662424+05:30"
+    },
+    {
+      "agent": "INCIDENT_DETECTION_AGENT",
+      "decision": "INDEPENDENT_COMPLAINTS",
+      "evidence_used": [
+        "Cluster size: 1 reports",
+        "Unique issue types: 1 (EXPOSED_WIRES)",
+        "Same-type reports: 1"
+      ],
+      "confidence": 0.5,
+      "recommended_action": "File as independent complaint",
+      "timestamp": "2026-09-03T09:38:27.849028+05:30"
+    },
+    {
+      "timestamp": "2026-09-03T09:38:33+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: FAIL - timeout)",
+      "details": {
+        "latency_ms": 12044,
+        "model": "gemini-3.6-flash",
+        "status": "error",
+        "error": "Connection Timeout: Server timed out after 10s while reaching gemini endpoint."
+      }
+    },
+    {
+      "timestamp": "2026-09-03T09:38:45+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: PASS, Latency: 4751ms)",
+      "details": {
+        "latency_ms": 4751,
+        "model": "gemini-flash-latest",
+        "status": "success"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T09:39:27+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "gemini",
+      "operator_action": "Saved configuration for provider 'gemini' (Model: gemini-flash-latest, Set Active: False)",
+      "details": {
+        "model": "gemini-flash-latest",
+        "temperature": 0.3,
+        "set_active": false
+      }
+    },
+    {
+      "timestamp": "2026-09-03T09:39:31+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: PASS, Latency: 3979ms)",
+      "details": {
+        "latency_ms": 3979,
+        "model": "gemini-flash-latest",
+        "status": "success"
+      }
+    },
+    {
+      "agent": "PERCEPTION_AGENT",
+      "decision": "Classified as WATER_LEAKAGE, HIGH severity",
+      "evidence_used": [
+        "Image analysis: leak_01.jpg",
+        "Citizen report: CIV-2026-1001",
+        "Visual: Observed defect matching category: water leakage",
+        "Visual: Observed severity level assessed as high",
+        "Visual: Visual validation matches known demographic seeds"
+      ],
+      "confidence": 0.91,
+      "recommended_action": "Proceed to clustering for related reports in the area",
+      "timestamp": "2026-09-03T09:44:12.657117+05:30"
+    },
+    {
+      "agent": "CLUSTERING_AGENT",
+      "decision": "Found 6 related reports in cluster",
+      "evidence_used": [
+        "Search radius: 180.0m",
+        "Time window: 7 days",
+        "Center: (19.1190, 72.8471)",
+        "Cluster radius: 42.0m"
+      ],
+      "confidence": 0.95,
+      "recommended_action": "Proceed to incident detection",
+      "timestamp": "2026-09-03T09:44:15.552993+05:30"
+    },
+    {
+      "agent": "PERCEPTION_AGENT",
+      "decision": "Classified as ROAD_DAMAGE, HIGH severity",
+      "evidence_used": [
+        "Image analysis: road_damage_01.jpg",
+        "Citizen report: CIV-2026-1002",
+        "Visual: Observed defect matching category: road damage",
+        "Visual: Observed severity level assessed as high",
+        "Visual: Visual validation matches known demographic seeds"
+      ],
+      "confidence": 0.89,
+      "recommended_action": "Proceed to clustering for related reports in the area",
+      "timestamp": "2026-09-03T09:44:27.950542+05:30"
+    },
+    {
+      "agent": "CLUSTERING_AGENT",
+      "decision": "Found 6 related reports in cluster",
+      "evidence_used": [
+        "Search radius: 180.0m",
+        "Time window: 7 days",
+        "Center: (19.1190, 72.8471)",
+        "Cluster radius: 42.0m"
+      ],
+      "confidence": 0.95,
+      "recommended_action": "Proceed to incident detection",
+      "timestamp": "2026-09-03T09:44:28.988844+05:30"
+    },
+    {
+      "agent": "INCIDENT_DETECTION_AGENT",
+      "decision": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "evidence_used": [
+        "Cluster size: 7 reports",
+        "Unique issue types: 4 (ROAD_DAMAGE, WATER_LEAKAGE, WATERLOGGING, POTHOLE)",
+        "Same-type reports: 2"
+      ],
+      "confidence": 0.95,
+      "recommended_action": "Create incident and proceed to root cause analysis",
+      "timestamp": "2026-09-03T09:44:38.686864+05:30"
+    },
+    {
+      "agent": "INCIDENT_DETECTION_AGENT",
+      "decision": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "evidence_used": [
+        "Cluster size: 7 reports",
+        "Unique issue types: 4 (ROAD_DAMAGE, WATER_LEAKAGE, WATERLOGGING, POTHOLE)",
+        "Same-type reports: 3"
+      ],
+      "confidence": 0.95,
+      "recommended_action": "Create incident and proceed to root cause analysis",
+      "timestamp": "2026-09-03T09:44:39.395253+05:30"
+    },
+    {
+      "agent": "Root-Cause Agent",
+      "timestamp": "2026-09-03T09:44:52.250145+05:30",
+      "message": "Formed cascade hypothesis [deterministic_fallback]: Root cause analysis identifies a cascading infrastructure failure: WATERLOGGING. The evidence suggests that WATERLOGGING triggered a chain of downstream effects through Single issue type - no causal chain to analyze. This cascade pattern is consistent with 1 distinct issue types observed within a concentrated geographic area.",
+      "decision": "CASCADE_CHAIN_IDENTIFIED",
+      "evidence_used": [
+        "Tools used: query_dependency_graph, get_weather_forecast, find_nearby_sensitive_sites, get_historical_incidents",
+        "Fallback mode active. Evaluated 7 reports against dependency graph."
+      ],
+      "confidence": 0.5,
+      "recommended_action": "Sequence repairs starting at root node"
+    },
+    {
+      "agent": "Civic Impact Agent",
+      "timestamp": "2026-09-03T09:44:52.274716+05:30",
+      "message": "Calculated civic threat score 75/100 (HIGH)",
+      "decision": "PRIORITY_HIGH",
+      "evidence_used": [
+        "Impact score of 71.0/100 classified as HIGH. Key factors: severity at 50/100, infrastructure proximity at 85/100, and secondary risk at 70/100. The cascading nature of 1 interconnected issue types over 2.9 days significantly elevates the overall impact."
+      ],
+      "confidence": 0.9,
+      "recommended_action": "Set SLA deadline according to HIGH tier"
+    },
+    {
+      "agent": "Response Agent",
+      "timestamp": "2026-09-03T09:44:52.298351+05:30",
+      "message": "Designed 2-step sequenced response plan across departments.",
+      "decision": "PLAN_GENERATED",
+      "evidence_used": [
+        "Topological sort of department execution dependencies"
+      ],
+      "confidence": 0.95,
+      "recommended_action": "Await authority officer approval before dispatching field teams"
+    },
+    {
+      "agent": "FILING_AGENT",
+      "decision": "Formal complaint filed as FILE-INC-2026-001 (SIMULATED)",
+      "evidence_used": [
+        "Incident: INC-2026-001",
+        "Reports: 7",
+        "Priority: HIGH"
+      ],
+      "confidence": 1.0,
+      "recommended_action": "Track resolution through SLA monitoring",
+      "timestamp": "2026-09-03T09:44:52.321424+05:30"
+    },
+    {
+      "agent": "Root-Cause Agent",
+      "timestamp": "2026-09-03T09:44:52.517224+05:30",
+      "message": "Formed cascade hypothesis [deterministic_fallback]: Root cause analysis identifies a cascading infrastructure failure: WATERLOGGING. The evidence suggests that WATERLOGGING triggered a chain of downstream effects through Single issue type - no causal chain to analyze. This cascade pattern is consistent with 1 distinct issue types observed within a concentrated geographic area.",
+      "decision": "CASCADE_CHAIN_IDENTIFIED",
+      "evidence_used": [
+        "Tools used: query_dependency_graph, get_weather_forecast, find_nearby_sensitive_sites, get_historical_incidents",
+        "Fallback mode active. Evaluated 7 reports against dependency graph."
+      ],
+      "confidence": 0.5,
+      "recommended_action": "Sequence repairs starting at root node"
+    },
+    {
+      "agent": "Civic Impact Agent",
+      "timestamp": "2026-09-03T09:44:52.540894+05:30",
+      "message": "Calculated civic threat score 75/100 (HIGH)",
+      "decision": "PRIORITY_HIGH",
+      "evidence_used": [
+        "Impact score of 71.0/100 classified as HIGH. Key factors: severity at 50/100, infrastructure proximity at 85/100, and secondary risk at 70/100. The cascading nature of 1 interconnected issue types over 2.9 days significantly elevates the overall impact."
+      ],
+      "confidence": 0.9,
+      "recommended_action": "Set SLA deadline according to HIGH tier"
+    },
+    {
+      "agent": "Response Agent",
+      "timestamp": "2026-09-03T09:44:52.567737+05:30",
+      "message": "Designed 2-step sequenced response plan across departments.",
+      "decision": "PLAN_GENERATED",
+      "evidence_used": [
+        "Topological sort of department execution dependencies"
+      ],
+      "confidence": 0.95,
+      "recommended_action": "Await authority officer approval before dispatching field teams"
+    },
+    {
+      "agent": "FILING_AGENT",
+      "decision": "Formal complaint filed as FILE-INC-2026-001 (SIMULATED)",
+      "evidence_used": [
+        "Incident: INC-2026-001",
+        "Reports: 7",
+        "Priority: HIGH"
+      ],
+      "confidence": 1.0,
+      "recommended_action": "Track resolution through SLA monitoring",
+      "timestamp": "2026-09-03T09:44:52.591730+05:30"
+    },
+    {
+      "timestamp": "2026-09-03T09:50:07+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: FAIL - network_error)",
+      "details": {
+        "latency_ms": 5501,
+        "model": "gemini-flash-latest",
+        "status": "error",
+        "error": "HTTP 503 Error from gemini: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+      }
+    },
+    {
+      "timestamp": "2026-09-03T09:50:16+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: FAIL - network_error)",
+      "details": {
+        "latency_ms": 4567,
+        "model": "gemini-flash-latest",
+        "status": "error",
+        "error": "HTTP 503 Error from gemini: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+      }
+    },
+    {
+      "timestamp": "2026-09-03T09:50:24+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: FAIL - model_not_found)",
+      "details": {
+        "latency_ms": 2222,
+        "model": "gemini-2.5-flash",
+        "status": "error",
+        "error": "Model Not Found (HTTP 404): The model string is invalid or unavailable for gemini. (This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.)"
+      }
+    },
+    {
+      "timestamp": "2026-09-03T09:50:32+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: PASS, Latency: 3583ms)",
+      "details": {
+        "latency_ms": 3583,
+        "model": "gemini-flash-latest",
+        "status": "success"
+      }
+    },
+    {
+      "agent": "PERCEPTION_AGENT",
+      "decision": "Classified as DRAIN_BLOCKAGE, HIGH severity",
+      "evidence_used": [
+        "Image analysis: drain_01.jpg",
+        "Citizen report: CIV-2026-1007",
+        "Visual: Observed defect matching category: drain blockage",
+        "Visual: Observed severity level assessed as high",
+        "Visual: Visual validation matches known demographic seeds"
+      ],
+      "confidence": 0.88,
+      "recommended_action": "Proceed to clustering for related reports in the area",
+      "timestamp": "2026-09-03T23:15:15.710420+05:30"
+    },
+    {
+      "agent": "CLUSTERING_AGENT",
+      "decision": "Found 4 related reports in cluster",
+      "evidence_used": [
+        "Search radius: 180.0m",
+        "Time window: 7 days",
+        "Center: (19.0721, 72.8561)",
+        "Cluster radius: 36.9m"
+      ],
+      "confidence": 0.9,
+      "recommended_action": "Proceed to incident detection",
+      "timestamp": "2026-09-03T23:15:19.992756+05:30"
+    },
+    {
+      "agent": "INCIDENT_DETECTION_AGENT",
+      "decision": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "evidence_used": [
+        "Cluster size: 5 reports",
+        "Unique issue types: 3 (WATERLOGGING, DRAIN_BLOCKAGE, GARBAGE_OVERFLOW)",
+        "Same-type reports: 2"
+      ],
+      "confidence": 0.94,
+      "recommended_action": "Create incident and proceed to root cause analysis",
+      "timestamp": "2026-09-03T23:15:40.799495+05:30"
+    },
+    {
+      "timestamp": "2026-09-03T23:15:49+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_PING_TEST",
+      "provider": "gemini",
+      "operator_action": "Executed diagnostic API ping test for provider 'gemini' (Result: PASS, Latency: 6157ms)",
+      "details": {
+        "latency_ms": 6157,
+        "model": "gemini-3-flash-preview",
+        "status": "success"
+      }
+    },
+    {
+      "agent": "Root-Cause Agent",
+      "timestamp": "2026-09-03T23:15:52.896435+05:30",
+      "message": "Formed cascade hypothesis [deterministic_fallback]: Root cause analysis identifies a cascading infrastructure failure: WATERLOGGING. The evidence suggests that WATERLOGGING triggered a chain of downstream effects through Single issue type - no causal chain to analyze. This cascade pattern is consistent with 1 distinct issue types observed within a concentrated geographic area.",
+      "decision": "CASCADE_CHAIN_IDENTIFIED",
+      "evidence_used": [
+        "Tools used: query_dependency_graph, get_weather_forecast, find_nearby_sensitive_sites, get_historical_incidents",
+        "Fallback mode active. Evaluated 5 reports against dependency graph."
+      ],
+      "confidence": 0.5,
+      "recommended_action": "Sequence repairs starting at root node"
+    },
+    {
+      "agent": "Civic Impact Agent",
+      "timestamp": "2026-09-03T23:15:52.917482+05:30",
+      "message": "Calculated civic threat score 75/100 (HIGH)",
+      "decision": "PRIORITY_HIGH",
+      "evidence_used": [
+        "Impact score of 69.0/100 classified as HIGH. Key factors: severity at 50/100, infrastructure proximity at 85/100, and secondary risk at 70/100. The cascading nature of 1 interconnected issue types over 2.1 days significantly elevates the overall impact."
+      ],
+      "confidence": 0.9,
+      "recommended_action": "Set SLA deadline according to HIGH tier"
+    },
+    {
+      "agent": "Response Agent",
+      "timestamp": "2026-09-03T23:15:52.941529+05:30",
+      "message": "Designed 2-step sequenced response plan across departments.",
+      "decision": "PLAN_GENERATED",
+      "evidence_used": [
+        "Topological sort of department execution dependencies"
+      ],
+      "confidence": 0.95,
+      "recommended_action": "Await authority officer approval before dispatching field teams"
+    },
+    {
+      "agent": "FILING_AGENT",
+      "decision": "Formal complaint filed as FILE-INC-2026-002 (SIMULATED)",
+      "evidence_used": [
+        "Incident: INC-2026-002",
+        "Reports: 5",
+        "Priority: HIGH"
+      ],
+      "confidence": 1.0,
+      "recommended_action": "Track resolution through SLA monitoring",
+      "timestamp": "2026-09-03T23:15:52.970341+05:30"
+    },
+    {
+      "timestamp": "2026-09-03T23:15:53+05:30",
+      "log_type": "config_audit",
+      "agent": "SYSTEM_CONFIG_AUDIT",
+      "event_type": "PROVIDER_SAVED",
+      "provider": "gemini",
+      "operator_action": "Saved configuration for provider 'gemini' (Model: gemini-3-flash-preview, Set Active: True)",
+      "details": {
+        "model": "gemini-3-flash-preview",
+        "temperature": 0.3,
+        "set_active": true
+      }
+    },
+    {
+      "agent": "PERCEPTION_AGENT",
+      "decision": "Classified as DRAIN_BLOCKAGE, HIGH severity",
+      "evidence_used": [
+        "Image analysis: drain_01.jpg",
+        "Citizen report: CIV-2026-1052",
+        "Visual: Observed defect matching category: drain blockage",
+        "Visual: Observed severity level assessed as high",
+        "Visual: Visual validation matches known demographic seeds"
+      ],
+      "confidence": 0.88,
+      "recommended_action": "Proceed to clustering for related reports in the area",
+      "timestamp": "2026-09-04T10:38:41.458430+05:30"
+    },
+    {
+      "agent": "CLUSTERING_AGENT",
+      "decision": "Found 0 related reports in cluster",
+      "evidence_used": [
+        "Search radius: 180.0m",
+        "Time window: 7 days",
+        "Center: (19.0720, 72.8560)",
+        "Cluster radius: 0m"
+      ],
+      "confidence": 0.5,
+      "recommended_action": "File as independent complaint",
+      "timestamp": "2026-09-04T10:38:41.498791+05:30"
+    },
+    {
+      "agent": "PERCEPTION_AGENT",
+      "decision": "Classified as DRAIN_BLOCKAGE, HIGH severity",
+      "evidence_used": [
+        "Image analysis: drain_01.jpg",
+        "Citizen report: CIV-2026-1052",
+        "Visual: Observed defect matching category: drain blockage",
+        "Visual: Observed severity level assessed as high",
+        "Visual: Visual validation matches known demographic seeds"
+      ],
+      "confidence": 0.88,
+      "recommended_action": "Proceed to clustering for related reports in the area",
+      "timestamp": "2026-09-04T10:38:42.231064+05:30"
+    },
+    {
+      "agent": "CLUSTERING_AGENT",
+      "decision": "Found 0 related reports in cluster",
+      "evidence_used": [
+        "Search radius: 180.0m",
+        "Time window: 7 days",
+        "Center: (19.0720, 72.8560)",
+        "Cluster radius: 0m"
+      ],
+      "confidence": 0.5,
+      "recommended_action": "File as independent complaint",
+      "timestamp": "2026-09-04T10:38:42.261615+05:30"
+    },
+    {
+      "agent": "INCIDENT_DETECTION_AGENT",
+      "decision": "INDEPENDENT_COMPLAINTS",
+      "evidence_used": [
+        "Cluster size: 1 reports",
+        "Unique issue types: 1 (DRAIN_BLOCKAGE)",
+        "Same-type reports: 1"
+      ],
+      "confidence": 0.5,
+      "recommended_action": "File as independent complaint",
+      "timestamp": "2026-09-04T10:38:46.531877+05:30"
+    },
+    {
+      "agent": "INCIDENT_DETECTION_AGENT",
+      "decision": "INDEPENDENT_COMPLAINTS",
+      "evidence_used": [
+        "Cluster size: 1 reports",
+        "Unique issue types: 1 (DRAIN_BLOCKAGE)",
+        "Same-type reports: 1"
+      ],
+      "confidence": 0.5,
+      "recommended_action": "File as independent complaint",
+      "timestamp": "2026-09-04T10:38:46.621466+05:30"
+    }
+  ],
+  "total": 83
+}

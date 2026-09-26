@@ -1,0 +1,85 @@
+{
+  "scenarios": [
+    {
+      "scenario_id": 1,
+      "title": "Water Infrastructure Cascade",
+      "description": "Water leakage → road damage → pothole → waterlogging. Main demo scenario showing how a single pipe leak causes cascading infrastructure failure.",
+      "ward": "Ward 7 - Andheri East",
+      "report_ids": [
+        "CIV-2026-1001",
+        "CIV-2026-1002",
+        "CIV-2026-1003",
+        "CIV-2026-1004",
+        "CIV-2026-1005",
+        "CIV-2026-1006",
+        "CIV-2026-1040"
+      ],
+      "expected_incident_id": "INC-2026-001",
+      "expected_chain": [
+        "WATER_LEAKAGE",
+        "ROAD_DAMAGE",
+        "POTHOLE",
+        "WATERLOGGING"
+      ],
+      "expected_impact_score": 86,
+      "expected_priority": "CRITICAL"
+    },
+    {
+      "scenario_id": 2,
+      "title": "Drainage-Waste Cycle",
+      "description": "Drain blockage → waterlogging → garbage accumulation. Shows how blocked drains create a self-reinforcing cycle of flooding and waste buildup.",
+      "ward": "Ward 6 - Kurla",
+      "report_ids": [
+        "CIV-2026-1007",
+        "CIV-2026-1008",
+        "CIV-2026-1009",
+        "CIV-2026-1010",
+        "CIV-2026-1011"
+      ],
+      "expected_incident_id": "INC-2026-002",
+      "expected_chain": [
+        "DRAIN_BLOCKAGE",
+        "WATERLOGGING",
+        "GARBAGE_OVERFLOW"
+      ],
+      "expected_impact_score": 72,
+      "expected_priority": "HIGH"
+    },
+    {
+      "scenario_id": 3,
+      "title": "Electrical Safety Hazard Near School",
+      "description": "Exposed electrical wires near a school. Only 2 reports but CRITICAL impact — proves that priority ≠ complaint count.",
+      "ward": "Ward 3 - Marine Lines",
+      "report_ids": [
+        "CIV-2026-1012",
+        "CIV-2026-1013"
+      ],
+      "expected_incident_id": "INC-2026-003",
+      "expected_chain": [
+        "BROKEN_STREETLIGHT",
+        "EXPOSED_WIRES"
+      ],
+      "expected_impact_score": 91,
+      "expected_priority": "CRITICAL"
+    },
+    {
+      "scenario_id": 4,
+      "title": "Recurring Pothole Failure",
+      "description": "Repeated pothole reports after a claimed resolution. Proves the verification and reopen logic — resolution failed, incident must reopen.",
+      "ward": "Ward 5 - Bandra West",
+      "report_ids": [
+        "CIV-2026-1014",
+        "CIV-2026-1015",
+        "CIV-2026-1016",
+        "CIV-2026-1017"
+      ],
+      "expected_incident_id": "INC-2026-004",
+      "expected_chain": [
+        "POTHOLE",
+        "ROAD_DAMAGE"
+      ],
+      "expected_impact_score": 68,
+      "expected_priority": "HIGH"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "provider": "mock",
+  "api_key": "",
+  "model": "simulation-mode",
+  "base_url": "",
+  "temperature": 0.3,
+  "max_tokens": 1000,
+  "provider_keys": {}
+}

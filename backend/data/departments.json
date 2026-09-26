@@ -1,0 +1,138 @@
+{
+  "departments": {
+    "WATER_BOARD": {
+      "name": "Municipal Water Supply & Sewerage Board",
+      "code": "WATER_BOARD",
+      "handles": ["WATER_LEAKAGE", "SEWAGE_OVERFLOW"],
+      "contact_email": "water.dept@nagarseva.gov.in",
+      "contact_phone": "+91-22-2201-1001",
+      "head": "Chief Engineer, Water Supply",
+      "sla_hours": {
+        "CRITICAL": 12,
+        "HIGH": 24,
+        "MEDIUM": 48,
+        "LOW": 72
+      },
+      "resources": [
+        "Pipe repair crews",
+        "Emergency water tankers",
+        "Pumping equipment",
+        "Leak detection units"
+      ]
+    },
+    "ROADS_DEPT": {
+      "name": "Roads & Infrastructure Department",
+      "code": "ROADS_DEPT",
+      "handles": ["POTHOLE", "ROAD_DAMAGE"],
+      "contact_email": "roads.dept@nagarseva.gov.in",
+      "contact_phone": "+91-22-2201-1002",
+      "head": "Executive Engineer, Roads Division",
+      "sla_hours": {
+        "CRITICAL": 24,
+        "HIGH": 48,
+        "MEDIUM": 72,
+        "LOW": 120
+      },
+      "resources": [
+        "Asphalt paving crews",
+        "Road repair machinery",
+        "Traffic management units",
+        "Barricades and signage"
+      ]
+    },
+    "STORM_WATER_DRAINAGE": {
+      "name": "Storm Water Drainage Department",
+      "code": "STORM_WATER_DRAINAGE",
+      "handles": ["WATERLOGGING", "DRAINAGE_PROBLEM", "DRAIN_BLOCKAGE"],
+      "contact_email": "drainage.dept@nagarseva.gov.in",
+      "contact_phone": "+91-22-2201-1003",
+      "head": "Superintendent Engineer, Drainage",
+      "sla_hours": {
+        "CRITICAL": 8,
+        "HIGH": 16,
+        "MEDIUM": 36,
+        "LOW": 72
+      },
+      "resources": [
+        "Drain cleaning machines",
+        "Dewatering pumps",
+        "CCTV drain inspection units",
+        "Emergency response teams"
+      ]
+    },
+    "SOLID_WASTE_MGMT": {
+      "name": "Solid Waste Management Department",
+      "code": "SOLID_WASTE_MGMT",
+      "handles": ["GARBAGE_OVERFLOW"],
+      "contact_email": "swm.dept@nagarseva.gov.in",
+      "contact_phone": "+91-22-2201-1004",
+      "head": "Deputy Commissioner, SWM",
+      "sla_hours": {
+        "CRITICAL": 12,
+        "HIGH": 24,
+        "MEDIUM": 48,
+        "LOW": 72
+      },
+      "resources": [
+        "Garbage collection trucks",
+        "Mechanized sweepers",
+        "Bio-hazard cleanup teams",
+        "Waste segregation units"
+      ]
+    },
+    "ELECTRICAL_DEPT": {
+      "name": "Electrical & Street Lighting Department",
+      "code": "ELECTRICAL_DEPT",
+      "handles": ["BROKEN_STREETLIGHT", "EXPOSED_WIRES"],
+      "contact_email": "electrical.dept@nagarseva.gov.in",
+      "contact_phone": "+91-22-2201-1005",
+      "head": "Chief Electrical Engineer",
+      "sla_hours": {
+        "CRITICAL": 4,
+        "HIGH": 12,
+        "MEDIUM": 36,
+        "LOW": 72
+      },
+      "resources": [
+        "Electrical repair crews",
+        "Transformer units",
+        "Insulation equipment",
+        "Emergency power cutoff teams"
+      ]
+    }
+  },
+  "issue_to_departments": {
+    "WATER_LEAKAGE": ["WATER_BOARD"],
+    "WATERLOGGING": ["STORM_WATER_DRAINAGE", "WATER_BOARD"],
+    "POTHOLE": ["ROADS_DEPT"],
+    "ROAD_DAMAGE": ["ROADS_DEPT"],
+    "GARBAGE_OVERFLOW": ["SOLID_WASTE_MGMT"],
+    "BROKEN_STREETLIGHT": ["ELECTRICAL_DEPT"],
+    "DRAINAGE_PROBLEM": ["STORM_WATER_DRAINAGE"],
+    "EXPOSED_WIRES": ["ELECTRICAL_DEPT"],
+    "SEWAGE_OVERFLOW": ["WATER_BOARD", "STORM_WATER_DRAINAGE"],
+    "DRAIN_BLOCKAGE": ["STORM_WATER_DRAINAGE", "SOLID_WASTE_MGMT"]
+  },
+  "department_dependencies": {
+    "ROADS_DEPT": {
+      "must_complete_after": ["WATER_BOARD", "STORM_WATER_DRAINAGE"],
+      "reason": "Road repairs are wasted if underlying water/drainage issues persist"
+    },
+    "SOLID_WASTE_MGMT": {
+      "must_complete_after": [],
+      "reason": "Garbage clearance can proceed independently"
+    },
+    "WATER_BOARD": {
+      "must_complete_after": [],
+      "reason": "Water supply fixes are typically root-cause and should go first"
+    },
+    "STORM_WATER_DRAINAGE": {
+      "must_complete_after": ["SOLID_WASTE_MGMT"],
+      "reason": "Clear garbage blocking drains before drain repair"
+    },
+    "ELECTRICAL_DEPT": {
+      "must_complete_after": [],
+      "reason": "Electrical safety is independent and urgent"
+    }
+  }
+}

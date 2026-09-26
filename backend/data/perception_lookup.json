@@ -1,0 +1,314 @@
+{
+  "leak_01.jpg": {
+    "issue_type": "WATER_LEAKAGE",
+    "severity": "HIGH",
+    "confidence": 0.91,
+    "evidence_text": "Visible water accumulation on road surface indicating underground pipe rupture. Continuous water flow pattern suggests pressurized supply line breach. Road surface appears saturated with mineral staining consistent with prolonged water exposure."
+  },
+  "leak_02.jpg": {
+    "issue_type": "WATER_LEAKAGE",
+    "severity": "HIGH",
+    "confidence": 0.88,
+    "evidence_text": "Active water seepage from road surface crack. Flow rate and clarity suggest potable water supply line damage. Wet zone extends approximately 5 meters from source point."
+  },
+  "leak_03.jpg": {
+    "issue_type": "WATER_LEAKAGE",
+    "severity": "MEDIUM",
+    "confidence": 0.85,
+    "evidence_text": "Minor water seepage near footpath edge. Low flow rate suggests small pipe joint failure. Localized wet patch without significant road damage."
+  },
+  "leak_04.jpg": {
+    "issue_type": "WATER_LEAKAGE",
+    "severity": "MEDIUM",
+    "confidence": 0.83,
+    "evidence_text": "Slow water leak from exposed pipe section. Consistent drip pattern indicates joint or valve issue. Limited area of impact."
+  },
+  "leak_05.jpg": {
+    "issue_type": "WATER_LEAKAGE",
+    "severity": "CRITICAL",
+    "confidence": 0.94,
+    "evidence_text": "High-pressure water burst from underground main. Significant volume of water flowing onto road. Geyser-like eruption indicates major supply line failure requiring emergency response."
+  },
+  "leak_06.jpg": {
+    "issue_type": "WATER_LEAKAGE",
+    "severity": "LOW",
+    "confidence": 0.8,
+    "evidence_text": "Minor dampness on road surface near pipe junction. No active flow visible. Possible slow seep from aging pipe infrastructure."
+  },
+  "road_damage_01.jpg": {
+    "issue_type": "ROAD_DAMAGE",
+    "severity": "HIGH",
+    "confidence": 0.89,
+    "evidence_text": "Extensive surface cracking with visible sub-base erosion. Crack pattern consistent with water-induced base failure. Road surface depression indicates undermining by subsurface water flow."
+  },
+  "road_damage_02.jpg": {
+    "issue_type": "ROAD_DAMAGE",
+    "severity": "MEDIUM",
+    "confidence": 0.85,
+    "evidence_text": "Surface-level cracking and bitumen peeling on service road. Early-stage deterioration with multiple longitudinal cracks. No base failure visible yet."
+  },
+  "road_damage_03.jpg": {
+    "issue_type": "ROAD_DAMAGE",
+    "severity": "MEDIUM",
+    "confidence": 0.84,
+    "evidence_text": "Surface wear and cracking on main road. Bitumen layer showing signs of aging and heavy vehicle stress. Multiple transverse cracks visible."
+  },
+  "road_damage_04.jpg": {
+    "issue_type": "ROAD_DAMAGE",
+    "severity": "HIGH",
+    "confidence": 0.87,
+    "evidence_text": "Severe road surface damage with displaced speed breakers. Evidence of heavy vehicle impact on weakened road base. Multiple potholes forming in the damaged stretch."
+  },
+  "road_damage_05.jpg": {
+    "issue_type": "ROAD_DAMAGE",
+    "severity": "HIGH",
+    "confidence": 0.86,
+    "evidence_text": "Road surface and divider damage in high-traffic area. Broken curb and displaced median. Signs of repeated heavy vehicle encroachment."
+  },
+  "pothole_01.jpg": {
+    "issue_type": "POTHOLE",
+    "severity": "HIGH",
+    "confidence": 0.93,
+    "evidence_text": "Deep pothole approximately 60cm diameter and 30cm depth. Filled with standing muddy water. Edges showing further erosion. Located in active traffic lane with no warning markers."
+  },
+  "pothole_02.jpg": {
+    "issue_type": "POTHOLE",
+    "severity": "MEDIUM",
+    "confidence": 0.87,
+    "evidence_text": "Medium-sized pothole near traffic signal. Approximately 40cm wide. Position at turning point increases collision risk for two-wheelers."
+  },
+  "pothole_03.jpg": {
+    "issue_type": "POTHOLE",
+    "severity": "HIGH",
+    "confidence": 0.9,
+    "evidence_text": "Previously reported pothole has enlarged. Depth increased significantly. Fresh edge breakage visible indicating ongoing deterioration. Active safety hazard."
+  },
+  "pothole_04.jpg": {
+    "issue_type": "POTHOLE",
+    "severity": "HIGH",
+    "confidence": 0.92,
+    "evidence_text": "Pothole at previously repaired location. Patch material has dislodged completely. Underlying base failure visible. Repair quality was inadequate for traffic load."
+  },
+  "pothole_05.jpg": {
+    "issue_type": "ROAD_DAMAGE",
+    "severity": "HIGH",
+    "confidence": 0.88,
+    "evidence_text": "Extended road damage around failed pothole repair site. Surface breaking apart in 20-meter stretch. Base layer exposed. Complete resurfacing required."
+  },
+  "pothole_06.jpg": {
+    "issue_type": "POTHOLE",
+    "severity": "LOW",
+    "confidence": 0.82,
+    "evidence_text": "Small pothole at road turning. Shallow depth but positioned to catch drivers off-guard. Minor surface-level damage."
+  },
+  "pothole_07.jpg": {
+    "issue_type": "POTHOLE",
+    "severity": "MEDIUM",
+    "confidence": 0.86,
+    "evidence_text": "Medium pothole near railway crossing. Uneven road surface around it. Position forces vehicles to slow down creating bottleneck."
+  },
+  "pothole_08.jpg": {
+    "issue_type": "POTHOLE",
+    "severity": "HIGH",
+    "confidence": 0.89,
+    "evidence_text": "Multiple potholes on service road stretch. At least 5 visible in frame. Road surface severely degraded. Systematic failure rather than isolated damage."
+  },
+  "pothole_09.jpg": {
+    "issue_type": "POTHOLE",
+    "severity": "MEDIUM",
+    "confidence": 0.84,
+    "evidence_text": "Pothole in commercial area road. Moderate depth. Located near shops causing access difficulties for customers and delivery vehicles."
+  },
+  "waterlogging_01.jpg": {
+    "issue_type": "WATERLOGGING",
+    "severity": "HIGH",
+    "confidence": 0.9,
+    "evidence_text": "Significant standing water on road surface, approximately ankle-deep. Visible debris floating. No drainage visible. Road damage and potholes acting as water retention basins."
+  },
+  "waterlogging_02.jpg": {
+    "issue_type": "WATERLOGGING",
+    "severity": "MEDIUM",
+    "confidence": 0.85,
+    "evidence_text": "Moderate waterlogging in market area. Water level reaching shop entrances. Blocked drain visible as contributing factor. Stagnant water with debris."
+  },
+  "waterlogging_03.jpg": {
+    "issue_type": "WATERLOGGING",
+    "severity": "HIGH",
+    "confidence": 0.88,
+    "evidence_text": "Severe stagnant water with visible algae growth indicating multi-day accumulation. Green discoloration suggests health hazard. Mosquito breeding conditions present."
+  },
+  "waterlogging_04.jpg": {
+    "issue_type": "WATERLOGGING",
+    "severity": "HIGH",
+    "confidence": 0.87,
+    "evidence_text": "Extensive waterlogging at bus depot approach. Water depth preventing vehicle entry. Large surface area affected. Drainage infrastructure overwhelmed."
+  },
+  "waterlogging_05.jpg": {
+    "issue_type": "WATERLOGGING",
+    "severity": "MEDIUM",
+    "confidence": 0.83,
+    "evidence_text": "Recurring waterlogging on causeway. Low-lying area with inadequate drainage capacity. Water accumulation pattern suggests structural drainage deficiency."
+  },
+  "drain_01.jpg": {
+    "issue_type": "DRAIN_BLOCKAGE",
+    "severity": "HIGH",
+    "confidence": 0.88,
+    "evidence_text": "Drain mouth completely blocked with plastic waste and construction debris. No water flow visible. Surrounding area shows water accumulation from blocked outflow."
+  },
+  "drain_02.jpg": {
+    "issue_type": "DRAIN_BLOCKAGE",
+    "severity": "MEDIUM",
+    "confidence": 0.84,
+    "evidence_text": "Partially blocked drain near bus stop. Floating debris reducing flow capacity. Water backing up at drain inlet. Secondary blockage developing."
+  },
+  "drain_03.jpg": {
+    "issue_type": "DRAIN_BLOCKAGE",
+    "severity": "MEDIUM",
+    "confidence": 0.82,
+    "evidence_text": "Drain blocked with construction debris in residential area. Cement and brick fragments visible in drain. Water level rising above normal."
+  },
+  "drain_04.jpg": {
+    "issue_type": "DRAIN_BLOCKAGE",
+    "severity": "MEDIUM",
+    "confidence": 0.81,
+    "evidence_text": "Open drain with plastic waste blockage. Missing drain cover creating pedestrian hazard. Plastic bags clogging water flow."
+  },
+  "garbage_01.jpg": {
+    "issue_type": "GARBAGE_OVERFLOW",
+    "severity": "MEDIUM",
+    "confidence": 0.86,
+    "evidence_text": "Overflowing garbage collection point. Mixed waste including organic and plastic. Waste mixing with waterlogged area creating contamination. Stray animals scavenging."
+  },
+  "garbage_02.jpg": {
+    "issue_type": "GARBAGE_OVERFLOW",
+    "severity": "MEDIUM",
+    "confidence": 0.84,
+    "evidence_text": "Multiple bins overflowing in market area. Waste bags torn by animals. Scattered waste on road surface. Collection schedule appears inadequate."
+  },
+  "garbage_03.jpg": {
+    "issue_type": "GARBAGE_OVERFLOW",
+    "severity": "MEDIUM",
+    "confidence": 0.83,
+    "evidence_text": "Community bin overflow. Waste piled above bin capacity. Organic waste decomposing. Flies and insects visible. Residential area affected."
+  },
+  "garbage_04.jpg": {
+    "issue_type": "GARBAGE_OVERFLOW",
+    "severity": "HIGH",
+    "confidence": 0.85,
+    "evidence_text": "Market area garbage overflow with vegetable waste. Rotting organic matter creating health hazard. Area near food stalls, food safety risk."
+  },
+  "garbage_05.jpg": {
+    "issue_type": "GARBAGE_OVERFLOW",
+    "severity": "HIGH",
+    "confidence": 0.87,
+    "evidence_text": "Illegal construction waste dumping on service road. Large pile of debris including concrete and metal. Road partially blocked. Night dumping suspected."
+  },
+  "garbage_06.jpg": {
+    "issue_type": "GARBAGE_OVERFLOW",
+    "severity": "MEDIUM",
+    "confidence": 0.82,
+    "evidence_text": "Overflowing bins at road junction. Wind-scattered waste across road. Multiple bins full, collection overdue. Traffic area needs priority cleanup."
+  },
+  "exposed_wire_01.jpg": {
+    "issue_type": "EXPOSED_WIRES",
+    "severity": "CRITICAL",
+    "confidence": 0.94,
+    "evidence_text": "Exposed high-voltage wires hanging from damaged pole near school entrance. Insulation completely stripped. Wire at approximately 1.5m height — within reach of children. Immediate electrocution risk, amplified during rain."
+  },
+  "exposed_wire_02.jpg": {
+    "issue_type": "EXPOSED_WIRES",
+    "severity": "CRITICAL",
+    "confidence": 0.92,
+    "evidence_text": "Broken streetlight with exposed internal wiring on school path. Junction box damaged and open. Multiple bare copper conductors visible. Combination with wet monsoon conditions creates lethal hazard."
+  },
+  "exposed_wire_03.jpg": {
+    "issue_type": "EXPOSED_WIRES",
+    "severity": "HIGH",
+    "confidence": 0.89,
+    "evidence_text": "Exposed wires from melted insulation in industrial area. Overload damage visible on conductors. Warning sign placed by locals but wire remains energized."
+  },
+  "exposed_wire_04.jpg": {
+    "issue_type": "EXPOSED_WIRES",
+    "severity": "HIGH",
+    "confidence": 0.88,
+    "evidence_text": "Open junction box with exposed wires near beach area. Box cover missing. Internal connections visible and accessible. High foot traffic area with children."
+  },
+  "streetlight_01.jpg": {
+    "issue_type": "BROKEN_STREETLIGHT",
+    "severity": "MEDIUM",
+    "confidence": 0.87,
+    "evidence_text": "Non-functional streetlight on main road. Lamp housing intact but no illumination. Likely electrical supply or bulb failure. Dark stretch creates safety concern."
+  },
+  "streetlight_02.jpg": {
+    "issue_type": "BROKEN_STREETLIGHT",
+    "severity": "MEDIUM",
+    "confidence": 0.85,
+    "evidence_text": "Multiple non-functional streetlights on station road. Three consecutive lights out creating extended dark zone. Possible common electrical supply issue."
+  },
+  "streetlight_03.jpg": {
+    "issue_type": "BROKEN_STREETLIGHT",
+    "severity": "HIGH",
+    "confidence": 0.88,
+    "evidence_text": "Tilting streetlight pole at intersection. Base mount appears corroded. Pole leaning at approximately 15 degrees. Risk of collapse onto parked vehicles or pedestrians."
+  },
+  "streetlight_04.jpg": {
+    "issue_type": "BROKEN_STREETLIGHT",
+    "severity": "MEDIUM",
+    "confidence": 0.84,
+    "evidence_text": "Streetlight out on main road stretch. Area known for safety issues. Dark zone approximately 200 meters. Street lighting is sole illumination source."
+  },
+  "sewage_01.jpg": {
+    "issue_type": "SEWAGE_OVERFLOW",
+    "severity": "HIGH",
+    "confidence": 0.89,
+    "evidence_text": "Sewage overflowing from manhole. Dark contaminated water spreading on heritage road. Manhole cover partially displaced. Sewage line pressure buildup indicated."
+  },
+  "sewage_02.jpg": {
+    "issue_type": "SEWAGE_OVERFLOW",
+    "severity": "HIGH",
+    "confidence": 0.87,
+    "evidence_text": "Sewage from dislodged manhole near nullah. Contaminated water mixing with road drainage. Vehicles splashing sewage onto pedestrians. Health and hygiene hazard."
+  },
+  "sewage_03.jpg": {
+    "issue_type": "SEWAGE_OVERFLOW",
+    "severity": "HIGH",
+    "confidence": 0.86,
+    "evidence_text": "Open nullah overflow with raw sewage. Pre-monsoon cleaning not completed. Accumulated waste in nullah causing overflow. Wide area stench impact."
+  },
+  "sewage_04.jpg": {
+    "issue_type": "SEWAGE_OVERFLOW",
+    "severity": "CRITICAL",
+    "confidence": 0.91,
+    "evidence_text": "Burst sewage line in residential area. Raw sewage flowing on street. Children's play area affected. Major public health emergency requiring immediate response."
+  },
+  "drainage_01.jpg": {
+    "issue_type": "DRAINAGE_PROBLEM",
+    "severity": "MEDIUM",
+    "confidence": 0.83,
+    "evidence_text": "Inadequate drainage grating on main road. Water ponding hours after rain stopped. Grating size insufficient for water volume. Structural drainage capacity issue."
+  },
+  "drainage_02.jpg": {
+    "issue_type": "DRAINAGE_PROBLEM",
+    "severity": "MEDIUM",
+    "confidence": 0.81,
+    "evidence_text": "Chronic drainage problem in heritage area. Repeated water retention after rainfall. Drainage infrastructure appears inadequate for current surface area."
+  },
+  "drainage_03.jpg": {
+    "issue_type": "DRAINAGE_PROBLEM",
+    "severity": "MEDIUM",
+    "confidence": 0.82,
+    "evidence_text": "Drainage capacity issue near lake. Jogging track affected by standing water. Overflow risk during heavy rain events. Storm drain connection appears insufficient."
+  },
+  "resolved_leak_correct.jpg": {
+    "issue_type": "WATER_LEAKAGE",
+    "severity": "LOW",
+    "confidence": 0.95,
+    "evidence_text": "Road surface appears dry. New pipe joint visible indicating completed repair. No water seepage detected. Area cleaned and restored."
+  },
+  "resolved_leak_wrong.jpg": {
+    "issue_type": "GARBAGE_OVERFLOW",
+    "severity": "MEDIUM",
+    "confidence": 0.78,
+    "evidence_text": "Image shows a different location — garbage collection area. No water infrastructure visible. Does not match the incident location for water leakage verification."
+  }
+}
