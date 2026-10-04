@@ -184,12 +184,12 @@ def calculate_impact_score(
 
     score = round(score, 1)
 
-    # Priority tier
-    if score >= 76:
+    # Priority tier (>=80 CRITICAL, 65-79 HIGH, 45-64 MEDIUM, <45 LOW)
+    if score >= 80:
         priority = "CRITICAL"
-    elif score >= 51:
+    elif score >= 65:
         priority = "HIGH"
-    elif score >= 26:
+    elif score >= 45:
         priority = "MEDIUM"
     else:
         priority = "LOW"

@@ -4,8 +4,8 @@
       "incident_id": "INC-2026-001",
       "status": "UNDER_REVIEW",
       "classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
-      "created_at": "2026-09-03T09:44:39.416934+05:30",
-      "updated_at": "2026-09-03T09:44:39.416956+05:30",
+      "created_at": "2026-10-04T11:14:33.860237+05:30",
+      "updated_at": "2026-10-04T11:14:33.860273+05:30",
       "connected_reports": [
         "CIV-2026-1001",
         "CIV-2026-1004",
@@ -28,7 +28,7 @@
           "issue_type": "WATER_LEAKAGE",
           "severity": "HIGH",
           "confidence": 0.91,
-          "evidence_text": "Visual analysis reveals substantial, active water upwelling penetrating the asphalt surface, consistent with a high-pressure subsurface pipe rupture. Extensive pooling covers multiple traffic lanes and curbsides, indicating deep surface saturation and continuous uncontained outflow. Sediment displacement and standing water across the junction point to immediate risk of sub-base road degradation and traffic disruption.",
+          "evidence_text": "Visual analysis confirms a high-volume, pressurized water discharge surfacing through a breach in the asphalt, causing extensive pooling across the roadway. The surrounding pavement is heavily saturated, with water accumulation extending into the gutter and adjacent traffic lanes. Displaced sediment near the point of origin further indicates an active, high-pressure underground pipe failure and potential erosion of the road’s sub-base.",
           "image_filename": "leak_01.jpg",
           "visual_evidence": [
             "Observed defect matching category: water leakage",
@@ -41,7 +41,493 @@
           "issue_type": "WATERLOGGING",
           "severity": "HIGH",
           "confidence": 0.9,
-          "evidence_text": "Visual analysis reveals extensive standing water accumulation spanning the carriageway, completely submerging the road surface and pedestrian pathways to near-curb depth. Transit and commercial vehicles show significant wheel-level submersion, with localized pooling concentrated heavily around visible asphalt depressions and submerged potholes. The lack of active surface runoff or drainage vortexes indicates non-functional or severely obstructed stormwater catch basins along the corridor.",
+          "evidence_text": "Visual analysis reveals extensive water accumulation across the entire roadway, with the depth reaching the mid-wheel level of transit vehicles and fully submerging pedestrian walking paths. Significant surface irregularities and depressions in the asphalt are trapping stagnant water, indicating a failure of the drainage infrastructure to facilitate adequate runoff.",
+          "image_filename": "waterlogging_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: waterlogging",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1040",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "CRITICAL",
+          "confidence": 0.94,
+          "evidence_text": "A high-pressure water plume is visible discharging from a ruptured subterranean pipe located at the base of metro pillar 28. The significant volume of escaping water has resulted in extensive surface flooding and localized erosion across the immediate roadway and pedestrian area.",
+          "image_filename": "leak_05.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as critical",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1002",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "HIGH",
+          "confidence": 0.89,
+          "evidence_text": "The pavement exhibits extensive longitudinal and interconnected alligator cracking with visible moisture seepage and damp patches surfacing through the asphalt. This structural degradation has resulted in significant surface depressions and the accumulation of loose aggregate debris across the primary traffic lane. These conditions indicate a compromised sub-base, creating an uneven and hazardous surface for passing vehicles.",
+          "image_filename": "road_damage_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1003",
+          "issue_type": "POTHOLE",
+          "severity": "HIGH",
+          "confidence": 0.93,
+          "evidence_text": "The photograph reveals a substantial cavity in the asphalt surface filled with opaque, muddy water, which obscures the total depth of the depression. Extensive radial cracking and crumbling edges are visible around the perimeter, indicating significant structural degradation of the surrounding pavement. The pothole occupies a large portion of the active travel lane, creating a high-risk obstruction for motorists and cyclists.",
+          "image_filename": "pothole_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: pothole",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1005",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.88,
+          "evidence_text": "Active water seepage from road surface crack. Flow rate and clarity suggest potable water supply line damage. Wet zone extends approximately 5 meters from source point.",
+          "image_filename": "leak_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1006",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "evidence_text": "Surface-level cracking and bitumen peeling on service road. Early-stage deterioration with multiple longitudinal cracks. No base failure visible yet.",
+          "image_filename": "road_damage_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as medium",
+            "Visual validation matches known demographic seeds"
+          ]
+        }
+      ],
+      "root_cause": {
+        "hypothesis": "Root cause analysis identifies a cascading infrastructure failure: WATERLOGGING. The evidence suggests that WATERLOGGING triggered a chain of downstream effects through Single issue type - no causal chain to analyze. This cascade pattern is consistent with 1 distinct issue types observed within a concentrated geographic area.",
+        "confidence": 0.5,
+        "chain": [],
+        "disclaimer": "AI-generated civic incident hypothesis. Physical inspection recommended.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "find_nearby_sensitive_sites",
+          "get_historical_incidents"
+        ],
+        "reasoning_notes": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "nearby_sites": [
+          {
+            "id": "12350609084",
+            "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+            "type": "clinic",
+            "latitude": 19.1183809,
+            "longitude": 72.8458359,
+            "distance_m": 140.3
+          },
+          {
+            "id": "353191630",
+            "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+            "type": "clinic",
+            "latitude": 19.1183563,
+            "longitude": 72.8458471,
+            "distance_m": 140.7
+          },
+          {
+            "id": "11275619443",
+            "name": "Anuvansh Fertility & Women's Clinic",
+            "type": "clinic",
+            "latitude": 19.1179194,
+            "longitude": 72.8460756,
+            "distance_m": 154.5
+          },
+          {
+            "id": "11698463569",
+            "name": "Aakash Institute",
+            "type": "prep_school",
+            "latitude": 19.1194001,
+            "longitude": 72.8455521,
+            "distance_m": 158.5
+          },
+          {
+            "id": "7049613221",
+            "name": "Saheli Clinic",
+            "type": "clinic",
+            "latitude": 19.1200089,
+            "longitude": 72.8485844,
+            "distance_m": 200.7
+          },
+          {
+            "id": "7068429399",
+            "name": "Bses Mg Hospital (Managed By)Brahma Kumari Global Hospital and Res Center",
+            "type": "hospital",
+            "latitude": 19.119331,
+            "longitude": 72.845019,
+            "distance_m": 211.4
+          },
+          {
+            "id": "11698432789",
+            "name": "IItian's PACE - Andheri",
+            "type": "school",
+            "latitude": 19.1203044,
+            "longitude": 72.8454164,
+            "distance_m": 220.7
+          },
+          {
+            "id": "4571165089",
+            "name": "Clinic",
+            "type": "clinic",
+            "latitude": 19.120518,
+            "longitude": 72.8456246,
+            "distance_m": 222.2
+          },
+          {
+            "id": "8261417275",
+            "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+            "type": "clinic",
+            "latitude": 19.1188092,
+            "longitude": 72.8492685,
+            "distance_m": 239.3
+          },
+          {
+            "id": "7050518138",
+            "name": "Vishal X-Ray Clinic",
+            "type": "clinic",
+            "latitude": 19.1208566,
+            "longitude": 72.8457941,
+            "distance_m": 242.2
+          }
+        ]
+      },
+      "impact_score": {
+        "score": 75,
+        "priority": "HIGH",
+        "breakdown": {},
+        "explanation": "Impact score of 71.0/100 classified as HIGH. Key factors: severity at 50/100, infrastructure proximity at 85/100, and secondary risk at 70/100. The cascading nature of 1 interconnected issue types over 2.9 days significantly elevates the overall impact.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "find_nearby_sensitive_sites",
+          "get_historical_incidents"
+        ]
+      },
+      "response_plan": {
+        "steps": [
+          {
+            "step_number": 1,
+            "department": "WATER_BOARD",
+            "department_name": "Municipal Water Supply & Sewerage Board",
+            "action": "Address WATERLOGGING issues",
+            "reason": "Water supply fixes are typically root-cause and should go first",
+            "estimated_hours": 24,
+            "depends_on": [],
+            "resources": [
+              "Pipe repair crews",
+              "Emergency water tankers",
+              "Pumping equipment",
+              "Leak detection units"
+            ],
+            "issues": [
+              "WATERLOGGING"
+            ]
+          },
+          {
+            "step_number": 2,
+            "department": "STORM_WATER_DRAINAGE",
+            "department_name": "Storm Water Drainage Department",
+            "action": "Address WATERLOGGING issues",
+            "reason": "Clear garbage blocking drains before drain repair",
+            "estimated_hours": 16,
+            "depends_on": [],
+            "resources": [
+              "Drain cleaning machines",
+              "Dewatering pumps",
+              "CCTV drain inspection units",
+              "Emergency response teams"
+            ],
+            "issues": [
+              "WATERLOGGING"
+            ]
+          }
+        ],
+        "rationale": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "approved": false,
+        "approved_by": "",
+        "approved_at": ""
+      },
+      "resolution": {},
+      "sla": {
+        "deadline": "2026-10-05T11:14:45.221066+05:30",
+        "reminders_sent": 0,
+        "escalated": false,
+        "escalation_reason": "",
+        "original_deadline": "2026-10-05T11:14:45.221066+05:30"
+      },
+      "agent_log": [],
+      "reasoning_mode": "deterministic_fallback",
+      "tools_used": [
+        "query_dependency_graph",
+        "get_weather_forecast",
+        "find_nearby_sensitive_sites",
+        "get_historical_incidents"
+      ],
+      "tool_traces": [
+        {
+          "tool_name": "get_weather_forecast",
+          "result": {
+            "available": true,
+            "rain_risk_pct": 0,
+            "max_precipitation_mm": 0.0,
+            "heavy_rain_expected": false,
+            "forecast_hours_checked": 24,
+            "summary": "Next 24h max rain risk: 0% (0.0mm)"
+          }
+        },
+        {
+          "tool_name": "find_nearby_sensitive_sites",
+          "result": {
+            "available": true,
+            "sites": [
+              {
+                "id": "12350609084",
+                "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+                "type": "clinic",
+                "latitude": 19.1183809,
+                "longitude": 72.8458359,
+                "distance_m": 140.3
+              },
+              {
+                "id": "353191630",
+                "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+                "type": "clinic",
+                "latitude": 19.1183563,
+                "longitude": 72.8458471,
+                "distance_m": 140.7
+              },
+              {
+                "id": "11275619443",
+                "name": "Anuvansh Fertility & Women's Clinic",
+                "type": "clinic",
+                "latitude": 19.1179194,
+                "longitude": 72.8460756,
+                "distance_m": 154.5
+              },
+              {
+                "id": "11698463569",
+                "name": "Aakash Institute",
+                "type": "prep_school",
+                "latitude": 19.1194001,
+                "longitude": 72.8455521,
+                "distance_m": 158.5
+              },
+              {
+                "id": "7049613221",
+                "name": "Saheli Clinic",
+                "type": "clinic",
+                "latitude": 19.1200089,
+                "longitude": 72.8485844,
+                "distance_m": 200.7
+              },
+              {
+                "id": "7068429399",
+                "name": "Bses Mg Hospital (Managed By)Brahma Kumari Global Hospital and Res Center",
+                "type": "hospital",
+                "latitude": 19.119331,
+                "longitude": 72.845019,
+                "distance_m": 211.4
+              },
+              {
+                "id": "11698432789",
+                "name": "IItian's PACE - Andheri",
+                "type": "school",
+                "latitude": 19.1203044,
+                "longitude": 72.8454164,
+                "distance_m": 220.7
+              },
+              {
+                "id": "4571165089",
+                "name": "Clinic",
+                "type": "clinic",
+                "latitude": 19.120518,
+                "longitude": 72.8456246,
+                "distance_m": 222.2
+              },
+              {
+                "id": "8261417275",
+                "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+                "type": "clinic",
+                "latitude": 19.1188092,
+                "longitude": 72.8492685,
+                "distance_m": 239.3
+              },
+              {
+                "id": "7050518138",
+                "name": "Vishal X-Ray Clinic",
+                "type": "clinic",
+                "latitude": 19.1208566,
+                "longitude": 72.8457941,
+                "distance_m": 242.2
+              }
+            ],
+            "total_found": 10,
+            "closest_site": {
+              "id": "12350609084",
+              "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+              "type": "clinic",
+              "latitude": 19.1183809,
+              "longitude": 72.8458359,
+              "distance_m": 140.3
+            },
+            "summary": "Found 10 sensitive site(s) within 250m"
+          }
+        },
+        {
+          "tool_name": "get_historical_incidents",
+          "result": {
+            "available": true,
+            "prior_incidents": [],
+            "total_nearby": 0,
+            "has_repeats": false,
+            "summary": "Found 0 prior incident(s) within 180m"
+          }
+        }
+      ],
+      "nearby_sites": [
+        {
+          "id": "12350609084",
+          "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+          "type": "clinic",
+          "latitude": 19.1183809,
+          "longitude": 72.8458359,
+          "distance_m": 140.3
+        },
+        {
+          "id": "353191630",
+          "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+          "type": "clinic",
+          "latitude": 19.1183563,
+          "longitude": 72.8458471,
+          "distance_m": 140.7
+        },
+        {
+          "id": "11275619443",
+          "name": "Anuvansh Fertility & Women's Clinic",
+          "type": "clinic",
+          "latitude": 19.1179194,
+          "longitude": 72.8460756,
+          "distance_m": 154.5
+        },
+        {
+          "id": "11698463569",
+          "name": "Aakash Institute",
+          "type": "prep_school",
+          "latitude": 19.1194001,
+          "longitude": 72.8455521,
+          "distance_m": 158.5
+        },
+        {
+          "id": "7049613221",
+          "name": "Saheli Clinic",
+          "type": "clinic",
+          "latitude": 19.1200089,
+          "longitude": 72.8485844,
+          "distance_m": 200.7
+        },
+        {
+          "id": "7068429399",
+          "name": "Bses Mg Hospital (Managed By)Brahma Kumari Global Hospital and Res Center",
+          "type": "hospital",
+          "latitude": 19.119331,
+          "longitude": 72.845019,
+          "distance_m": 211.4
+        },
+        {
+          "id": "11698432789",
+          "name": "IItian's PACE - Andheri",
+          "type": "school",
+          "latitude": 19.1203044,
+          "longitude": 72.8454164,
+          "distance_m": 220.7
+        },
+        {
+          "id": "4571165089",
+          "name": "Clinic",
+          "type": "clinic",
+          "latitude": 19.120518,
+          "longitude": 72.8456246,
+          "distance_m": 222.2
+        },
+        {
+          "id": "8261417275",
+          "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+          "type": "clinic",
+          "latitude": 19.1188092,
+          "longitude": 72.8492685,
+          "distance_m": 239.3
+        },
+        {
+          "id": "7050518138",
+          "name": "Vishal X-Ray Clinic",
+          "type": "clinic",
+          "latitude": 19.1208566,
+          "longitude": 72.8457941,
+          "distance_m": 242.2
+        }
+      ]
+    },
+    {
+      "incident_id": "INC-2026-002",
+      "status": "UNDER_REVIEW",
+      "classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "created_at": "2026-10-04T11:23:42.470193+05:30",
+      "updated_at": "2026-10-04T11:23:42.470207+05:30",
+      "connected_reports": [
+        "CIV-2026-1001",
+        "CIV-2026-1004",
+        "CIV-2026-1040",
+        "CIV-2026-1002",
+        "CIV-2026-1003",
+        "CIV-2026-1005",
+        "CIV-2026-1006"
+      ],
+      "cluster": {
+        "radius_m": 42.0,
+        "time_window_days": 7,
+        "center_lat": 19.119,
+        "center_lon": 72.84705714285714,
+        "report_count": 7
+      },
+      "perception_results": [
+        {
+          "report_id": "CIV-2026-1001",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.91,
+          "evidence_text": "Visible water accumulation on road surface indicating underground pipe rupture. Continuous water flow pattern suggests pressurized supply line breach. Road surface appears saturated with mineral staining consistent with prolonged water exposure.",
+          "image_filename": "leak_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1004",
+          "issue_type": "WATERLOGGING",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "evidence_text": "Significant standing water on road surface, approximately ankle-deep. Visible debris floating. No drainage visible. Road damage and potholes acting as water retention basins.",
           "image_filename": "waterlogging_01.jpg",
           "visual_evidence": [
             "Observed defect matching category: waterlogging",
@@ -268,11 +754,11 @@
       },
       "resolution": {},
       "sla": {
-        "deadline": "2026-09-04T09:44:52.350300+05:30",
+        "deadline": "2026-10-05T11:23:47.328322+05:30",
         "reminders_sent": 0,
         "escalated": false,
         "escalation_reason": "",
-        "original_deadline": "2026-09-04T09:44:52.350300+05:30"
+        "original_deadline": "2026-10-05T11:23:47.328322+05:30"
       },
       "agent_log": [],
       "reasoning_mode": "deterministic_fallback",
@@ -287,11 +773,11 @@
           "tool_name": "get_weather_forecast",
           "result": {
             "available": true,
-            "rain_risk_pct": 100,
-            "max_precipitation_mm": 0.8,
-            "heavy_rain_expected": true,
+            "rain_risk_pct": 0,
+            "max_precipitation_mm": 0.0,
+            "heavy_rain_expected": false,
             "forecast_hours_checked": 24,
-            "summary": "Next 24h max rain risk: 100% (0.8mm)"
+            "summary": "Next 24h max rain risk: 0% (0.0mm)"
           }
         },
         {
@@ -487,19 +973,19 @@
       ]
     },
     {
-      "incident_id": "INC-2026-001",
+      "incident_id": "INC-2026-002",
       "status": "UNDER_REVIEW",
       "classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
-      "created_at": "2026-09-03T09:44:38.709501+05:30",
-      "updated_at": "2026-09-03T09:44:38.709521+05:30",
+      "created_at": "2026-10-04T11:23:41.784543+05:30",
+      "updated_at": "2026-10-04T11:23:41.784558+05:30",
       "connected_reports": [
-        "CIV-2026-1002",
-        "CIV-2026-1005",
         "CIV-2026-1001",
         "CIV-2026-1004",
         "CIV-2026-1040",
-        "CIV-2026-1006",
-        "CIV-2026-1003"
+        "CIV-2026-1002",
+        "CIV-2026-1003",
+        "CIV-2026-1005",
+        "CIV-2026-1006"
       ],
       "cluster": {
         "radius_m": 42.0,
@@ -509,32 +995,6 @@
         "report_count": 7
       },
       "perception_results": [
-        {
-          "report_id": "CIV-2026-1002",
-          "issue_type": "ROAD_DAMAGE",
-          "severity": "HIGH",
-          "confidence": 0.89,
-          "evidence_text": "Extensive surface cracking with visible sub-base erosion. Crack pattern consistent with water-induced base failure. Road surface depression indicates undermining by subsurface water flow.",
-          "image_filename": "road_damage_01.jpg",
-          "visual_evidence": [
-            "Observed defect matching category: road damage",
-            "Observed severity level assessed as high",
-            "Visual validation matches known demographic seeds"
-          ]
-        },
-        {
-          "report_id": "CIV-2026-1005",
-          "issue_type": "WATER_LEAKAGE",
-          "severity": "HIGH",
-          "confidence": 0.88,
-          "evidence_text": "Active water seepage from road surface crack. Flow rate and clarity suggest potable water supply line damage. Wet zone extends approximately 5 meters from source point.",
-          "image_filename": "leak_02.jpg",
-          "visual_evidence": [
-            "Observed defect matching category: water leakage",
-            "Observed severity level assessed as high",
-            "Visual validation matches known demographic seeds"
-          ]
-        },
         {
           "report_id": "CIV-2026-1001",
           "issue_type": "WATER_LEAKAGE",
@@ -575,15 +1035,15 @@
           ]
         },
         {
-          "report_id": "CIV-2026-1006",
+          "report_id": "CIV-2026-1002",
           "issue_type": "ROAD_DAMAGE",
-          "severity": "MEDIUM",
-          "confidence": 0.85,
-          "evidence_text": "Surface-level cracking and bitumen peeling on service road. Early-stage deterioration with multiple longitudinal cracks. No base failure visible yet.",
-          "image_filename": "road_damage_02.jpg",
+          "severity": "HIGH",
+          "confidence": 0.89,
+          "evidence_text": "Extensive surface cracking with visible sub-base erosion. Crack pattern consistent with water-induced base failure. Road surface depression indicates undermining by subsurface water flow.",
+          "image_filename": "road_damage_01.jpg",
           "visual_evidence": [
             "Observed defect matching category: road damage",
-            "Observed severity level assessed as medium",
+            "Observed severity level assessed as high",
             "Visual validation matches known demographic seeds"
           ]
         },
@@ -597,6 +1057,32 @@
           "visual_evidence": [
             "Observed defect matching category: pothole",
             "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1005",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.88,
+          "evidence_text": "Active water seepage from road surface crack. Flow rate and clarity suggest potable water supply line damage. Wet zone extends approximately 5 meters from source point.",
+          "image_filename": "leak_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1006",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "evidence_text": "Surface-level cracking and bitumen peeling on service road. Early-stage deterioration with multiple longitudinal cracks. No base failure visible yet.",
+          "image_filename": "road_damage_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as medium",
             "Visual validation matches known demographic seeds"
           ]
         }
@@ -620,7 +1106,7 @@
             "type": "clinic",
             "latitude": 19.1183809,
             "longitude": 72.8458359,
-            "distance_m": 169.8
+            "distance_m": 140.3
           },
           {
             "id": "353191630",
@@ -628,23 +1114,7 @@
             "type": "clinic",
             "latitude": 19.1183563,
             "longitude": 72.8458471,
-            "distance_m": 170.3
-          },
-          {
-            "id": "7049613221",
-            "name": "Saheli Clinic",
-            "type": "clinic",
-            "latitude": 19.1200089,
-            "longitude": 72.8485844,
-            "distance_m": 171.0
-          },
-          {
-            "id": "11698463569",
-            "name": "Aakash Institute",
-            "type": "prep_school",
-            "latitude": 19.1194001,
-            "longitude": 72.8455521,
-            "distance_m": 174.6
+            "distance_m": 140.7
           },
           {
             "id": "11275619443",
@@ -652,31 +1122,23 @@
             "type": "clinic",
             "latitude": 19.1179194,
             "longitude": 72.8460756,
-            "distance_m": 185.0
+            "distance_m": 154.5
           },
           {
-            "id": "4571165089",
-            "name": "Clinic",
+            "id": "11698463569",
+            "name": "Aakash Institute",
+            "type": "prep_school",
+            "latitude": 19.1194001,
+            "longitude": 72.8455521,
+            "distance_m": 158.5
+          },
+          {
+            "id": "7049613221",
+            "name": "Saheli Clinic",
             "type": "clinic",
-            "latitude": 19.120518,
-            "longitude": 72.8456246,
-            "distance_m": 221.1
-          },
-          {
-            "id": "8261417275",
-            "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
-            "type": "clinic",
-            "latitude": 19.1188092,
-            "longitude": 72.8492685,
-            "distance_m": 221.6
-          },
-          {
-            "id": "11698432789",
-            "name": "IItian's PACE - Andheri",
-            "type": "school",
-            "latitude": 19.1203044,
-            "longitude": 72.8454164,
-            "distance_m": 224.0
+            "latitude": 19.1200089,
+            "longitude": 72.8485844,
+            "distance_m": 200.7
           },
           {
             "id": "7068429399",
@@ -684,7 +1146,31 @@
             "type": "hospital",
             "latitude": 19.119331,
             "longitude": 72.845019,
-            "distance_m": 229.6
+            "distance_m": 211.4
+          },
+          {
+            "id": "11698432789",
+            "name": "IItian's PACE - Andheri",
+            "type": "school",
+            "latitude": 19.1203044,
+            "longitude": 72.8454164,
+            "distance_m": 220.7
+          },
+          {
+            "id": "4571165089",
+            "name": "Clinic",
+            "type": "clinic",
+            "latitude": 19.120518,
+            "longitude": 72.8456246,
+            "distance_m": 222.2
+          },
+          {
+            "id": "8261417275",
+            "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+            "type": "clinic",
+            "latitude": 19.1188092,
+            "longitude": 72.8492685,
+            "distance_m": 239.3
           },
           {
             "id": "7050518138",
@@ -692,7 +1178,7 @@
             "type": "clinic",
             "latitude": 19.1208566,
             "longitude": 72.8457941,
-            "distance_m": 236.1
+            "distance_m": 242.2
           }
         ]
       },
@@ -754,11 +1240,11 @@
       },
       "resolution": {},
       "sla": {
-        "deadline": "2026-09-04T09:44:52.619114+05:30",
+        "deadline": "2026-10-05T11:23:47.520126+05:30",
         "reminders_sent": 0,
         "escalated": false,
         "escalation_reason": "",
-        "original_deadline": "2026-09-04T09:44:52.619114+05:30"
+        "original_deadline": "2026-10-05T11:23:47.520126+05:30"
       },
       "agent_log": [],
       "reasoning_mode": "deterministic_fallback",
@@ -773,11 +1259,11 @@
           "tool_name": "get_weather_forecast",
           "result": {
             "available": true,
-            "rain_risk_pct": 100,
-            "max_precipitation_mm": 0.8,
-            "heavy_rain_expected": true,
+            "rain_risk_pct": 0,
+            "max_precipitation_mm": 0.0,
+            "heavy_rain_expected": false,
             "forecast_hours_checked": 24,
-            "summary": "Next 24h max rain risk: 100% (0.8mm)"
+            "summary": "Next 24h max rain risk: 0% (0.0mm)"
           }
         },
         {
@@ -791,7 +1277,7 @@
                 "type": "clinic",
                 "latitude": 19.1183809,
                 "longitude": 72.8458359,
-                "distance_m": 169.8
+                "distance_m": 140.3
               },
               {
                 "id": "353191630",
@@ -799,23 +1285,7 @@
                 "type": "clinic",
                 "latitude": 19.1183563,
                 "longitude": 72.8458471,
-                "distance_m": 170.3
-              },
-              {
-                "id": "7049613221",
-                "name": "Saheli Clinic",
-                "type": "clinic",
-                "latitude": 19.1200089,
-                "longitude": 72.8485844,
-                "distance_m": 171.0
-              },
-              {
-                "id": "11698463569",
-                "name": "Aakash Institute",
-                "type": "prep_school",
-                "latitude": 19.1194001,
-                "longitude": 72.8455521,
-                "distance_m": 174.6
+                "distance_m": 140.7
               },
               {
                 "id": "11275619443",
@@ -823,31 +1293,23 @@
                 "type": "clinic",
                 "latitude": 19.1179194,
                 "longitude": 72.8460756,
-                "distance_m": 185.0
+                "distance_m": 154.5
               },
               {
-                "id": "4571165089",
-                "name": "Clinic",
+                "id": "11698463569",
+                "name": "Aakash Institute",
+                "type": "prep_school",
+                "latitude": 19.1194001,
+                "longitude": 72.8455521,
+                "distance_m": 158.5
+              },
+              {
+                "id": "7049613221",
+                "name": "Saheli Clinic",
                 "type": "clinic",
-                "latitude": 19.120518,
-                "longitude": 72.8456246,
-                "distance_m": 221.1
-              },
-              {
-                "id": "8261417275",
-                "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
-                "type": "clinic",
-                "latitude": 19.1188092,
-                "longitude": 72.8492685,
-                "distance_m": 221.6
-              },
-              {
-                "id": "11698432789",
-                "name": "IItian's PACE - Andheri",
-                "type": "school",
-                "latitude": 19.1203044,
-                "longitude": 72.8454164,
-                "distance_m": 224.0
+                "latitude": 19.1200089,
+                "longitude": 72.8485844,
+                "distance_m": 200.7
               },
               {
                 "id": "7068429399",
@@ -855,7 +1317,31 @@
                 "type": "hospital",
                 "latitude": 19.119331,
                 "longitude": 72.845019,
-                "distance_m": 229.6
+                "distance_m": 211.4
+              },
+              {
+                "id": "11698432789",
+                "name": "IItian's PACE - Andheri",
+                "type": "school",
+                "latitude": 19.1203044,
+                "longitude": 72.8454164,
+                "distance_m": 220.7
+              },
+              {
+                "id": "4571165089",
+                "name": "Clinic",
+                "type": "clinic",
+                "latitude": 19.120518,
+                "longitude": 72.8456246,
+                "distance_m": 222.2
+              },
+              {
+                "id": "8261417275",
+                "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+                "type": "clinic",
+                "latitude": 19.1188092,
+                "longitude": 72.8492685,
+                "distance_m": 239.3
               },
               {
                 "id": "7050518138",
@@ -863,7 +1349,7 @@
                 "type": "clinic",
                 "latitude": 19.1208566,
                 "longitude": 72.8457941,
-                "distance_m": 236.1
+                "distance_m": 242.2
               }
             ],
             "total_found": 10,
@@ -873,7 +1359,7 @@
               "type": "clinic",
               "latitude": 19.1183809,
               "longitude": 72.8458359,
-              "distance_m": 169.8
+              "distance_m": 140.3
             },
             "summary": "Found 10 sensitive site(s) within 250m"
           }
@@ -896,7 +1382,7 @@
           "type": "clinic",
           "latitude": 19.1183809,
           "longitude": 72.8458359,
-          "distance_m": 169.8
+          "distance_m": 140.3
         },
         {
           "id": "353191630",
@@ -904,23 +1390,7 @@
           "type": "clinic",
           "latitude": 19.1183563,
           "longitude": 72.8458471,
-          "distance_m": 170.3
-        },
-        {
-          "id": "7049613221",
-          "name": "Saheli Clinic",
-          "type": "clinic",
-          "latitude": 19.1200089,
-          "longitude": 72.8485844,
-          "distance_m": 171.0
-        },
-        {
-          "id": "11698463569",
-          "name": "Aakash Institute",
-          "type": "prep_school",
-          "latitude": 19.1194001,
-          "longitude": 72.8455521,
-          "distance_m": 174.6
+          "distance_m": 140.7
         },
         {
           "id": "11275619443",
@@ -928,31 +1398,23 @@
           "type": "clinic",
           "latitude": 19.1179194,
           "longitude": 72.8460756,
-          "distance_m": 185.0
+          "distance_m": 154.5
         },
         {
-          "id": "4571165089",
-          "name": "Clinic",
+          "id": "11698463569",
+          "name": "Aakash Institute",
+          "type": "prep_school",
+          "latitude": 19.1194001,
+          "longitude": 72.8455521,
+          "distance_m": 158.5
+        },
+        {
+          "id": "7049613221",
+          "name": "Saheli Clinic",
           "type": "clinic",
-          "latitude": 19.120518,
-          "longitude": 72.8456246,
-          "distance_m": 221.1
-        },
-        {
-          "id": "8261417275",
-          "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
-          "type": "clinic",
-          "latitude": 19.1188092,
-          "longitude": 72.8492685,
-          "distance_m": 221.6
-        },
-        {
-          "id": "11698432789",
-          "name": "IItian's PACE - Andheri",
-          "type": "school",
-          "latitude": 19.1203044,
-          "longitude": 72.8454164,
-          "distance_m": 224.0
+          "latitude": 19.1200089,
+          "longitude": 72.8485844,
+          "distance_m": 200.7
         },
         {
           "id": "7068429399",
@@ -960,7 +1422,31 @@
           "type": "hospital",
           "latitude": 19.119331,
           "longitude": 72.845019,
-          "distance_m": 229.6
+          "distance_m": 211.4
+        },
+        {
+          "id": "11698432789",
+          "name": "IItian's PACE - Andheri",
+          "type": "school",
+          "latitude": 19.1203044,
+          "longitude": 72.8454164,
+          "distance_m": 220.7
+        },
+        {
+          "id": "4571165089",
+          "name": "Clinic",
+          "type": "clinic",
+          "latitude": 19.120518,
+          "longitude": 72.8456246,
+          "distance_m": 222.2
+        },
+        {
+          "id": "8261417275",
+          "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+          "type": "clinic",
+          "latitude": 19.1188092,
+          "longitude": 72.8492685,
+          "distance_m": 239.3
         },
         {
           "id": "7050518138",
@@ -968,92 +1454,120 @@
           "type": "clinic",
           "latitude": 19.1208566,
           "longitude": 72.8457941,
-          "distance_m": 236.1
+          "distance_m": 242.2
         }
       ]
     },
     {
-      "incident_id": "INC-2026-002",
+      "incident_id": "INC-2026-003",
       "status": "UNDER_REVIEW",
       "classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
-      "created_at": "2026-09-03T23:15:40.829627+05:30",
-      "updated_at": "2026-09-03T23:15:40.829643+05:30",
+      "created_at": "2026-10-04T11:31:50.842461+05:30",
+      "updated_at": "2026-10-04T11:31:50.842476+05:30",
       "connected_reports": [
-        "CIV-2026-1007",
-        "CIV-2026-1009",
-        "CIV-2026-1008",
-        "CIV-2026-1011",
-        "CIV-2026-1010"
+        "CIV-2026-1001",
+        "CIV-2026-1004",
+        "CIV-2026-1040",
+        "CIV-2026-1002",
+        "CIV-2026-1003",
+        "CIV-2026-1005",
+        "CIV-2026-1006"
       ],
       "cluster": {
-        "radius_m": 36.9,
+        "radius_m": 42.0,
         "time_window_days": 7,
-        "center_lat": 19.0721,
-        "center_lon": 72.85607999999999,
-        "report_count": 5
+        "center_lat": 19.119,
+        "center_lon": 72.84705714285714,
+        "report_count": 7
       },
       "perception_results": [
         {
-          "report_id": "CIV-2026-1007",
-          "issue_type": "DRAIN_BLOCKAGE",
+          "report_id": "CIV-2026-1001",
+          "issue_type": "WATER_LEAKAGE",
           "severity": "HIGH",
-          "confidence": 0.88,
-          "evidence_text": "Drain mouth completely blocked with plastic waste and construction debris. No water flow visible. Surrounding area shows water accumulation from blocked outflow.",
-          "image_filename": "drain_01.jpg",
+          "confidence": 0.91,
+          "evidence_text": "Visible water accumulation on road surface indicating underground pipe rupture. Continuous water flow pattern suggests pressurized supply line breach. Road surface appears saturated with mineral staining consistent with prolonged water exposure.",
+          "image_filename": "leak_01.jpg",
           "visual_evidence": [
-            "Observed defect matching category: drain blockage",
+            "Observed defect matching category: water leakage",
             "Observed severity level assessed as high",
             "Visual validation matches known demographic seeds"
           ]
         },
         {
-          "report_id": "CIV-2026-1009",
-          "issue_type": "GARBAGE_OVERFLOW",
-          "severity": "MEDIUM",
-          "confidence": 0.86,
-          "evidence_text": "Visual inspection reveals an accumulation of mixed domestic solid waste and plastic refuse spilling over the curb and partially obstructing the adjacent drainage channel. Stagnant, discolored runoff has pooled around the base of the debris pile, indicating compromised surface drainage and restricted water flow. The uncollected waste encroaches directly onto the pedestrian path, presenting a localized sanitary and infrastructure obstruction consistent with a medium-severity overflow.",
-          "image_filename": "garbage_01.jpg",
+          "report_id": "CIV-2026-1004",
+          "issue_type": "WATERLOGGING",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "evidence_text": "Significant standing water on road surface, approximately ankle-deep. Visible debris floating. No drainage visible. Road damage and potholes acting as water retention basins.",
+          "image_filename": "waterlogging_01.jpg",
           "visual_evidence": [
-            "Observed defect matching category: garbage overflow",
-            "Observed severity level assessed as medium",
+            "Observed defect matching category: waterlogging",
+            "Observed severity level assessed as high",
             "Visual validation matches known demographic seeds"
           ]
         },
         {
-          "report_id": "CIV-2026-1008",
-          "issue_type": "WATERLOGGING",
+          "report_id": "CIV-2026-1040",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "CRITICAL",
+          "confidence": 0.94,
+          "evidence_text": "High-pressure water burst from underground main. Significant volume of water flowing onto road. Geyser-like eruption indicates major supply line failure requiring emergency response.",
+          "image_filename": "leak_05.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as critical",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1002",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "HIGH",
+          "confidence": 0.89,
+          "evidence_text": "Extensive surface cracking with visible sub-base erosion. Crack pattern consistent with water-induced base failure. Road surface depression indicates undermining by subsurface water flow.",
+          "image_filename": "road_damage_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1003",
+          "issue_type": "POTHOLE",
+          "severity": "HIGH",
+          "confidence": 0.93,
+          "evidence_text": "Deep pothole approximately 60cm diameter and 30cm depth. Filled with standing muddy water. Edges showing further erosion. Located in active traffic lane with no warning markers.",
+          "image_filename": "pothole_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: pothole",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1005",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.88,
+          "evidence_text": "Active water seepage from road surface crack. Flow rate and clarity suggest potable water supply line damage. Wet zone extends approximately 5 meters from source point.",
+          "image_filename": "leak_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1006",
+          "issue_type": "ROAD_DAMAGE",
           "severity": "MEDIUM",
           "confidence": 0.85,
-          "evidence_text": "Moderate waterlogging in market area. Water level reaching shop entrances. Blocked drain visible as contributing factor. Stagnant water with debris.",
-          "image_filename": "waterlogging_02.jpg",
+          "evidence_text": "Surface-level cracking and bitumen peeling on service road. Early-stage deterioration with multiple longitudinal cracks. No base failure visible yet.",
+          "image_filename": "road_damage_02.jpg",
           "visual_evidence": [
-            "Observed defect matching category: waterlogging",
-            "Observed severity level assessed as medium",
-            "Visual validation matches known demographic seeds"
-          ]
-        },
-        {
-          "report_id": "CIV-2026-1011",
-          "issue_type": "WATERLOGGING",
-          "severity": "HIGH",
-          "confidence": 0.88,
-          "evidence_text": "Severe stagnant water with visible algae growth indicating multi-day accumulation. Green discoloration suggests health hazard. Mosquito breeding conditions present.",
-          "image_filename": "waterlogging_03.jpg",
-          "visual_evidence": [
-            "Observed defect matching category: waterlogging",
-            "Observed severity level assessed as high",
-            "Visual validation matches known demographic seeds"
-          ]
-        },
-        {
-          "report_id": "CIV-2026-1010",
-          "issue_type": "DRAIN_BLOCKAGE",
-          "severity": "MEDIUM",
-          "confidence": 0.84,
-          "evidence_text": "Partially blocked drain near bus stop. Floating debris reducing flow capacity. Water backing up at drain inlet. Secondary blockage developing.",
-          "image_filename": "drain_02.jpg",
-          "visual_evidence": [
-            "Observed defect matching category: drain blockage",
+            "Observed defect matching category: road damage",
             "Observed severity level assessed as medium",
             "Visual validation matches known demographic seeds"
           ]
@@ -1061,27 +1575,25 @@
       ],
       "root_cause": {
         "hypothesis": "Root cause analysis identifies a cascading infrastructure failure: WATERLOGGING. The evidence suggests that WATERLOGGING triggered a chain of downstream effects through Single issue type - no causal chain to analyze. This cascade pattern is consistent with 1 distinct issue types observed within a concentrated geographic area.",
-        "confidence": 0.5,
+        "confidence": 0.35,
         "chain": [],
         "disclaimer": "AI-generated civic incident hypothesis. Physical inspection recommended.",
         "tools_used": [
           "query_dependency_graph",
           "get_weather_forecast",
-          "find_nearby_sensitive_sites",
           "get_historical_incidents"
         ],
-        "reasoning_notes": "Fallback mode active. Evaluated 5 reports against dependency graph.",
+        "reasoning_notes": "Fallback mode active. Evaluated 7 reports against dependency graph.",
         "nearby_sites": []
       },
       "impact_score": {
         "score": 75,
         "priority": "HIGH",
         "breakdown": {},
-        "explanation": "Impact score of 69.0/100 classified as HIGH. Key factors: severity at 50/100, infrastructure proximity at 85/100, and secondary risk at 70/100. The cascading nature of 1 interconnected issue types over 2.1 days significantly elevates the overall impact.",
+        "explanation": "Impact score of 71.0/100 classified as HIGH. Key factors: severity at 50/100, infrastructure proximity at 85/100, and secondary risk at 70/100. The cascading nature of 1 interconnected issue types over 2.9 days significantly elevates the overall impact.",
         "tools_used": [
           "query_dependency_graph",
           "get_weather_forecast",
-          "find_nearby_sensitive_sites",
           "get_historical_incidents"
         ]
       },
@@ -1089,24 +1601,6 @@
         "steps": [
           {
             "step_number": 1,
-            "department": "STORM_WATER_DRAINAGE",
-            "department_name": "Storm Water Drainage Department",
-            "action": "Address WATERLOGGING issues",
-            "reason": "Clear garbage blocking drains before drain repair",
-            "estimated_hours": 16,
-            "depends_on": [],
-            "resources": [
-              "Drain cleaning machines",
-              "Dewatering pumps",
-              "CCTV drain inspection units",
-              "Emergency response teams"
-            ],
-            "issues": [
-              "WATERLOGGING"
-            ]
-          },
-          {
-            "step_number": 2,
             "department": "WATER_BOARD",
             "department_name": "Municipal Water Supply & Sewerage Board",
             "action": "Address WATERLOGGING issues",
@@ -1122,20 +1616,1456 @@
             "issues": [
               "WATERLOGGING"
             ]
+          },
+          {
+            "step_number": 2,
+            "department": "STORM_WATER_DRAINAGE",
+            "department_name": "Storm Water Drainage Department",
+            "action": "Address WATERLOGGING issues",
+            "reason": "Clear garbage blocking drains before drain repair",
+            "estimated_hours": 16,
+            "depends_on": [],
+            "resources": [
+              "Drain cleaning machines",
+              "Dewatering pumps",
+              "CCTV drain inspection units",
+              "Emergency response teams"
+            ],
+            "issues": [
+              "WATERLOGGING"
+            ]
           }
         ],
-        "rationale": "Fallback mode active. Evaluated 5 reports against dependency graph.",
+        "rationale": "Fallback mode active. Evaluated 7 reports against dependency graph.",
         "approved": false,
         "approved_by": "",
         "approved_at": ""
       },
       "resolution": {},
       "sla": {
-        "deadline": "2026-09-04T23:15:52.990702+05:30",
+        "deadline": "2026-10-05T11:32:01.515272+05:30",
         "reminders_sent": 0,
         "escalated": false,
         "escalation_reason": "",
-        "original_deadline": "2026-09-04T23:15:52.990702+05:30"
+        "original_deadline": "2026-10-05T11:32:01.515272+05:30"
+      },
+      "agent_log": [],
+      "reasoning_mode": "deterministic_fallback",
+      "tools_used": [
+        "query_dependency_graph",
+        "get_weather_forecast",
+        "get_historical_incidents"
+      ],
+      "tool_traces": [
+        {
+          "tool_name": "get_weather_forecast",
+          "result": {
+            "available": true,
+            "rain_risk_pct": 0,
+            "max_precipitation_mm": 0.0,
+            "heavy_rain_expected": false,
+            "forecast_hours_checked": 24,
+            "summary": "Next 24h max rain risk: 0% (0.0mm)"
+          }
+        },
+        {
+          "tool_name": "get_historical_incidents",
+          "result": {
+            "available": true,
+            "prior_incidents": [],
+            "total_nearby": 0,
+            "has_repeats": false,
+            "summary": "Found 0 prior incident(s) within 180m"
+          }
+        }
+      ],
+      "agent_trace": [
+        {
+          "step": 1,
+          "type": "model_call",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Offline deterministic fallback engine active",
+          "latency_ms": 1.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:32:01.436246+05:30"
+        },
+        {
+          "step": 2,
+          "type": "tool_call",
+          "tool_name": "query_dependency_graph",
+          "arguments": {
+            "issue_types": [
+              "WATERLOGGING"
+            ]
+          },
+          "result_summary": "Queried dependency graph for 1 issue types",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T11:32:01.436246+05:30"
+        },
+        {
+          "step": 3,
+          "type": "tool_result",
+          "tool_name": "query_dependency_graph",
+          "arguments": null,
+          "result_summary": "Identified cascade chain: []",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T11:32:01.436246+05:30"
+        },
+        {
+          "step": 4,
+          "type": "final",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Deterministic hypothesis: Root cause analysis identifies a cascading infrastructure failure: WATERLOGGING. The evidence sugges",
+          "latency_ms": 0.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:32:01.436246+05:30"
+        }
+      ],
+      "reflection": {
+        "verdict": "unresolved",
+        "iterations": 2,
+        "issues": [
+          "Causal chain is empty."
+        ],
+        "checks": [
+          {
+            "name": "causal_graph_alignment",
+            "passed": false,
+            "detail": "Causal chain is empty."
+          },
+          {
+            "name": "grounded_evidence",
+            "passed": true,
+            "detail": "Evidence items grounded in reported symptoms or sensor inputs."
+          },
+          {
+            "name": "confidence_consistency",
+            "passed": true,
+            "detail": "Confidence (0.50) is consistent with evidence breadth."
+          },
+          {
+            "name": "impact_formula_and_priority",
+            "passed": true,
+            "detail": "Impact score matches breakdown formula and priority tier thresholds."
+          },
+          {
+            "name": "sensitive_sites_proximity",
+            "passed": true,
+            "detail": "Proximity risk correctly reflects local sensitive facilities."
+          },
+          {
+            "name": "topological_department_order",
+            "passed": true,
+            "detail": "Response plan respects departmental topological execution order."
+          }
+        ]
+      },
+      "nearby_sites": []
+    },
+    {
+      "incident_id": "INC-2026-004",
+      "status": "UNDER_REVIEW",
+      "classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "created_at": "2026-10-04T11:32:41.535929+05:30",
+      "updated_at": "2026-10-04T11:32:41.535944+05:30",
+      "connected_reports": [
+        "CIV-2026-1001",
+        "CIV-2026-1004",
+        "CIV-2026-1040",
+        "CIV-2026-1002",
+        "CIV-2026-1003",
+        "CIV-2026-1005",
+        "CIV-2026-1006"
+      ],
+      "cluster": {
+        "radius_m": 42.0,
+        "time_window_days": 7,
+        "center_lat": 19.119,
+        "center_lon": 72.84705714285714,
+        "report_count": 7
+      },
+      "perception_results": [
+        {
+          "report_id": "CIV-2026-1001",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.91,
+          "evidence_text": "Visible water accumulation on road surface indicating underground pipe rupture. Continuous water flow pattern suggests pressurized supply line breach. Road surface appears saturated with mineral staining consistent with prolonged water exposure.",
+          "image_filename": "leak_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1004",
+          "issue_type": "WATERLOGGING",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "evidence_text": "Significant standing water on road surface, approximately ankle-deep. Visible debris floating. No drainage visible. Road damage and potholes acting as water retention basins.",
+          "image_filename": "waterlogging_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: waterlogging",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1040",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "CRITICAL",
+          "confidence": 0.94,
+          "evidence_text": "High-pressure water burst from underground main. Significant volume of water flowing onto road. Geyser-like eruption indicates major supply line failure requiring emergency response.",
+          "image_filename": "leak_05.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as critical",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1002",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "HIGH",
+          "confidence": 0.89,
+          "evidence_text": "Extensive surface cracking with visible sub-base erosion. Crack pattern consistent with water-induced base failure. Road surface depression indicates undermining by subsurface water flow.",
+          "image_filename": "road_damage_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1003",
+          "issue_type": "POTHOLE",
+          "severity": "HIGH",
+          "confidence": 0.93,
+          "evidence_text": "Deep pothole approximately 60cm diameter and 30cm depth. Filled with standing muddy water. Edges showing further erosion. Located in active traffic lane with no warning markers.",
+          "image_filename": "pothole_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: pothole",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1005",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.88,
+          "evidence_text": "Active water seepage from road surface crack. Flow rate and clarity suggest potable water supply line damage. Wet zone extends approximately 5 meters from source point.",
+          "image_filename": "leak_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1006",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "evidence_text": "Surface-level cracking and bitumen peeling on service road. Early-stage deterioration with multiple longitudinal cracks. No base failure visible yet.",
+          "image_filename": "road_damage_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as medium",
+            "Visual validation matches known demographic seeds"
+          ]
+        }
+      ],
+      "root_cause": {
+        "hypothesis": "Root cause analysis identifies a cascading infrastructure failure: WATERLOGGING. The evidence suggests that WATERLOGGING triggered a chain of downstream effects through Single issue type - no causal chain to analyze. This cascade pattern is consistent with 1 distinct issue types observed within a concentrated geographic area.",
+        "confidence": 0.5,
+        "chain": [
+          "WATERLOGGING"
+        ],
+        "disclaimer": "AI-generated civic incident hypothesis. Physical inspection recommended.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "get_historical_incidents"
+        ],
+        "reasoning_notes": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "nearby_sites": []
+      },
+      "impact_score": {
+        "score": 75,
+        "priority": "HIGH",
+        "breakdown": {},
+        "explanation": "Impact score of 71.0/100 classified as HIGH. Key factors: severity at 50/100, infrastructure proximity at 85/100, and secondary risk at 70/100. The cascading nature of 1 interconnected issue types over 2.9 days significantly elevates the overall impact.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "get_historical_incidents"
+        ]
+      },
+      "response_plan": {
+        "steps": [
+          {
+            "step_number": 1,
+            "department": "WATER_BOARD",
+            "department_name": "Municipal Water Supply & Sewerage Board",
+            "action": "Address WATERLOGGING issues",
+            "reason": "Water supply fixes are typically root-cause and should go first",
+            "estimated_hours": 24,
+            "depends_on": [],
+            "resources": [
+              "Pipe repair crews",
+              "Emergency water tankers",
+              "Pumping equipment",
+              "Leak detection units"
+            ],
+            "issues": [
+              "WATERLOGGING"
+            ]
+          },
+          {
+            "step_number": 2,
+            "department": "STORM_WATER_DRAINAGE",
+            "department_name": "Storm Water Drainage Department",
+            "action": "Address WATERLOGGING issues",
+            "reason": "Clear garbage blocking drains before drain repair",
+            "estimated_hours": 16,
+            "depends_on": [],
+            "resources": [
+              "Drain cleaning machines",
+              "Dewatering pumps",
+              "CCTV drain inspection units",
+              "Emergency response teams"
+            ],
+            "issues": [
+              "WATERLOGGING"
+            ]
+          }
+        ],
+        "rationale": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "approved": false,
+        "approved_by": "",
+        "approved_at": ""
+      },
+      "resolution": {},
+      "sla": {
+        "deadline": "2026-10-05T11:32:54.186006+05:30",
+        "reminders_sent": 0,
+        "escalated": false,
+        "escalation_reason": "",
+        "original_deadline": "2026-10-05T11:32:54.186006+05:30"
+      },
+      "agent_log": [],
+      "reasoning_mode": "deterministic_fallback",
+      "tools_used": [
+        "query_dependency_graph",
+        "get_weather_forecast",
+        "get_historical_incidents"
+      ],
+      "tool_traces": [
+        {
+          "tool_name": "get_weather_forecast",
+          "result": {
+            "available": true,
+            "rain_risk_pct": 0,
+            "max_precipitation_mm": 0.0,
+            "heavy_rain_expected": false,
+            "forecast_hours_checked": 24,
+            "summary": "Next 24h max rain risk: 0% (0.0mm)"
+          }
+        },
+        {
+          "tool_name": "get_historical_incidents",
+          "result": {
+            "available": true,
+            "prior_incidents": [],
+            "total_nearby": 0,
+            "has_repeats": false,
+            "summary": "Found 0 prior incident(s) within 180m"
+          }
+        }
+      ],
+      "agent_trace": [
+        {
+          "step": 1,
+          "type": "model_call",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Offline deterministic fallback engine active",
+          "latency_ms": 1.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:32:54.107616+05:30"
+        },
+        {
+          "step": 2,
+          "type": "tool_call",
+          "tool_name": "query_dependency_graph",
+          "arguments": {
+            "issue_types": [
+              "WATERLOGGING"
+            ]
+          },
+          "result_summary": "Queried dependency graph for 1 issue types",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T11:32:54.107616+05:30"
+        },
+        {
+          "step": 3,
+          "type": "tool_result",
+          "tool_name": "query_dependency_graph",
+          "arguments": null,
+          "result_summary": "Identified cascade chain: ['WATERLOGGING']",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T11:32:54.107616+05:30"
+        },
+        {
+          "step": 4,
+          "type": "final",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Deterministic hypothesis: Root cause analysis identifies a cascading infrastructure failure: WATERLOGGING. The evidence sugges",
+          "latency_ms": 0.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:32:54.107616+05:30"
+        }
+      ],
+      "reflection": {
+        "verdict": "revised",
+        "iterations": 2,
+        "issues": [
+          "Topological inversion: Step for WATER_BOARD follows a downstream department step."
+        ],
+        "checks": [
+          {
+            "name": "causal_graph_alignment",
+            "passed": true,
+            "detail": "All links valid in civic dependency graph."
+          },
+          {
+            "name": "grounded_evidence",
+            "passed": true,
+            "detail": "Evidence items grounded in reported symptoms or sensor inputs."
+          },
+          {
+            "name": "confidence_consistency",
+            "passed": true,
+            "detail": "Confidence (0.50) is consistent with evidence breadth."
+          },
+          {
+            "name": "impact_formula_and_priority",
+            "passed": true,
+            "detail": "Impact score matches breakdown formula and priority tier thresholds."
+          },
+          {
+            "name": "sensitive_sites_proximity",
+            "passed": true,
+            "detail": "Proximity risk correctly reflects local sensitive facilities."
+          },
+          {
+            "name": "topological_department_order",
+            "passed": true,
+            "detail": "Response plan respects departmental topological execution order."
+          }
+        ]
+      },
+      "nearby_sites": []
+    },
+    {
+      "incident_id": "INC-2026-005",
+      "status": "UNDER_REVIEW",
+      "classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "created_at": "2026-10-04T11:34:25.494765+05:30",
+      "updated_at": "2026-10-04T11:34:25.494780+05:30",
+      "connected_reports": [
+        "CIV-2026-1001",
+        "CIV-2026-1004",
+        "CIV-2026-1040",
+        "CIV-2026-1002",
+        "CIV-2026-1003",
+        "CIV-2026-1005",
+        "CIV-2026-1006"
+      ],
+      "cluster": {
+        "radius_m": 42.0,
+        "time_window_days": 7,
+        "center_lat": 19.119,
+        "center_lon": 72.84705714285714,
+        "report_count": 7
+      },
+      "perception_results": [
+        {
+          "report_id": "CIV-2026-1001",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.91,
+          "evidence_text": "Visible water accumulation on road surface indicating underground pipe rupture. Continuous water flow pattern suggests pressurized supply line breach. Road surface appears saturated with mineral staining consistent with prolonged water exposure.",
+          "image_filename": "leak_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1004",
+          "issue_type": "WATERLOGGING",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "evidence_text": "Significant standing water on road surface, approximately ankle-deep. Visible debris floating. No drainage visible. Road damage and potholes acting as water retention basins.",
+          "image_filename": "waterlogging_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: waterlogging",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1040",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "CRITICAL",
+          "confidence": 0.94,
+          "evidence_text": "High-pressure water burst from underground main. Significant volume of water flowing onto road. Geyser-like eruption indicates major supply line failure requiring emergency response.",
+          "image_filename": "leak_05.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as critical",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1002",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "HIGH",
+          "confidence": 0.89,
+          "evidence_text": "Extensive surface cracking with visible sub-base erosion. Crack pattern consistent with water-induced base failure. Road surface depression indicates undermining by subsurface water flow.",
+          "image_filename": "road_damage_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1003",
+          "issue_type": "POTHOLE",
+          "severity": "HIGH",
+          "confidence": 0.93,
+          "evidence_text": "Deep pothole approximately 60cm diameter and 30cm depth. Filled with standing muddy water. Edges showing further erosion. Located in active traffic lane with no warning markers.",
+          "image_filename": "pothole_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: pothole",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1005",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.88,
+          "evidence_text": "Active water seepage from road surface crack. Flow rate and clarity suggest potable water supply line damage. Wet zone extends approximately 5 meters from source point.",
+          "image_filename": "leak_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1006",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "evidence_text": "Surface-level cracking and bitumen peeling on service road. Early-stage deterioration with multiple longitudinal cracks. No base failure visible yet.",
+          "image_filename": "road_damage_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as medium",
+            "Visual validation matches known demographic seeds"
+          ]
+        }
+      ],
+      "root_cause": {
+        "hypothesis": "Root cause analysis identifies a cascading infrastructure failure: WATER_LEAKAGE -> ROAD_DAMAGE -> POTHOLE. The evidence suggests that WATER_LEAKAGE triggered a chain of downstream effects through Root cause, Prolonged water seepage weakens road sub-base and surface layers. This cascade pattern is consistent with 4 distinct issue types observed within a concentrated geographic area.",
+        "confidence": 0.43,
+        "chain": [
+          "WATER_LEAKAGE",
+          "ROAD_DAMAGE",
+          "POTHOLE"
+        ],
+        "disclaimer": "AI-generated civic incident hypothesis. Physical inspection recommended.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "get_historical_incidents"
+        ],
+        "reasoning_notes": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "nearby_sites": []
+      },
+      "impact_score": {
+        "score": 75,
+        "priority": "CRITICAL",
+        "breakdown": {},
+        "explanation": "Impact score of 88.2/100 classified as CRITICAL. Key factors: severity at 100/100, infrastructure proximity at 85/100, and secondary risk at 85/100. The cascading nature of 4 interconnected issue types over 2.9 days significantly elevates the overall impact.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "get_historical_incidents"
+        ]
+      },
+      "response_plan": {
+        "steps": [
+          {
+            "step_number": 1,
+            "department": "WATER_BOARD",
+            "department_name": "Municipal Water Supply & Sewerage Board",
+            "action": "Address WATER_LEAKAGE, WATERLOGGING issues",
+            "reason": "Water supply fixes are typically root-cause and should go first",
+            "estimated_hours": 12,
+            "depends_on": [],
+            "resources": [
+              "Pipe repair crews",
+              "Emergency water tankers",
+              "Pumping equipment",
+              "Leak detection units"
+            ],
+            "issues": [
+              "WATER_LEAKAGE",
+              "WATERLOGGING"
+            ]
+          },
+          {
+            "step_number": 2,
+            "department": "STORM_WATER_DRAINAGE",
+            "department_name": "Storm Water Drainage Department",
+            "action": "Address WATERLOGGING issues",
+            "reason": "Clear garbage blocking drains before drain repair",
+            "estimated_hours": 8,
+            "depends_on": [],
+            "resources": [
+              "Drain cleaning machines",
+              "Dewatering pumps",
+              "CCTV drain inspection units",
+              "Emergency response teams"
+            ],
+            "issues": [
+              "WATERLOGGING"
+            ]
+          },
+          {
+            "step_number": 3,
+            "department": "ROADS_DEPT",
+            "department_name": "Roads & Infrastructure Department",
+            "action": "Address ROAD_DAMAGE, POTHOLE issues",
+            "reason": "Road repairs are wasted if underlying water/drainage issues persist",
+            "estimated_hours": 24,
+            "depends_on": [
+              "WATER_BOARD",
+              "STORM_WATER_DRAINAGE"
+            ],
+            "resources": [
+              "Asphalt paving crews",
+              "Road repair machinery",
+              "Traffic management units",
+              "Barricades and signage"
+            ],
+            "issues": [
+              "ROAD_DAMAGE",
+              "POTHOLE"
+            ]
+          }
+        ],
+        "rationale": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "approved": false,
+        "approved_by": "",
+        "approved_at": ""
+      },
+      "resolution": {},
+      "sla": {
+        "deadline": "2026-10-04T23:34:52.116545+05:30",
+        "reminders_sent": 0,
+        "escalated": false,
+        "escalation_reason": "",
+        "original_deadline": "2026-10-04T23:34:52.116545+05:30"
+      },
+      "agent_log": [],
+      "reasoning_mode": "deterministic_fallback",
+      "tools_used": [
+        "query_dependency_graph",
+        "get_weather_forecast",
+        "get_historical_incidents"
+      ],
+      "tool_traces": [
+        {
+          "tool_name": "get_weather_forecast",
+          "result": {
+            "available": true,
+            "rain_risk_pct": 0,
+            "max_precipitation_mm": 0.0,
+            "heavy_rain_expected": false,
+            "forecast_hours_checked": 24,
+            "summary": "Next 24h max rain risk: 0% (0.0mm)"
+          }
+        },
+        {
+          "tool_name": "get_historical_incidents",
+          "result": {
+            "available": true,
+            "prior_incidents": [],
+            "total_nearby": 0,
+            "has_repeats": false,
+            "summary": "Found 0 prior incident(s) within 180m"
+          }
+        }
+      ],
+      "agent_trace": [
+        {
+          "step": 1,
+          "type": "model_call",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Offline deterministic fallback engine active",
+          "latency_ms": 1.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:34:52.035397+05:30"
+        },
+        {
+          "step": 2,
+          "type": "tool_call",
+          "tool_name": "query_dependency_graph",
+          "arguments": {
+            "issue_types": [
+              "WATER_LEAKAGE",
+              "WATERLOGGING",
+              "ROAD_DAMAGE",
+              "POTHOLE"
+            ]
+          },
+          "result_summary": "Queried dependency graph for 4 issue types",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T11:34:52.035397+05:30"
+        },
+        {
+          "step": 3,
+          "type": "tool_result",
+          "tool_name": "query_dependency_graph",
+          "arguments": null,
+          "result_summary": "Identified cascade chain: ['WATER_LEAKAGE', 'ROAD_DAMAGE', 'POTHOLE']",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T11:34:52.035397+05:30"
+        },
+        {
+          "step": 4,
+          "type": "final",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Deterministic hypothesis: Root cause analysis identifies a cascading infrastructure failure: WATER_LEAKAGE -> ROAD_DAMAGE -> P",
+          "latency_ms": 0.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:34:52.035397+05:30"
+        }
+      ],
+      "reflection": {
+        "verdict": "unresolved",
+        "iterations": 2,
+        "issues": [
+          "Priority tier 'CRITICAL' does not match score 75.0 (expected 'HIGH')."
+        ],
+        "checks": [
+          {
+            "name": "causal_graph_alignment",
+            "passed": true,
+            "detail": "All links valid in civic dependency graph."
+          },
+          {
+            "name": "grounded_evidence",
+            "passed": true,
+            "detail": "Evidence items grounded in reported symptoms or sensor inputs."
+          },
+          {
+            "name": "confidence_consistency",
+            "passed": true,
+            "detail": "Confidence (0.58) is consistent with evidence breadth."
+          },
+          {
+            "name": "impact_formula_and_priority",
+            "passed": false,
+            "detail": "Priority tier 'CRITICAL' does not match score 75.0 (expected 'HIGH')."
+          },
+          {
+            "name": "sensitive_sites_proximity",
+            "passed": true,
+            "detail": "Proximity risk correctly reflects local sensitive facilities."
+          },
+          {
+            "name": "topological_department_order",
+            "passed": true,
+            "detail": "Response plan respects departmental topological execution order."
+          }
+        ]
+      },
+      "nearby_sites": []
+    },
+    {
+      "incident_id": "INC-2026-006",
+      "status": "UNDER_REVIEW",
+      "classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "created_at": "2026-10-04T11:37:19.522342+05:30",
+      "updated_at": "2026-10-04T11:37:19.522358+05:30",
+      "connected_reports": [
+        "CIV-2026-1001",
+        "CIV-2026-1004",
+        "CIV-2026-1040",
+        "CIV-2026-1002",
+        "CIV-2026-1003",
+        "CIV-2026-1005",
+        "CIV-2026-1006"
+      ],
+      "cluster": {
+        "radius_m": 42.0,
+        "time_window_days": 7,
+        "center_lat": 19.119,
+        "center_lon": 72.84705714285714,
+        "report_count": 7
+      },
+      "perception_results": [
+        {
+          "report_id": "CIV-2026-1001",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.91,
+          "evidence_text": "Visible water accumulation on road surface indicating underground pipe rupture. Continuous water flow pattern suggests pressurized supply line breach. Road surface appears saturated with mineral staining consistent with prolonged water exposure.",
+          "image_filename": "leak_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1004",
+          "issue_type": "WATERLOGGING",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "evidence_text": "Significant standing water on road surface, approximately ankle-deep. Visible debris floating. No drainage visible. Road damage and potholes acting as water retention basins.",
+          "image_filename": "waterlogging_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: waterlogging",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1040",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "CRITICAL",
+          "confidence": 0.94,
+          "evidence_text": "High-pressure water burst from underground main. Significant volume of water flowing onto road. Geyser-like eruption indicates major supply line failure requiring emergency response.",
+          "image_filename": "leak_05.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as critical",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1002",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "HIGH",
+          "confidence": 0.89,
+          "evidence_text": "Extensive surface cracking with visible sub-base erosion. Crack pattern consistent with water-induced base failure. Road surface depression indicates undermining by subsurface water flow.",
+          "image_filename": "road_damage_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1003",
+          "issue_type": "POTHOLE",
+          "severity": "HIGH",
+          "confidence": 0.93,
+          "evidence_text": "Deep pothole approximately 60cm diameter and 30cm depth. Filled with standing muddy water. Edges showing further erosion. Located in active traffic lane with no warning markers.",
+          "image_filename": "pothole_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: pothole",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1005",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.88,
+          "evidence_text": "Active water seepage from road surface crack. Flow rate and clarity suggest potable water supply line damage. Wet zone extends approximately 5 meters from source point.",
+          "image_filename": "leak_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1006",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "evidence_text": "Surface-level cracking and bitumen peeling on service road. Early-stage deterioration with multiple longitudinal cracks. No base failure visible yet.",
+          "image_filename": "road_damage_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as medium",
+            "Visual validation matches known demographic seeds"
+          ]
+        }
+      ],
+      "root_cause": {
+        "hypothesis": "Root cause analysis identifies a cascading infrastructure failure: WATER_LEAKAGE -> ROAD_DAMAGE -> POTHOLE. The evidence suggests that WATER_LEAKAGE triggered a chain of downstream effects through Root cause, Prolonged water seepage weakens road sub-base and surface layers. This cascade pattern is consistent with 4 distinct issue types observed within a concentrated geographic area.",
+        "confidence": 0.58,
+        "chain": [
+          "WATER_LEAKAGE",
+          "ROAD_DAMAGE",
+          "POTHOLE"
+        ],
+        "disclaimer": "AI-generated civic incident hypothesis. Physical inspection recommended.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "get_historical_incidents"
+        ],
+        "reasoning_notes": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "nearby_sites": []
+      },
+      "impact_score": {
+        "score": 88.2,
+        "priority": "CRITICAL",
+        "breakdown": {
+          "severity_score": 100,
+          "infrastructure_proximity": 85,
+          "people_affected": 90,
+          "duration": 50,
+          "repeat_reports": 100,
+          "secondary_risk": 85
+        },
+        "explanation": "Impact score of 88.2/100 classified as CRITICAL. Key factors: severity at 100/100, infrastructure proximity at 85/100, and secondary risk at 85/100. The cascading nature of 4 interconnected issue types over 2.9 days significantly elevates the overall impact.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "get_historical_incidents"
+        ]
+      },
+      "response_plan": {
+        "steps": [
+          {
+            "step_number": 1,
+            "department": "WATER_BOARD",
+            "department_name": "Municipal Water Supply & Sewerage Board",
+            "action": "Address WATER_LEAKAGE, WATERLOGGING issues",
+            "reason": "Water supply fixes are typically root-cause and should go first",
+            "estimated_hours": 12,
+            "depends_on": [],
+            "resources": [
+              "Pipe repair crews",
+              "Emergency water tankers",
+              "Pumping equipment",
+              "Leak detection units"
+            ],
+            "issues": [
+              "WATER_LEAKAGE",
+              "WATERLOGGING"
+            ]
+          },
+          {
+            "step_number": 2,
+            "department": "STORM_WATER_DRAINAGE",
+            "department_name": "Storm Water Drainage Department",
+            "action": "Address WATERLOGGING issues",
+            "reason": "Clear garbage blocking drains before drain repair",
+            "estimated_hours": 8,
+            "depends_on": [],
+            "resources": [
+              "Drain cleaning machines",
+              "Dewatering pumps",
+              "CCTV drain inspection units",
+              "Emergency response teams"
+            ],
+            "issues": [
+              "WATERLOGGING"
+            ]
+          },
+          {
+            "step_number": 3,
+            "department": "ROADS_DEPT",
+            "department_name": "Roads & Infrastructure Department",
+            "action": "Address ROAD_DAMAGE, POTHOLE issues",
+            "reason": "Road repairs are wasted if underlying water/drainage issues persist",
+            "estimated_hours": 24,
+            "depends_on": [
+              "STORM_WATER_DRAINAGE",
+              "WATER_BOARD"
+            ],
+            "resources": [
+              "Asphalt paving crews",
+              "Road repair machinery",
+              "Traffic management units",
+              "Barricades and signage"
+            ],
+            "issues": [
+              "ROAD_DAMAGE",
+              "POTHOLE"
+            ]
+          }
+        ],
+        "rationale": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "approved": false,
+        "approved_by": "",
+        "approved_at": ""
+      },
+      "resolution": {},
+      "sla": {
+        "deadline": "2026-10-04T23:37:38.713785+05:30",
+        "reminders_sent": 0,
+        "escalated": false,
+        "escalation_reason": "",
+        "original_deadline": "2026-10-04T23:37:38.713785+05:30"
+      },
+      "agent_log": [],
+      "reasoning_mode": "deterministic_fallback",
+      "tools_used": [
+        "query_dependency_graph",
+        "get_weather_forecast",
+        "get_historical_incidents"
+      ],
+      "tool_traces": [
+        {
+          "tool_name": "get_weather_forecast",
+          "result": {
+            "available": true,
+            "rain_risk_pct": 0,
+            "max_precipitation_mm": 0.0,
+            "heavy_rain_expected": false,
+            "forecast_hours_checked": 24,
+            "summary": "Next 24h max rain risk: 0% (0.0mm)"
+          }
+        },
+        {
+          "tool_name": "get_historical_incidents",
+          "result": {
+            "available": true,
+            "prior_incidents": [],
+            "total_nearby": 0,
+            "has_repeats": false,
+            "summary": "Found 0 prior incident(s) within 180m"
+          }
+        }
+      ],
+      "agent_trace": [
+        {
+          "step": 1,
+          "type": "model_call",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Offline deterministic fallback engine active",
+          "latency_ms": 1.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:37:38.632393+05:30"
+        },
+        {
+          "step": 2,
+          "type": "tool_call",
+          "tool_name": "query_dependency_graph",
+          "arguments": {
+            "issue_types": [
+              "WATER_LEAKAGE",
+              "WATERLOGGING",
+              "ROAD_DAMAGE",
+              "POTHOLE"
+            ]
+          },
+          "result_summary": "Queried dependency graph for 4 issue types",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T11:37:38.632393+05:30"
+        },
+        {
+          "step": 3,
+          "type": "tool_result",
+          "tool_name": "query_dependency_graph",
+          "arguments": null,
+          "result_summary": "Identified cascade chain: ['WATER_LEAKAGE', 'ROAD_DAMAGE', 'POTHOLE']",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T11:37:38.632393+05:30"
+        },
+        {
+          "step": 4,
+          "type": "final",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Deterministic hypothesis: Root cause analysis identifies a cascading infrastructure failure: WATER_LEAKAGE -> ROAD_DAMAGE -> P",
+          "latency_ms": 0.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:37:38.632393+05:30"
+        }
+      ],
+      "reflection": {
+        "verdict": "revised",
+        "iterations": 2,
+        "issues": [
+          "Topological inversion: Step for WATER_BOARD follows a downstream department step."
+        ],
+        "checks": [
+          {
+            "name": "causal_graph_alignment",
+            "passed": true,
+            "detail": "All links valid in civic dependency graph."
+          },
+          {
+            "name": "grounded_evidence",
+            "passed": true,
+            "detail": "Evidence items grounded in reported symptoms or sensor inputs."
+          },
+          {
+            "name": "confidence_consistency",
+            "passed": true,
+            "detail": "Confidence (0.58) is consistent with evidence breadth."
+          },
+          {
+            "name": "impact_formula_and_priority",
+            "passed": true,
+            "detail": "Impact score matches breakdown formula and priority tier thresholds."
+          },
+          {
+            "name": "sensitive_sites_proximity",
+            "passed": true,
+            "detail": "Proximity risk correctly reflects local sensitive facilities."
+          },
+          {
+            "name": "topological_department_order",
+            "passed": true,
+            "detail": "Response plan respects departmental topological execution order."
+          }
+        ]
+      },
+      "nearby_sites": []
+    },
+    {
+      "incident_id": "INC-2026-007",
+      "status": "UNDER_REVIEW",
+      "classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "created_at": "2026-10-04T11:54:30.718697+05:30",
+      "updated_at": "2026-10-04T11:54:30.718712+05:30",
+      "connected_reports": [
+        "CIV-2026-1001",
+        "CIV-2026-1004",
+        "CIV-2026-1040",
+        "CIV-2026-1002",
+        "CIV-2026-1003",
+        "CIV-2026-1005",
+        "CIV-2026-1006"
+      ],
+      "cluster": {
+        "radius_m": 42.0,
+        "time_window_days": 7,
+        "center_lat": 19.119,
+        "center_lon": 72.84705714285714,
+        "report_count": 7
+      },
+      "perception_results": [
+        {
+          "report_id": "CIV-2026-1001",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.91,
+          "evidence_text": "Visible water accumulation on road surface indicating underground pipe rupture. Continuous water flow pattern suggests pressurized supply line breach. Road surface appears saturated with mineral staining consistent with prolonged water exposure.",
+          "image_filename": "leak_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1004",
+          "issue_type": "WATERLOGGING",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "evidence_text": "Significant standing water on road surface, approximately ankle-deep. Visible debris floating. No drainage visible. Road damage and potholes acting as water retention basins.",
+          "image_filename": "waterlogging_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: waterlogging",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1040",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "CRITICAL",
+          "confidence": 0.94,
+          "evidence_text": "High-pressure water burst from underground main. Significant volume of water flowing onto road. Geyser-like eruption indicates major supply line failure requiring emergency response.",
+          "image_filename": "leak_05.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as critical",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1002",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "HIGH",
+          "confidence": 0.89,
+          "evidence_text": "Extensive surface cracking with visible sub-base erosion. Crack pattern consistent with water-induced base failure. Road surface depression indicates undermining by subsurface water flow.",
+          "image_filename": "road_damage_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1003",
+          "issue_type": "POTHOLE",
+          "severity": "HIGH",
+          "confidence": 0.93,
+          "evidence_text": "Deep pothole approximately 60cm diameter and 30cm depth. Filled with standing muddy water. Edges showing further erosion. Located in active traffic lane with no warning markers.",
+          "image_filename": "pothole_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: pothole",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1005",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.88,
+          "evidence_text": "Active water seepage from road surface crack. Flow rate and clarity suggest potable water supply line damage. Wet zone extends approximately 5 meters from source point.",
+          "image_filename": "leak_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1006",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "evidence_text": "Surface-level cracking and bitumen peeling on service road. Early-stage deterioration with multiple longitudinal cracks. No base failure visible yet.",
+          "image_filename": "road_damage_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as medium",
+            "Visual validation matches known demographic seeds"
+          ]
+        }
+      ],
+      "root_cause": {
+        "hypothesis": "Root cause analysis identifies a cascading infrastructure failure: WATER_LEAKAGE -> ROAD_DAMAGE -> POTHOLE. The evidence suggests that WATER_LEAKAGE triggered a chain of downstream effects through Root cause, Prolonged water seepage weakens road sub-base and surface layers. This cascade pattern is consistent with 4 distinct issue types observed within a concentrated geographic area.",
+        "confidence": 0.58,
+        "chain": [
+          "WATER_LEAKAGE",
+          "ROAD_DAMAGE",
+          "POTHOLE"
+        ],
+        "disclaimer": "AI-generated civic incident hypothesis. Physical inspection recommended.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "find_nearby_sensitive_sites",
+          "get_historical_incidents"
+        ],
+        "reasoning_notes": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "nearby_sites": [
+          {
+            "id": "12350609084",
+            "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+            "type": "clinic",
+            "latitude": 19.1183809,
+            "longitude": 72.8458359,
+            "distance_m": 140.3
+          },
+          {
+            "id": "353191630",
+            "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+            "type": "clinic",
+            "latitude": 19.1183563,
+            "longitude": 72.8458471,
+            "distance_m": 140.7
+          },
+          {
+            "id": "11275619443",
+            "name": "Anuvansh Fertility & Women's Clinic",
+            "type": "clinic",
+            "latitude": 19.1179194,
+            "longitude": 72.8460756,
+            "distance_m": 154.5
+          },
+          {
+            "id": "11698463569",
+            "name": "Aakash Institute",
+            "type": "prep_school",
+            "latitude": 19.1194001,
+            "longitude": 72.8455521,
+            "distance_m": 158.5
+          },
+          {
+            "id": "7049613221",
+            "name": "Saheli Clinic",
+            "type": "clinic",
+            "latitude": 19.1200089,
+            "longitude": 72.8485844,
+            "distance_m": 200.7
+          },
+          {
+            "id": "7068429399",
+            "name": "Bses Mg Hospital (Managed By)Brahma Kumari Global Hospital and Res Center",
+            "type": "hospital",
+            "latitude": 19.119331,
+            "longitude": 72.845019,
+            "distance_m": 211.4
+          },
+          {
+            "id": "11698432789",
+            "name": "IItian's PACE - Andheri",
+            "type": "school",
+            "latitude": 19.1203044,
+            "longitude": 72.8454164,
+            "distance_m": 220.7
+          },
+          {
+            "id": "4571165089",
+            "name": "Clinic",
+            "type": "clinic",
+            "latitude": 19.120518,
+            "longitude": 72.8456246,
+            "distance_m": 222.2
+          },
+          {
+            "id": "8261417275",
+            "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+            "type": "clinic",
+            "latitude": 19.1188092,
+            "longitude": 72.8492685,
+            "distance_m": 239.3
+          },
+          {
+            "id": "7050518138",
+            "name": "Vishal X-Ray Clinic",
+            "type": "clinic",
+            "latitude": 19.1208566,
+            "longitude": 72.8457941,
+            "distance_m": 242.2
+          }
+        ]
+      },
+      "impact_score": {
+        "score": 88.2,
+        "priority": "CRITICAL",
+        "breakdown": {
+          "severity_score": 100,
+          "infrastructure_proximity": 85,
+          "people_affected": 90,
+          "duration": 50,
+          "repeat_reports": 100,
+          "secondary_risk": 85
+        },
+        "explanation": "Impact score of 88.2/100 classified as CRITICAL. Key factors: severity at 100/100, infrastructure proximity at 85/100, and secondary risk at 85/100. The cascading nature of 4 interconnected issue types over 2.9 days significantly elevates the overall impact.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "find_nearby_sensitive_sites",
+          "get_historical_incidents"
+        ]
+      },
+      "response_plan": {
+        "steps": [
+          {
+            "step_number": 1,
+            "department": "WATER_BOARD",
+            "department_name": "Municipal Water Supply & Sewerage Board",
+            "action": "Address WATER_LEAKAGE, WATERLOGGING issues",
+            "reason": "Water supply fixes are typically root-cause and should go first",
+            "estimated_hours": 12,
+            "depends_on": [],
+            "resources": [
+              "Pipe repair crews",
+              "Emergency water tankers",
+              "Pumping equipment",
+              "Leak detection units"
+            ],
+            "issues": [
+              "WATER_LEAKAGE",
+              "WATERLOGGING"
+            ]
+          },
+          {
+            "step_number": 2,
+            "department": "STORM_WATER_DRAINAGE",
+            "department_name": "Storm Water Drainage Department",
+            "action": "Address WATERLOGGING issues",
+            "reason": "Clear garbage blocking drains before drain repair",
+            "estimated_hours": 8,
+            "depends_on": [],
+            "resources": [
+              "Drain cleaning machines",
+              "Dewatering pumps",
+              "CCTV drain inspection units",
+              "Emergency response teams"
+            ],
+            "issues": [
+              "WATERLOGGING"
+            ]
+          },
+          {
+            "step_number": 3,
+            "department": "ROADS_DEPT",
+            "department_name": "Roads & Infrastructure Department",
+            "action": "Address ROAD_DAMAGE, POTHOLE issues",
+            "reason": "Road repairs are wasted if underlying water/drainage issues persist",
+            "estimated_hours": 24,
+            "depends_on": [
+              "STORM_WATER_DRAINAGE",
+              "WATER_BOARD"
+            ],
+            "resources": [
+              "Asphalt paving crews",
+              "Road repair machinery",
+              "Traffic management units",
+              "Barricades and signage"
+            ],
+            "issues": [
+              "ROAD_DAMAGE",
+              "POTHOLE"
+            ]
+          }
+        ],
+        "rationale": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "approved": false,
+        "approved_by": "",
+        "approved_at": ""
+      },
+      "resolution": {},
+      "sla": {
+        "deadline": "2026-10-04T23:54:34.565414+05:30",
+        "reminders_sent": 0,
+        "escalated": false,
+        "escalation_reason": "",
+        "original_deadline": "2026-10-04T23:54:34.565414+05:30"
       },
       "agent_log": [],
       "reasoning_mode": "deterministic_fallback",
@@ -1150,11 +3080,1671 @@
           "tool_name": "get_weather_forecast",
           "result": {
             "available": true,
-            "rain_risk_pct": 100,
-            "max_precipitation_mm": 0.8,
-            "heavy_rain_expected": true,
+            "rain_risk_pct": 0,
+            "max_precipitation_mm": 0.0,
+            "heavy_rain_expected": false,
             "forecast_hours_checked": 24,
-            "summary": "Next 24h max rain risk: 100% (0.8mm)"
+            "summary": "Next 24h max rain risk: 0% (0.0mm)"
+          }
+        },
+        {
+          "tool_name": "find_nearby_sensitive_sites",
+          "result": {
+            "available": true,
+            "sites": [
+              {
+                "id": "12350609084",
+                "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+                "type": "clinic",
+                "latitude": 19.1183809,
+                "longitude": 72.8458359,
+                "distance_m": 140.3
+              },
+              {
+                "id": "353191630",
+                "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+                "type": "clinic",
+                "latitude": 19.1183563,
+                "longitude": 72.8458471,
+                "distance_m": 140.7
+              },
+              {
+                "id": "11275619443",
+                "name": "Anuvansh Fertility & Women's Clinic",
+                "type": "clinic",
+                "latitude": 19.1179194,
+                "longitude": 72.8460756,
+                "distance_m": 154.5
+              },
+              {
+                "id": "11698463569",
+                "name": "Aakash Institute",
+                "type": "prep_school",
+                "latitude": 19.1194001,
+                "longitude": 72.8455521,
+                "distance_m": 158.5
+              },
+              {
+                "id": "7049613221",
+                "name": "Saheli Clinic",
+                "type": "clinic",
+                "latitude": 19.1200089,
+                "longitude": 72.8485844,
+                "distance_m": 200.7
+              },
+              {
+                "id": "7068429399",
+                "name": "Bses Mg Hospital (Managed By)Brahma Kumari Global Hospital and Res Center",
+                "type": "hospital",
+                "latitude": 19.119331,
+                "longitude": 72.845019,
+                "distance_m": 211.4
+              },
+              {
+                "id": "11698432789",
+                "name": "IItian's PACE - Andheri",
+                "type": "school",
+                "latitude": 19.1203044,
+                "longitude": 72.8454164,
+                "distance_m": 220.7
+              },
+              {
+                "id": "4571165089",
+                "name": "Clinic",
+                "type": "clinic",
+                "latitude": 19.120518,
+                "longitude": 72.8456246,
+                "distance_m": 222.2
+              },
+              {
+                "id": "8261417275",
+                "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+                "type": "clinic",
+                "latitude": 19.1188092,
+                "longitude": 72.8492685,
+                "distance_m": 239.3
+              },
+              {
+                "id": "7050518138",
+                "name": "Vishal X-Ray Clinic",
+                "type": "clinic",
+                "latitude": 19.1208566,
+                "longitude": 72.8457941,
+                "distance_m": 242.2
+              }
+            ],
+            "total_found": 10,
+            "closest_site": {
+              "id": "12350609084",
+              "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+              "type": "clinic",
+              "latitude": 19.1183809,
+              "longitude": 72.8458359,
+              "distance_m": 140.3
+            },
+            "summary": "Found 10 sensitive site(s) within 250m"
+          }
+        },
+        {
+          "tool_name": "get_historical_incidents",
+          "result": {
+            "available": true,
+            "prior_incidents": [],
+            "total_nearby": 0,
+            "has_repeats": false,
+            "summary": "Found 0 prior incident(s) within 180m"
+          }
+        }
+      ],
+      "agent_trace": [
+        {
+          "step": 1,
+          "type": "model_call",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Offline deterministic fallback engine active",
+          "latency_ms": 1.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:54:34.479247+05:30"
+        },
+        {
+          "step": 2,
+          "type": "tool_call",
+          "tool_name": "query_dependency_graph",
+          "arguments": {
+            "issue_types": [
+              "WATER_LEAKAGE",
+              "WATERLOGGING",
+              "ROAD_DAMAGE",
+              "POTHOLE"
+            ]
+          },
+          "result_summary": "Queried dependency graph for 4 issue types",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T11:54:34.479247+05:30"
+        },
+        {
+          "step": 3,
+          "type": "tool_result",
+          "tool_name": "query_dependency_graph",
+          "arguments": null,
+          "result_summary": "Identified cascade chain: ['WATER_LEAKAGE', 'ROAD_DAMAGE', 'POTHOLE']",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T11:54:34.479247+05:30"
+        },
+        {
+          "step": 4,
+          "type": "tool_result",
+          "tool_name": "find_nearby_sensitive_sites",
+          "arguments": null,
+          "result_summary": "Found 10 sensitive site(s)",
+          "latency_ms": 1.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:54:34.479247+05:30"
+        },
+        {
+          "step": 5,
+          "type": "final",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Deterministic hypothesis: Root cause analysis identifies a cascading infrastructure failure: WATER_LEAKAGE -> ROAD_DAMAGE -> P",
+          "latency_ms": 0.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:54:34.479247+05:30"
+        }
+      ],
+      "reflection": {
+        "verdict": "revised",
+        "iterations": 2,
+        "issues": [
+          "Topological inversion: Step for WATER_BOARD follows a downstream department step."
+        ],
+        "checks": [
+          {
+            "name": "causal_graph_alignment",
+            "passed": true,
+            "detail": "All links valid in civic dependency graph."
+          },
+          {
+            "name": "grounded_evidence",
+            "passed": true,
+            "detail": "Evidence items grounded in reported symptoms or sensor inputs."
+          },
+          {
+            "name": "confidence_consistency",
+            "passed": true,
+            "detail": "Confidence (0.58) is consistent with evidence breadth."
+          },
+          {
+            "name": "impact_formula_and_priority",
+            "passed": true,
+            "detail": "Impact score matches breakdown formula and priority tier thresholds."
+          },
+          {
+            "name": "sensitive_sites_proximity",
+            "passed": true,
+            "detail": "Proximity risk correctly reflects local sensitive facilities."
+          },
+          {
+            "name": "topological_department_order",
+            "passed": true,
+            "detail": "Response plan respects departmental topological execution order."
+          }
+        ]
+      },
+      "nearby_sites": [
+        {
+          "id": "12350609084",
+          "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+          "type": "clinic",
+          "latitude": 19.1183809,
+          "longitude": 72.8458359,
+          "distance_m": 140.3
+        },
+        {
+          "id": "353191630",
+          "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+          "type": "clinic",
+          "latitude": 19.1183563,
+          "longitude": 72.8458471,
+          "distance_m": 140.7
+        },
+        {
+          "id": "11275619443",
+          "name": "Anuvansh Fertility & Women's Clinic",
+          "type": "clinic",
+          "latitude": 19.1179194,
+          "longitude": 72.8460756,
+          "distance_m": 154.5
+        },
+        {
+          "id": "11698463569",
+          "name": "Aakash Institute",
+          "type": "prep_school",
+          "latitude": 19.1194001,
+          "longitude": 72.8455521,
+          "distance_m": 158.5
+        },
+        {
+          "id": "7049613221",
+          "name": "Saheli Clinic",
+          "type": "clinic",
+          "latitude": 19.1200089,
+          "longitude": 72.8485844,
+          "distance_m": 200.7
+        },
+        {
+          "id": "7068429399",
+          "name": "Bses Mg Hospital (Managed By)Brahma Kumari Global Hospital and Res Center",
+          "type": "hospital",
+          "latitude": 19.119331,
+          "longitude": 72.845019,
+          "distance_m": 211.4
+        },
+        {
+          "id": "11698432789",
+          "name": "IItian's PACE - Andheri",
+          "type": "school",
+          "latitude": 19.1203044,
+          "longitude": 72.8454164,
+          "distance_m": 220.7
+        },
+        {
+          "id": "4571165089",
+          "name": "Clinic",
+          "type": "clinic",
+          "latitude": 19.120518,
+          "longitude": 72.8456246,
+          "distance_m": 222.2
+        },
+        {
+          "id": "8261417275",
+          "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+          "type": "clinic",
+          "latitude": 19.1188092,
+          "longitude": 72.8492685,
+          "distance_m": 239.3
+        },
+        {
+          "id": "7050518138",
+          "name": "Vishal X-Ray Clinic",
+          "type": "clinic",
+          "latitude": 19.1208566,
+          "longitude": 72.8457941,
+          "distance_m": 242.2
+        }
+      ]
+    },
+    {
+      "incident_id": "INC-2026-008",
+      "status": "UNDER_REVIEW",
+      "classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "created_at": "2026-10-04T11:59:35.656449+05:30",
+      "updated_at": "2026-10-04T11:59:35.656464+05:30",
+      "connected_reports": [
+        "CIV-2026-1001",
+        "CIV-2026-1004",
+        "CIV-2026-1040",
+        "CIV-2026-1002",
+        "CIV-2026-1003",
+        "CIV-2026-1005",
+        "CIV-2026-1006"
+      ],
+      "cluster": {
+        "radius_m": 42.0,
+        "time_window_days": 7,
+        "center_lat": 19.119,
+        "center_lon": 72.84705714285714,
+        "report_count": 7
+      },
+      "perception_results": [
+        {
+          "report_id": "CIV-2026-1001",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.91,
+          "evidence_text": "Visible water accumulation on road surface indicating underground pipe rupture. Continuous water flow pattern suggests pressurized supply line breach. Road surface appears saturated with mineral staining consistent with prolonged water exposure.",
+          "image_filename": "leak_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1004",
+          "issue_type": "WATERLOGGING",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "evidence_text": "Significant standing water on road surface, approximately ankle-deep. Visible debris floating. No drainage visible. Road damage and potholes acting as water retention basins.",
+          "image_filename": "waterlogging_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: waterlogging",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1040",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "CRITICAL",
+          "confidence": 0.94,
+          "evidence_text": "High-pressure water burst from underground main. Significant volume of water flowing onto road. Geyser-like eruption indicates major supply line failure requiring emergency response.",
+          "image_filename": "leak_05.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as critical",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1002",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "HIGH",
+          "confidence": 0.89,
+          "evidence_text": "Extensive surface cracking with visible sub-base erosion. Crack pattern consistent with water-induced base failure. Road surface depression indicates undermining by subsurface water flow.",
+          "image_filename": "road_damage_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1003",
+          "issue_type": "POTHOLE",
+          "severity": "HIGH",
+          "confidence": 0.93,
+          "evidence_text": "Deep pothole approximately 60cm diameter and 30cm depth. Filled with standing muddy water. Edges showing further erosion. Located in active traffic lane with no warning markers.",
+          "image_filename": "pothole_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: pothole",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1005",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.88,
+          "evidence_text": "Active water seepage from road surface crack. Flow rate and clarity suggest potable water supply line damage. Wet zone extends approximately 5 meters from source point.",
+          "image_filename": "leak_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1006",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "evidence_text": "Surface-level cracking and bitumen peeling on service road. Early-stage deterioration with multiple longitudinal cracks. No base failure visible yet.",
+          "image_filename": "road_damage_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as medium",
+            "Visual validation matches known demographic seeds"
+          ]
+        }
+      ],
+      "root_cause": {
+        "hypothesis": "Root cause analysis identifies a cascading infrastructure failure: WATER_LEAKAGE -> ROAD_DAMAGE -> POTHOLE. The evidence suggests that WATER_LEAKAGE triggered a chain of downstream effects through Root cause, Prolonged water seepage weakens road sub-base and surface layers. This cascade pattern is consistent with 4 distinct issue types observed within a concentrated geographic area.",
+        "confidence": 0.58,
+        "chain": [
+          "WATER_LEAKAGE",
+          "ROAD_DAMAGE",
+          "POTHOLE"
+        ],
+        "disclaimer": "AI-generated civic incident hypothesis. Physical inspection recommended.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "find_nearby_sensitive_sites",
+          "get_historical_incidents"
+        ],
+        "reasoning_notes": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "nearby_sites": [
+          {
+            "id": "12350609084",
+            "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+            "type": "clinic",
+            "latitude": 19.1183809,
+            "longitude": 72.8458359,
+            "distance_m": 140.3
+          },
+          {
+            "id": "353191630",
+            "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+            "type": "clinic",
+            "latitude": 19.1183563,
+            "longitude": 72.8458471,
+            "distance_m": 140.7
+          },
+          {
+            "id": "11275619443",
+            "name": "Anuvansh Fertility & Women's Clinic",
+            "type": "clinic",
+            "latitude": 19.1179194,
+            "longitude": 72.8460756,
+            "distance_m": 154.5
+          },
+          {
+            "id": "11698463569",
+            "name": "Aakash Institute",
+            "type": "prep_school",
+            "latitude": 19.1194001,
+            "longitude": 72.8455521,
+            "distance_m": 158.5
+          },
+          {
+            "id": "7049613221",
+            "name": "Saheli Clinic",
+            "type": "clinic",
+            "latitude": 19.1200089,
+            "longitude": 72.8485844,
+            "distance_m": 200.7
+          },
+          {
+            "id": "7068429399",
+            "name": "Bses Mg Hospital (Managed By)Brahma Kumari Global Hospital and Res Center",
+            "type": "hospital",
+            "latitude": 19.119331,
+            "longitude": 72.845019,
+            "distance_m": 211.4
+          },
+          {
+            "id": "11698432789",
+            "name": "IItian's PACE - Andheri",
+            "type": "school",
+            "latitude": 19.1203044,
+            "longitude": 72.8454164,
+            "distance_m": 220.7
+          },
+          {
+            "id": "4571165089",
+            "name": "Clinic",
+            "type": "clinic",
+            "latitude": 19.120518,
+            "longitude": 72.8456246,
+            "distance_m": 222.2
+          },
+          {
+            "id": "8261417275",
+            "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+            "type": "clinic",
+            "latitude": 19.1188092,
+            "longitude": 72.8492685,
+            "distance_m": 239.3
+          },
+          {
+            "id": "7050518138",
+            "name": "Vishal X-Ray Clinic",
+            "type": "clinic",
+            "latitude": 19.1208566,
+            "longitude": 72.8457941,
+            "distance_m": 242.2
+          }
+        ]
+      },
+      "impact_score": {
+        "score": 88.2,
+        "priority": "CRITICAL",
+        "breakdown": {
+          "severity_score": 100,
+          "infrastructure_proximity": 85,
+          "people_affected": 90,
+          "duration": 50,
+          "repeat_reports": 100,
+          "secondary_risk": 85
+        },
+        "explanation": "Impact score of 88.2/100 classified as CRITICAL. Key factors: severity at 100/100, infrastructure proximity at 85/100, and secondary risk at 85/100. The cascading nature of 4 interconnected issue types over 2.9 days significantly elevates the overall impact.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "find_nearby_sensitive_sites",
+          "get_historical_incidents"
+        ]
+      },
+      "response_plan": {
+        "steps": [
+          {
+            "step_number": 1,
+            "department": "WATER_BOARD",
+            "department_name": "Municipal Water Supply & Sewerage Board",
+            "action": "Address WATER_LEAKAGE, WATERLOGGING issues",
+            "reason": "Water supply fixes are typically root-cause and should go first",
+            "estimated_hours": 12,
+            "depends_on": [],
+            "resources": [
+              "Pipe repair crews",
+              "Emergency water tankers",
+              "Pumping equipment",
+              "Leak detection units"
+            ],
+            "issues": [
+              "WATER_LEAKAGE",
+              "WATERLOGGING"
+            ]
+          },
+          {
+            "step_number": 2,
+            "department": "STORM_WATER_DRAINAGE",
+            "department_name": "Storm Water Drainage Department",
+            "action": "Address WATERLOGGING issues",
+            "reason": "Clear garbage blocking drains before drain repair",
+            "estimated_hours": 8,
+            "depends_on": [],
+            "resources": [
+              "Drain cleaning machines",
+              "Dewatering pumps",
+              "CCTV drain inspection units",
+              "Emergency response teams"
+            ],
+            "issues": [
+              "WATERLOGGING"
+            ]
+          },
+          {
+            "step_number": 3,
+            "department": "ROADS_DEPT",
+            "department_name": "Roads & Infrastructure Department",
+            "action": "Address ROAD_DAMAGE, POTHOLE issues",
+            "reason": "Road repairs are wasted if underlying water/drainage issues persist",
+            "estimated_hours": 24,
+            "depends_on": [
+              "STORM_WATER_DRAINAGE",
+              "WATER_BOARD"
+            ],
+            "resources": [
+              "Asphalt paving crews",
+              "Road repair machinery",
+              "Traffic management units",
+              "Barricades and signage"
+            ],
+            "issues": [
+              "ROAD_DAMAGE",
+              "POTHOLE"
+            ]
+          }
+        ],
+        "rationale": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "approved": false,
+        "approved_by": "",
+        "approved_at": ""
+      },
+      "resolution": {},
+      "sla": {
+        "deadline": "2026-10-04T23:59:42.567836+05:30",
+        "reminders_sent": 0,
+        "escalated": false,
+        "escalation_reason": "",
+        "original_deadline": "2026-10-04T23:59:42.567836+05:30"
+      },
+      "agent_log": [],
+      "reasoning_mode": "deterministic_fallback",
+      "tools_used": [
+        "query_dependency_graph",
+        "get_weather_forecast",
+        "find_nearby_sensitive_sites",
+        "get_historical_incidents"
+      ],
+      "tool_traces": [
+        {
+          "tool_name": "get_weather_forecast",
+          "result": {
+            "available": true,
+            "rain_risk_pct": 0,
+            "max_precipitation_mm": 0.0,
+            "heavy_rain_expected": false,
+            "forecast_hours_checked": 24,
+            "summary": "Next 24h max rain risk: 0% (0.0mm)"
+          }
+        },
+        {
+          "tool_name": "find_nearby_sensitive_sites",
+          "result": {
+            "available": true,
+            "sites": [
+              {
+                "id": "12350609084",
+                "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+                "type": "clinic",
+                "latitude": 19.1183809,
+                "longitude": 72.8458359,
+                "distance_m": 140.3
+              },
+              {
+                "id": "353191630",
+                "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+                "type": "clinic",
+                "latitude": 19.1183563,
+                "longitude": 72.8458471,
+                "distance_m": 140.7
+              },
+              {
+                "id": "11275619443",
+                "name": "Anuvansh Fertility & Women's Clinic",
+                "type": "clinic",
+                "latitude": 19.1179194,
+                "longitude": 72.8460756,
+                "distance_m": 154.5
+              },
+              {
+                "id": "11698463569",
+                "name": "Aakash Institute",
+                "type": "prep_school",
+                "latitude": 19.1194001,
+                "longitude": 72.8455521,
+                "distance_m": 158.5
+              },
+              {
+                "id": "7049613221",
+                "name": "Saheli Clinic",
+                "type": "clinic",
+                "latitude": 19.1200089,
+                "longitude": 72.8485844,
+                "distance_m": 200.7
+              },
+              {
+                "id": "7068429399",
+                "name": "Bses Mg Hospital (Managed By)Brahma Kumari Global Hospital and Res Center",
+                "type": "hospital",
+                "latitude": 19.119331,
+                "longitude": 72.845019,
+                "distance_m": 211.4
+              },
+              {
+                "id": "11698432789",
+                "name": "IItian's PACE - Andheri",
+                "type": "school",
+                "latitude": 19.1203044,
+                "longitude": 72.8454164,
+                "distance_m": 220.7
+              },
+              {
+                "id": "4571165089",
+                "name": "Clinic",
+                "type": "clinic",
+                "latitude": 19.120518,
+                "longitude": 72.8456246,
+                "distance_m": 222.2
+              },
+              {
+                "id": "8261417275",
+                "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+                "type": "clinic",
+                "latitude": 19.1188092,
+                "longitude": 72.8492685,
+                "distance_m": 239.3
+              },
+              {
+                "id": "7050518138",
+                "name": "Vishal X-Ray Clinic",
+                "type": "clinic",
+                "latitude": 19.1208566,
+                "longitude": 72.8457941,
+                "distance_m": 242.2
+              }
+            ],
+            "total_found": 10,
+            "closest_site": {
+              "id": "12350609084",
+              "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+              "type": "clinic",
+              "latitude": 19.1183809,
+              "longitude": 72.8458359,
+              "distance_m": 140.3
+            },
+            "summary": "Found 10 sensitive site(s) within 250m"
+          }
+        },
+        {
+          "tool_name": "get_historical_incidents",
+          "result": {
+            "available": true,
+            "prior_incidents": [],
+            "total_nearby": 0,
+            "has_repeats": false,
+            "summary": "Found 0 prior incident(s) within 180m"
+          }
+        }
+      ],
+      "agent_trace": [
+        {
+          "step": 1,
+          "type": "model_call",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Offline deterministic fallback engine active",
+          "latency_ms": 1.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:59:42.476604+05:30"
+        },
+        {
+          "step": 2,
+          "type": "tool_call",
+          "tool_name": "query_dependency_graph",
+          "arguments": {
+            "issue_types": [
+              "WATER_LEAKAGE",
+              "WATERLOGGING",
+              "ROAD_DAMAGE",
+              "POTHOLE"
+            ]
+          },
+          "result_summary": "Queried dependency graph for 4 issue types",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T11:59:42.476604+05:30"
+        },
+        {
+          "step": 3,
+          "type": "tool_result",
+          "tool_name": "query_dependency_graph",
+          "arguments": null,
+          "result_summary": "Identified cascade chain: ['WATER_LEAKAGE', 'ROAD_DAMAGE', 'POTHOLE']",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T11:59:42.476604+05:30"
+        },
+        {
+          "step": 4,
+          "type": "tool_result",
+          "tool_name": "find_nearby_sensitive_sites",
+          "arguments": null,
+          "result_summary": "Found 10 sensitive site(s)",
+          "latency_ms": 1.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:59:42.476604+05:30"
+        },
+        {
+          "step": 5,
+          "type": "final",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Deterministic hypothesis: Root cause analysis identifies a cascading infrastructure failure: WATER_LEAKAGE -> ROAD_DAMAGE -> P",
+          "latency_ms": 0.0,
+          "error": null,
+          "timestamp": "2026-10-04T11:59:42.476604+05:30"
+        }
+      ],
+      "reflection": {
+        "verdict": "revised",
+        "iterations": 2,
+        "issues": [
+          "Topological inversion: Step for WATER_BOARD follows a downstream department step."
+        ],
+        "checks": [
+          {
+            "name": "causal_graph_alignment",
+            "passed": true,
+            "detail": "All links valid in civic dependency graph."
+          },
+          {
+            "name": "grounded_evidence",
+            "passed": true,
+            "detail": "Evidence items grounded in reported symptoms or sensor inputs."
+          },
+          {
+            "name": "confidence_consistency",
+            "passed": true,
+            "detail": "Confidence (0.58) is consistent with evidence breadth."
+          },
+          {
+            "name": "impact_formula_and_priority",
+            "passed": true,
+            "detail": "Impact score matches breakdown formula and priority tier thresholds."
+          },
+          {
+            "name": "sensitive_sites_proximity",
+            "passed": true,
+            "detail": "Proximity risk correctly reflects local sensitive facilities."
+          },
+          {
+            "name": "topological_department_order",
+            "passed": true,
+            "detail": "Response plan respects departmental topological execution order."
+          }
+        ]
+      },
+      "nearby_sites": [
+        {
+          "id": "12350609084",
+          "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+          "type": "clinic",
+          "latitude": 19.1183809,
+          "longitude": 72.8458359,
+          "distance_m": 140.3
+        },
+        {
+          "id": "353191630",
+          "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+          "type": "clinic",
+          "latitude": 19.1183563,
+          "longitude": 72.8458471,
+          "distance_m": 140.7
+        },
+        {
+          "id": "11275619443",
+          "name": "Anuvansh Fertility & Women's Clinic",
+          "type": "clinic",
+          "latitude": 19.1179194,
+          "longitude": 72.8460756,
+          "distance_m": 154.5
+        },
+        {
+          "id": "11698463569",
+          "name": "Aakash Institute",
+          "type": "prep_school",
+          "latitude": 19.1194001,
+          "longitude": 72.8455521,
+          "distance_m": 158.5
+        },
+        {
+          "id": "7049613221",
+          "name": "Saheli Clinic",
+          "type": "clinic",
+          "latitude": 19.1200089,
+          "longitude": 72.8485844,
+          "distance_m": 200.7
+        },
+        {
+          "id": "7068429399",
+          "name": "Bses Mg Hospital (Managed By)Brahma Kumari Global Hospital and Res Center",
+          "type": "hospital",
+          "latitude": 19.119331,
+          "longitude": 72.845019,
+          "distance_m": 211.4
+        },
+        {
+          "id": "11698432789",
+          "name": "IItian's PACE - Andheri",
+          "type": "school",
+          "latitude": 19.1203044,
+          "longitude": 72.8454164,
+          "distance_m": 220.7
+        },
+        {
+          "id": "4571165089",
+          "name": "Clinic",
+          "type": "clinic",
+          "latitude": 19.120518,
+          "longitude": 72.8456246,
+          "distance_m": 222.2
+        },
+        {
+          "id": "8261417275",
+          "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+          "type": "clinic",
+          "latitude": 19.1188092,
+          "longitude": 72.8492685,
+          "distance_m": 239.3
+        },
+        {
+          "id": "7050518138",
+          "name": "Vishal X-Ray Clinic",
+          "type": "clinic",
+          "latitude": 19.1208566,
+          "longitude": 72.8457941,
+          "distance_m": 242.2
+        }
+      ]
+    },
+    {
+      "incident_id": "INC-2026-009",
+      "status": "UNDER_REVIEW",
+      "classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "created_at": "2026-10-04T12:09:33.342193+05:30",
+      "updated_at": "2026-10-04T12:09:33.342209+05:30",
+      "connected_reports": [
+        "CIV-2026-1001",
+        "CIV-2026-1004",
+        "CIV-2026-1040",
+        "CIV-2026-1002",
+        "CIV-2026-1003",
+        "CIV-2026-1005",
+        "CIV-2026-1006"
+      ],
+      "cluster": {
+        "radius_m": 42.0,
+        "time_window_days": 7,
+        "center_lat": 19.119,
+        "center_lon": 72.84705714285714,
+        "report_count": 7
+      },
+      "perception_results": [
+        {
+          "report_id": "CIV-2026-1001",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.91,
+          "evidence_text": "Visible water accumulation on road surface indicating underground pipe rupture. Continuous water flow pattern suggests pressurized supply line breach. Road surface appears saturated with mineral staining consistent with prolonged water exposure.",
+          "image_filename": "leak_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1004",
+          "issue_type": "WATERLOGGING",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "evidence_text": "Significant standing water on road surface, approximately ankle-deep. Visible debris floating. No drainage visible. Road damage and potholes acting as water retention basins.",
+          "image_filename": "waterlogging_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: waterlogging",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1040",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "CRITICAL",
+          "confidence": 0.94,
+          "evidence_text": "High-pressure water burst from underground main. Significant volume of water flowing onto road. Geyser-like eruption indicates major supply line failure requiring emergency response.",
+          "image_filename": "leak_05.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as critical",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1002",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "HIGH",
+          "confidence": 0.89,
+          "evidence_text": "Extensive surface cracking with visible sub-base erosion. Crack pattern consistent with water-induced base failure. Road surface depression indicates undermining by subsurface water flow.",
+          "image_filename": "road_damage_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1003",
+          "issue_type": "POTHOLE",
+          "severity": "HIGH",
+          "confidence": 0.93,
+          "evidence_text": "Deep pothole approximately 60cm diameter and 30cm depth. Filled with standing muddy water. Edges showing further erosion. Located in active traffic lane with no warning markers.",
+          "image_filename": "pothole_01.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: pothole",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1005",
+          "issue_type": "WATER_LEAKAGE",
+          "severity": "HIGH",
+          "confidence": 0.88,
+          "evidence_text": "Active water seepage from road surface crack. Flow rate and clarity suggest potable water supply line damage. Wet zone extends approximately 5 meters from source point.",
+          "image_filename": "leak_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: water leakage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1006",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "evidence_text": "Surface-level cracking and bitumen peeling on service road. Early-stage deterioration with multiple longitudinal cracks. No base failure visible yet.",
+          "image_filename": "road_damage_02.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as medium",
+            "Visual validation matches known demographic seeds"
+          ]
+        }
+      ],
+      "root_cause": {
+        "hypothesis": "Root cause analysis identifies a cascading infrastructure failure: WATER_LEAKAGE -> ROAD_DAMAGE -> POTHOLE. The evidence suggests that WATER_LEAKAGE triggered a chain of downstream effects through Root cause, Prolonged water seepage weakens road sub-base and surface layers. This cascade pattern is consistent with 4 distinct issue types observed within a concentrated geographic area.",
+        "confidence": 0.58,
+        "chain": [
+          "WATER_LEAKAGE",
+          "ROAD_DAMAGE",
+          "POTHOLE"
+        ],
+        "disclaimer": "AI-generated civic incident hypothesis. Physical inspection recommended.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "find_nearby_sensitive_sites",
+          "get_historical_incidents"
+        ],
+        "reasoning_notes": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "nearby_sites": [
+          {
+            "id": "12350609084",
+            "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+            "type": "clinic",
+            "latitude": 19.1183809,
+            "longitude": 72.8458359,
+            "distance_m": 140.3
+          },
+          {
+            "id": "353191630",
+            "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+            "type": "clinic",
+            "latitude": 19.1183563,
+            "longitude": 72.8458471,
+            "distance_m": 140.7
+          },
+          {
+            "id": "11275619443",
+            "name": "Anuvansh Fertility & Women's Clinic",
+            "type": "clinic",
+            "latitude": 19.1179194,
+            "longitude": 72.8460756,
+            "distance_m": 154.5
+          },
+          {
+            "id": "11698463569",
+            "name": "Aakash Institute",
+            "type": "prep_school",
+            "latitude": 19.1194001,
+            "longitude": 72.8455521,
+            "distance_m": 158.5
+          },
+          {
+            "id": "7049613221",
+            "name": "Saheli Clinic",
+            "type": "clinic",
+            "latitude": 19.1200089,
+            "longitude": 72.8485844,
+            "distance_m": 200.7
+          },
+          {
+            "id": "7068429399",
+            "name": "Bses Mg Hospital (Managed By)Brahma Kumari Global Hospital and Res Center",
+            "type": "hospital",
+            "latitude": 19.119331,
+            "longitude": 72.845019,
+            "distance_m": 211.4
+          },
+          {
+            "id": "11698432789",
+            "name": "IItian's PACE - Andheri",
+            "type": "school",
+            "latitude": 19.1203044,
+            "longitude": 72.8454164,
+            "distance_m": 220.7
+          },
+          {
+            "id": "4571165089",
+            "name": "Clinic",
+            "type": "clinic",
+            "latitude": 19.120518,
+            "longitude": 72.8456246,
+            "distance_m": 222.2
+          },
+          {
+            "id": "8261417275",
+            "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+            "type": "clinic",
+            "latitude": 19.1188092,
+            "longitude": 72.8492685,
+            "distance_m": 239.3
+          },
+          {
+            "id": "7050518138",
+            "name": "Vishal X-Ray Clinic",
+            "type": "clinic",
+            "latitude": 19.1208566,
+            "longitude": 72.8457941,
+            "distance_m": 242.2
+          }
+        ]
+      },
+      "impact_score": {
+        "score": 88.2,
+        "priority": "CRITICAL",
+        "breakdown": {
+          "severity_score": 100,
+          "infrastructure_proximity": 85,
+          "people_affected": 90,
+          "duration": 50,
+          "repeat_reports": 100,
+          "secondary_risk": 85
+        },
+        "explanation": "Impact score of 88.2/100 classified as CRITICAL. Key factors: severity at 100/100, infrastructure proximity at 85/100, and secondary risk at 85/100. The cascading nature of 4 interconnected issue types over 2.9 days significantly elevates the overall impact.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "find_nearby_sensitive_sites",
+          "get_historical_incidents"
+        ]
+      },
+      "response_plan": {
+        "steps": [
+          {
+            "step_number": 1,
+            "department": "WATER_BOARD",
+            "department_name": "Municipal Water Supply & Sewerage Board",
+            "action": "Address WATER_LEAKAGE, WATERLOGGING issues",
+            "reason": "Water supply fixes are typically root-cause and should go first",
+            "estimated_hours": 12,
+            "depends_on": [],
+            "resources": [
+              "Pipe repair crews",
+              "Emergency water tankers",
+              "Pumping equipment",
+              "Leak detection units"
+            ],
+            "issues": [
+              "WATER_LEAKAGE",
+              "WATERLOGGING"
+            ]
+          },
+          {
+            "step_number": 2,
+            "department": "STORM_WATER_DRAINAGE",
+            "department_name": "Storm Water Drainage Department",
+            "action": "Address WATERLOGGING issues",
+            "reason": "Clear garbage blocking drains before drain repair",
+            "estimated_hours": 8,
+            "depends_on": [],
+            "resources": [
+              "Drain cleaning machines",
+              "Dewatering pumps",
+              "CCTV drain inspection units",
+              "Emergency response teams"
+            ],
+            "issues": [
+              "WATERLOGGING"
+            ]
+          },
+          {
+            "step_number": 3,
+            "department": "ROADS_DEPT",
+            "department_name": "Roads & Infrastructure Department",
+            "action": "Address ROAD_DAMAGE, POTHOLE issues",
+            "reason": "Road repairs are wasted if underlying water/drainage issues persist",
+            "estimated_hours": 24,
+            "depends_on": [
+              "WATER_BOARD",
+              "STORM_WATER_DRAINAGE"
+            ],
+            "resources": [
+              "Asphalt paving crews",
+              "Road repair machinery",
+              "Traffic management units",
+              "Barricades and signage"
+            ],
+            "issues": [
+              "ROAD_DAMAGE",
+              "POTHOLE"
+            ]
+          }
+        ],
+        "rationale": "Fallback mode active. Evaluated 7 reports against dependency graph.",
+        "approved": false,
+        "approved_by": "",
+        "approved_at": ""
+      },
+      "resolution": {},
+      "sla": {
+        "deadline": "2026-10-05T00:09:36.574331+05:30",
+        "reminders_sent": 0,
+        "escalated": false,
+        "escalation_reason": "",
+        "original_deadline": "2026-10-05T00:09:36.574331+05:30"
+      },
+      "agent_log": [],
+      "reasoning_mode": "deterministic_fallback",
+      "tools_used": [
+        "query_dependency_graph",
+        "get_weather_forecast",
+        "find_nearby_sensitive_sites",
+        "get_historical_incidents"
+      ],
+      "tool_traces": [
+        {
+          "tool_name": "get_weather_forecast",
+          "result": {
+            "available": true,
+            "rain_risk_pct": 0,
+            "max_precipitation_mm": 0.3,
+            "heavy_rain_expected": false,
+            "forecast_hours_checked": 24,
+            "summary": "Next 24h max rain risk: 0% (0.3mm)"
+          }
+        },
+        {
+          "tool_name": "find_nearby_sensitive_sites",
+          "result": {
+            "available": true,
+            "sites": [
+              {
+                "id": "12350609084",
+                "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+                "type": "clinic",
+                "latitude": 19.1183809,
+                "longitude": 72.8458359,
+                "distance_m": 140.3
+              },
+              {
+                "id": "353191630",
+                "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+                "type": "clinic",
+                "latitude": 19.1183563,
+                "longitude": 72.8458471,
+                "distance_m": 140.7
+              },
+              {
+                "id": "11275619443",
+                "name": "Anuvansh Fertility & Women's Clinic",
+                "type": "clinic",
+                "latitude": 19.1179194,
+                "longitude": 72.8460756,
+                "distance_m": 154.5
+              },
+              {
+                "id": "11698463569",
+                "name": "Aakash Institute",
+                "type": "prep_school",
+                "latitude": 19.1194001,
+                "longitude": 72.8455521,
+                "distance_m": 158.5
+              },
+              {
+                "id": "7049613221",
+                "name": "Saheli Clinic",
+                "type": "clinic",
+                "latitude": 19.1200089,
+                "longitude": 72.8485844,
+                "distance_m": 200.7
+              },
+              {
+                "id": "7068429399",
+                "name": "Bses Mg Hospital (Managed By)Brahma Kumari Global Hospital and Res Center",
+                "type": "hospital",
+                "latitude": 19.119331,
+                "longitude": 72.845019,
+                "distance_m": 211.4
+              },
+              {
+                "id": "11698432789",
+                "name": "IItian's PACE - Andheri",
+                "type": "school",
+                "latitude": 19.1203044,
+                "longitude": 72.8454164,
+                "distance_m": 220.7
+              },
+              {
+                "id": "4571165089",
+                "name": "Clinic",
+                "type": "clinic",
+                "latitude": 19.120518,
+                "longitude": 72.8456246,
+                "distance_m": 222.2
+              },
+              {
+                "id": "8261417275",
+                "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+                "type": "clinic",
+                "latitude": 19.1188092,
+                "longitude": 72.8492685,
+                "distance_m": 239.3
+              },
+              {
+                "id": "7050518138",
+                "name": "Vishal X-Ray Clinic",
+                "type": "clinic",
+                "latitude": 19.1208566,
+                "longitude": 72.8457941,
+                "distance_m": 242.2
+              }
+            ],
+            "total_found": 10,
+            "closest_site": {
+              "id": "12350609084",
+              "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+              "type": "clinic",
+              "latitude": 19.1183809,
+              "longitude": 72.8458359,
+              "distance_m": 140.3
+            },
+            "summary": "Found 10 sensitive site(s) within 250m"
+          }
+        },
+        {
+          "tool_name": "get_historical_incidents",
+          "result": {
+            "available": true,
+            "prior_incidents": [],
+            "total_nearby": 0,
+            "has_repeats": false,
+            "summary": "Found 0 prior incident(s) within 180m"
+          }
+        }
+      ],
+      "agent_trace": [
+        {
+          "step": 1,
+          "type": "model_call",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Offline deterministic fallback engine active",
+          "latency_ms": 1.0,
+          "error": null,
+          "timestamp": "2026-10-04T12:09:36.467917+05:30"
+        },
+        {
+          "step": 2,
+          "type": "tool_call",
+          "tool_name": "query_dependency_graph",
+          "arguments": {
+            "issue_types": [
+              "WATER_LEAKAGE",
+              "WATERLOGGING",
+              "ROAD_DAMAGE",
+              "POTHOLE"
+            ]
+          },
+          "result_summary": "Queried dependency graph for 4 issue types",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T12:09:36.467917+05:30"
+        },
+        {
+          "step": 3,
+          "type": "tool_result",
+          "tool_name": "query_dependency_graph",
+          "arguments": null,
+          "result_summary": "Identified cascade chain: ['WATER_LEAKAGE', 'ROAD_DAMAGE', 'POTHOLE']",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T12:09:36.467917+05:30"
+        },
+        {
+          "step": 4,
+          "type": "tool_result",
+          "tool_name": "find_nearby_sensitive_sites",
+          "arguments": null,
+          "result_summary": "Found 10 sensitive site(s)",
+          "latency_ms": 1.0,
+          "error": null,
+          "timestamp": "2026-10-04T12:09:36.467917+05:30"
+        },
+        {
+          "step": 5,
+          "type": "final",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Deterministic hypothesis: Root cause analysis identifies a cascading infrastructure failure: WATER_LEAKAGE -> ROAD_DAMAGE -> P",
+          "latency_ms": 0.0,
+          "error": null,
+          "timestamp": "2026-10-04T12:09:36.467917+05:30"
+        }
+      ],
+      "reflection": {
+        "verdict": "approved",
+        "iterations": 1,
+        "issues": [],
+        "checks": [
+          {
+            "name": "causal_graph_alignment",
+            "passed": true,
+            "detail": "All links valid in civic dependency graph."
+          },
+          {
+            "name": "grounded_evidence",
+            "passed": true,
+            "detail": "Evidence items grounded in reported symptoms or sensor inputs."
+          },
+          {
+            "name": "confidence_consistency",
+            "passed": true,
+            "detail": "Confidence (0.58) is consistent with evidence breadth."
+          },
+          {
+            "name": "impact_formula_and_priority",
+            "passed": true,
+            "detail": "Impact score matches breakdown formula and priority tier thresholds."
+          },
+          {
+            "name": "sensitive_sites_proximity",
+            "passed": true,
+            "detail": "Proximity risk correctly reflects local sensitive facilities."
+          },
+          {
+            "name": "topological_department_order",
+            "passed": true,
+            "detail": "Response plan respects departmental topological execution order."
+          }
+        ]
+      },
+      "nearby_sites": [
+        {
+          "id": "12350609084",
+          "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+          "type": "clinic",
+          "latitude": 19.1183809,
+          "longitude": 72.8458359,
+          "distance_m": 140.3
+        },
+        {
+          "id": "353191630",
+          "name": "Dr Jignesh Manshibhai Gala Eye Clinic",
+          "type": "clinic",
+          "latitude": 19.1183563,
+          "longitude": 72.8458471,
+          "distance_m": 140.7
+        },
+        {
+          "id": "11275619443",
+          "name": "Anuvansh Fertility & Women's Clinic",
+          "type": "clinic",
+          "latitude": 19.1179194,
+          "longitude": 72.8460756,
+          "distance_m": 154.5
+        },
+        {
+          "id": "11698463569",
+          "name": "Aakash Institute",
+          "type": "prep_school",
+          "latitude": 19.1194001,
+          "longitude": 72.8455521,
+          "distance_m": 158.5
+        },
+        {
+          "id": "7049613221",
+          "name": "Saheli Clinic",
+          "type": "clinic",
+          "latitude": 19.1200089,
+          "longitude": 72.8485844,
+          "distance_m": 200.7
+        },
+        {
+          "id": "7068429399",
+          "name": "Bses Mg Hospital (Managed By)Brahma Kumari Global Hospital and Res Center",
+          "type": "hospital",
+          "latitude": 19.119331,
+          "longitude": 72.845019,
+          "distance_m": 211.4
+        },
+        {
+          "id": "11698432789",
+          "name": "IItian's PACE - Andheri",
+          "type": "school",
+          "latitude": 19.1203044,
+          "longitude": 72.8454164,
+          "distance_m": 220.7
+        },
+        {
+          "id": "4571165089",
+          "name": "Clinic",
+          "type": "clinic",
+          "latitude": 19.120518,
+          "longitude": 72.8456246,
+          "distance_m": 222.2
+        },
+        {
+          "id": "8261417275",
+          "name": "DR. ANUJ SINGH'S HIP & KNEE CENTRE",
+          "type": "clinic",
+          "latitude": 19.1188092,
+          "longitude": 72.8492685,
+          "distance_m": 239.3
+        },
+        {
+          "id": "7050518138",
+          "name": "Vishal X-Ray Clinic",
+          "type": "clinic",
+          "latitude": 19.1208566,
+          "longitude": 72.8457941,
+          "distance_m": 242.2
+        }
+      ]
+    },
+    {
+      "incident_id": "INC-2026-010",
+      "status": "UNDER_REVIEW",
+      "classification": "POSSIBLE_CONNECTED_INCIDENT",
+      "created_at": "2026-10-04T12:41:34.928623+05:30",
+      "updated_at": "2026-10-04T12:41:34.928642+05:30",
+      "connected_reports": [
+        "CIV-2026-1016",
+        "CIV-2026-1017"
+      ],
+      "cluster": {
+        "radius_m": 11.9,
+        "time_window_days": 7,
+        "center_lat": 19.05395,
+        "center_lon": 72.8401,
+        "report_count": 2
+      },
+      "perception_results": [
+        {
+          "report_id": "CIV-2026-1016",
+          "issue_type": "POTHOLE",
+          "severity": "HIGH",
+          "confidence": 0.92,
+          "evidence_text": "Pothole at previously repaired location. Patch material has dislodged completely. Underlying base failure visible. Repair quality was inadequate for traffic load.",
+          "image_filename": "pothole_04.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: pothole",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        },
+        {
+          "report_id": "CIV-2026-1017",
+          "issue_type": "ROAD_DAMAGE",
+          "severity": "HIGH",
+          "confidence": 0.88,
+          "evidence_text": "Extended road damage around failed pothole repair site. Surface breaking apart in 20-meter stretch. Base layer exposed. Complete resurfacing required.",
+          "image_filename": "pothole_05.jpg",
+          "visual_evidence": [
+            "Observed defect matching category: road damage",
+            "Observed severity level assessed as high",
+            "Visual validation matches known demographic seeds"
+          ]
+        }
+      ],
+      "root_cause": {
+        "hypothesis": "Root cause analysis identifies a cascading infrastructure failure: ROAD_DAMAGE -> POTHOLE. The evidence suggests that ROAD_DAMAGE triggered a chain of downstream effects through Root cause, Damaged road surface deteriorates into potholes under traffic load. This cascade pattern is consistent with 2 distinct issue types observed within a concentrated geographic area.",
+        "confidence": 0.9,
+        "chain": [
+          "ROAD_DAMAGE",
+          "POTHOLE"
+        ],
+        "disclaimer": "AI-generated civic incident hypothesis. Physical inspection recommended.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "find_nearby_sensitive_sites",
+          "get_historical_incidents"
+        ],
+        "reasoning_notes": "Fallback mode active. Evaluated 2 reports against dependency graph.",
+        "nearby_sites": []
+      },
+      "impact_score": {
+        "score": 53.0,
+        "priority": "MEDIUM",
+        "breakdown": {
+          "severity_score": 80,
+          "infrastructure_proximity": 30,
+          "people_affected": 30,
+          "duration": 50,
+          "repeat_reports": 30,
+          "secondary_risk": 70
+        },
+        "explanation": "Impact score of 53.0/100 classified as MEDIUM. Key factors: severity at 80/100, infrastructure proximity at 30/100, and secondary risk at 70/100. The cascading nature of 2 interconnected issue types over 2.1 days significantly elevates the overall impact.",
+        "tools_used": [
+          "query_dependency_graph",
+          "get_weather_forecast",
+          "find_nearby_sensitive_sites",
+          "get_historical_incidents"
+        ]
+      },
+      "response_plan": {
+        "steps": [
+          {
+            "step_number": 1,
+            "department": "ROADS_DEPT",
+            "department_name": "Roads & Infrastructure Department",
+            "action": "Address POTHOLE, ROAD_DAMAGE issues",
+            "reason": "Road repairs are wasted if underlying water/drainage issues persist",
+            "estimated_hours": 72,
+            "depends_on": [],
+            "resources": [
+              "Asphalt paving crews",
+              "Road repair machinery",
+              "Traffic management units",
+              "Barricades and signage"
+            ],
+            "issues": [
+              "POTHOLE",
+              "ROAD_DAMAGE"
+            ]
+          }
+        ],
+        "rationale": "Fallback mode active. Evaluated 2 reports against dependency graph.",
+        "approved": false,
+        "approved_by": "",
+        "approved_at": ""
+      },
+      "resolution": {},
+      "sla": {
+        "deadline": "2026-10-06T12:41:44.045134+05:30",
+        "reminders_sent": 0,
+        "escalated": false,
+        "escalation_reason": "",
+        "original_deadline": "2026-10-06T12:41:44.045134+05:30"
+      },
+      "agent_log": [],
+      "reasoning_mode": "deterministic_fallback",
+      "tools_used": [
+        "query_dependency_graph",
+        "get_weather_forecast",
+        "find_nearby_sensitive_sites",
+        "get_historical_incidents"
+      ],
+      "tool_traces": [
+        {
+          "tool_name": "get_weather_forecast",
+          "result": {
+            "available": true,
+            "rain_risk_pct": 0,
+            "max_precipitation_mm": 0.3,
+            "heavy_rain_expected": false,
+            "forecast_hours_checked": 24,
+            "summary": "Next 24h max rain risk: 0% (0.3mm)"
           }
         },
         {
@@ -1178,8 +4768,92 @@
           }
         }
       ],
+      "agent_trace": [
+        {
+          "step": 1,
+          "type": "model_call",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Offline deterministic fallback engine active",
+          "latency_ms": 1.0,
+          "error": null,
+          "timestamp": "2026-10-04T12:41:43.953742+05:30"
+        },
+        {
+          "step": 2,
+          "type": "tool_call",
+          "tool_name": "query_dependency_graph",
+          "arguments": {
+            "issue_types": [
+              "POTHOLE",
+              "ROAD_DAMAGE"
+            ]
+          },
+          "result_summary": "Queried dependency graph for 2 issue types",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T12:41:43.953742+05:30"
+        },
+        {
+          "step": 3,
+          "type": "tool_result",
+          "tool_name": "query_dependency_graph",
+          "arguments": null,
+          "result_summary": "Identified cascade chain: ['ROAD_DAMAGE', 'POTHOLE']",
+          "latency_ms": 0.5,
+          "error": null,
+          "timestamp": "2026-10-04T12:41:43.953742+05:30"
+        },
+        {
+          "step": 4,
+          "type": "final",
+          "tool_name": null,
+          "arguments": null,
+          "result_summary": "Deterministic hypothesis: Root cause analysis identifies a cascading infrastructure failure: ROAD_DAMAGE -> POTHOLE. The evide",
+          "latency_ms": 0.0,
+          "error": null,
+          "timestamp": "2026-10-04T12:41:43.953742+05:30"
+        }
+      ],
+      "reflection": {
+        "verdict": "approved",
+        "iterations": 1,
+        "issues": [],
+        "checks": [
+          {
+            "name": "causal_graph_alignment",
+            "passed": true,
+            "detail": "All links valid in civic dependency graph."
+          },
+          {
+            "name": "grounded_evidence",
+            "passed": true,
+            "detail": "Evidence items grounded in reported symptoms or sensor inputs."
+          },
+          {
+            "name": "confidence_consistency",
+            "passed": true,
+            "detail": "Confidence (0.90) is consistent with evidence breadth."
+          },
+          {
+            "name": "impact_formula_and_priority",
+            "passed": true,
+            "detail": "Impact score matches breakdown formula and priority tier thresholds."
+          },
+          {
+            "name": "sensitive_sites_proximity",
+            "passed": true,
+            "detail": "Proximity risk correctly reflects local sensitive facilities."
+          },
+          {
+            "name": "topological_department_order",
+            "passed": true,
+            "detail": "Response plan respects departmental topological execution order."
+          }
+        ]
+      },
       "nearby_sites": []
     }
   ],
-  "total": 3
+  "total": 11
 }

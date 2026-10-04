@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-10-04T11:59:53+05:30",
+  "total_cases": 20,
+  "active_provider": "mock",
+  "has_live_llm": false,
+  "modes": {
+    "deterministic_fallback": {
+      "mode": "Deterministic Fallback",
+      "status": "COMPLETED",
+      "cases_evaluated": 20,
+      "root_cause_accuracy_pct": 85.0,
+      "chain_exact_match_pct": 75.0,
+      "mean_chain_jaccard": 0.925,
+      "priority_accuracy_pct": 50.0,
+      "mean_score_mae": 13.5,
+      "topological_validity_pct": 55.0,
+      "classification_accuracy_pct": 80.0,
+      "false_connection_rate_pct": 66.7,
+      "avg_latency_ms": 4.1,
+      "avg_tool_calls": 2.7
+    },
+    "deterministic_with_critic": {
+      "mode": "Deterministic + Critic Reflection",
+      "status": "COMPLETED",
+      "cases_evaluated": 20,
+      "root_cause_accuracy_pct": 85.0,
+      "chain_exact_match_pct": 75.0,
+      "mean_chain_jaccard": 0.925,
+      "priority_accuracy_pct": 40.0,
+      "mean_score_mae": 44.5,
+      "topological_validity_pct": 100.0,
+      "classification_accuracy_pct": 80.0,
+      "false_connection_rate_pct": 66.7,
+      "avg_latency_ms": 4.9,
+      "avg_tool_calls": 2.7
+    }
+  }
+}

@@ -62,6 +62,7 @@ class VerificationResult(str, Enum):
     RESOLUTION_VERIFIED = "RESOLUTION_VERIFIED"
     LOCATION_MISMATCH = "LOCATION_MISMATCH"
     POSSIBLE_FAILED_RESOLUTION = "POSSIBLE_FAILED_RESOLUTION"
+    AWAITING_RESOLUTION_EVIDENCE = "AWAITING_RESOLUTION_EVIDENCE"
     PENDING = "PENDING"
 
 
@@ -182,6 +183,7 @@ class Resolution(BaseModel):
     verification_details: str = ""
     confidence: float = 0.0
     verified_by_agent: bool = False
+    requested_evidence: List[str] = Field(default_factory=list)
 
 
 class SLA(BaseModel):
@@ -231,6 +233,8 @@ class IncidentContext(BaseModel):
     agent_log: List[AgentLogEntry] = Field(default_factory=list)
     tools_used: List[str] = Field(default_factory=list)
     tool_traces: List[dict] = Field(default_factory=list)
+    agent_trace: List[dict] = Field(default_factory=list)
+    reflection: dict = Field(default_factory=dict)
     nearby_sites: List[dict] = Field(default_factory=list)
     scenario_id: Optional[int] = None  # For demo tracking
 

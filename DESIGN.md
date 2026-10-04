@@ -4,129 +4,175 @@
 
 ## 1. Design Philosophy & Visual Identity
 
-OmniCivic AI is engineered to deliver an **ultra-premium, command-center aesthetic** suitable for high-stakes municipal operations. The UI blends sleek dark-mode glassmorphism, dynamic glowing status indicators, vibrant categorical badges, and real-time micro-animations to instantly convey complex multi-agent intelligence.
+OmniCivic AI is crafted as an **ultra-premium municipal command center** engineered for high-stakes urban infrastructure operations. The user interface harmonizes modern glassmorphism, dynamic data visualizations, color-coded priority cues, interactive spatial GIS mapping, and subtle micro-animations to instantly transform raw civic noise into actionable intelligence.
+
+The system features seamless **Dark & Light Mode** support powered by CSS custom properties and persistent theme state stored in browser `localStorage`.
 
 ---
 
 ## 2. Color Palette & Design Tokens
 
-### 2.1 Dark Mode Theme Tokens
+### 2.1 Dark & Light Theme Variables (`index.css`)
 
 ```css
 :root {
-  /* Surface & Background Colors */
-  --bg-dark: #0b0f19;
-  --bg-card: rgba(17, 24, 39, 0.85);
-  --bg-card-hover: rgba(31, 41, 55, 0.9);
-  --border-glass: rgba(255, 255, 255, 0.1);
-  --border-glass-glow: rgba(59, 130, 246, 0.3);
+  /* Dark Theme Tokens (Default) */
+  --bg-primary: #0A0D14;
+  --bg-secondary: #0F1420;
+  --bg-tertiary: #161D2E;
+  --bg-card: rgba(15, 20, 32, 0.88);
+  --border-primary: #1E283D;
+  --border-secondary: #2A3650;
+  --border-glass-glow: rgba(59, 130, 246, 0.35);
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-tertiary: #64748B;
 
   /* Brand Accents */
-  --accent-blue: #3b82f6;
-  --accent-cyan: #06b6d4;
-  --accent-indigo: #6366f1;
+  --accent-blue: #2563EB;
+  --accent-blue-hover: #1D4ED8;
+  --accent-teal: #0D9488;
+  --accent-indigo: #6366F1;
 
-  /* Priority & Status Colors */
-  --status-critical: #ef4444; /* Glowing Red */
-  --status-high: #f97316;     /* Vivid Orange */
-  --status-medium: #eab308;   /* Amber Yellow */
-  --status-low: #10b981;      /* Emerald Green */
-  --status-resolved: #10b981; /* Emerald Green */
-  --status-escalated: #a855f7;/* Imperial Purple */
+  /* Priority & Status Signals */
+  --status-critical: #EF4444;      /* Glowing Red - Emergency / Immediate Hazard */
+  --status-critical-bg: rgba(239, 68, 68, 0.12);
+  --status-high: #F59E0B;          /* Vivid Amber - High Priority / Attention */
+  --status-high-bg: rgba(245, 158, 11, 0.12);
+  --status-medium: #3B82F6;        /* Cobalt Blue - Standard Queue */
+  --status-medium-bg: rgba(59, 130, 246, 0.12);
+  --status-low: #64748B;           /* Slate - Minor / Routine */
+  --status-low-bg: rgba(100, 116, 139, 0.12);
+  --status-resolved: #10B981;      /* Emerald Green - Verified Closure */
+  --status-resolved-bg: rgba(16, 185, 129, 0.12);
+  --status-escalated: #A855F7;     /* Purple Pulse - SLA Breach */
+  --status-escalated-bg: rgba(168, 85, 247, 0.12);
+}
 
-  /* Typography Colors */
-  --text-primary: #f9fafb;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
+[data-theme="light"] {
+  /* Light Theme Tokens */
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F1F5F9;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --border-primary: #E2E8F0;
+  --border-secondary: #CBD5E1;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #94A3B8;
 }
 ```
 
 ---
 
-## 3. Component Architecture & Visual Layout
+## 3. Application Layout Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                            Header / Navigation                              │
+│ Header: [Logo] OmniCivic AI | [Dashboard] [Citizen Portal] [AI Settings]  │
+│         [● AI Engine Operational] [☀️/🌙 Theme Toggle]                      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Aggregate Stats Row: Total Reports | Incidents | Critical | Resolved | SLA │
 ├───────────────────────────────┬─────────────────────────────────────────────┤
-│   Citizen Reports Feed (Left) │           Active Incident Display           │
-│  ┌─────────────────────────┐  │  ┌───────────────────────────────────────┐  │
-│  │ Report Card CIV-1001    │  │  │ Agent Pipeline Progress Indicator     │  │
-│  │ [Run Agentic AI Button] │  │  └───────────────────────────────────────┘  │
-│  └─────────────────────────┘  │  ┌───────────────────────────────────────┐  │
-│  ┌─────────────────────────┐  │  │ Root Cause Card (Hypothesis)         │  │
-│  │ Report Card CIV-1002    │  │  └───────────────────────────────────────┘  │
-│  └─────────────────────────┘  │  ┌───────────────────┬───────────────────┐  │
-│                               │  │ Civic Impact      │ Sequenced Plan    │  │
-│                               │  │ Priority Gauge    │ (Approve Button)  │  │
-│                               │  └───────────────────┴───────────────────┘  │
-│                               │  ┌───────────────────────────────────────┐  │
-│                               │  │ Verification & Anti-Fraud Card        │  │
-│                               │  └───────────────────────────────────────┘  │
+│ Spatial Intelligence & Feeds  │ Active Incident Workspace                   │
+│ [List View | Map View Toggle] │ ┌─────────────────────────────────────────┐ │
+│ ┌───────────────────────────┐ │ │ Multi-Agent Reasoning Pipeline (7-Stage)│ │
+│ │ • Leaflet Spatial Map OR  │ │ └─────────────────────────────────────────┘ │
+│ │ • Incident Intelligence   │ │ ┌─────────────────────────────────────────┐ │
+│ │   Feed Cards              │ │ │ Geo-Temporal Cluster & Evidence Gallery │ │
+│ │ • Citizen Reports Feed    │ │ └─────────────────────────────────────────┘ │
+│ │   [Run Agentic AI]        │ │ ┌───────────────────┬─────────────────────┐ │
+│ └───────────────────────────┘ │ │ Civic Impact      │ Root Cause Card     │ │
+│                               │ │ 0-100 Gauge       │ Hypothesis & Tools  │ │
+│                               │ └───────────────────┴─────────────────────┘ │
+│                               │ ┌───────────────────┬─────────────────────┐ │
+│                               │ │ Sequenced Plan    │ Resolution Panel    │ │
+│                               │ │ [Approve Button]  │ Verification Beat   │ │
+│                               │ └───────────────────┴─────────────────────┘ │
 └───────────────────────────────┴─────────────────────────────────────────────┘
 ```
 
 ---
 
-## 4. Key UI Components & Micro-Interactions
+## 4. Key UI Components & Interactions
 
-### 4.1 Agent Pipeline Tracker (`AgentPipeline.tsx`)
-- Displays all 7 stages horizontally: `Perception` $\to$ `Clustering` $\to$ `Detection` $\to$ `Root Cause` $\to$ `Impact` $\to$ `Response` $\to$ `Filing`.
-- Active stage animates with a pulsing blue glow ring and spinner icon.
-- Completed stages transition smoothly to an emerald green checkmark badge (`✓`).
+### 4.1 Navigation Bar & Operational Indicator
+- Sticky glassmorphic top navigation with route tabs: **Operations Dashboard** (`/`), **Citizen Portal** (`/report`), and **AI Settings** (`/settings`).
+- Live system status pill (`AI Engine Operational`) featuring a pulsing emerald beacon.
+- Theme switch toggle smoothly toggling between dark command center and crisp daylight mode.
 
-### 4.2 Civic Impact Gauge (`ImpactGauge.tsx`)
-- Renders a semi-circular gauge displaying the 0-100 score.
-- Dynamic color transitions based on priority score ($S \ge 80$ Red, $S \ge 65$ Orange, $S \ge 45$ Yellow, $S < 45$ Green).
-- Interactive expander reveals the 6-factor weight breakdown table.
+### 4.2 Spatial Map View (`MapView.tsx`)
+- Powered by **Leaflet** & **React-Leaflet** with theme-responsive tile layers:
+  - *Dark Mode:* CartoDB Dark Matter (`https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png`)
+  - *Light Mode:* CartoDB Positron (`https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png`)
+- **Cluster Radius Circles:** Translucent circular overlays displaying the spatial bounding radius (e.g. 150m) with glowing boundary strokes.
+- **Custom HTML DivIcon Pins:** Color-coded pins matching incident priority with subtle bounce on selection.
+- **Sensitive Sites Overlay:** Displays nearby schools, hospitals, and clinics discovered via OpenStreetMap Overpass with distance badges.
+- **Auto-Recenter & Tile Bounds Invalidation:** Smoothly pans to selected incidents and recalculates bounding dimensions upon tab changes.
 
-### 4.3 Root Cause Card (`RootCauseCard.tsx`)
-- Features a dark glassmorphic container with a subtle indigo border glow.
-- Displays the causal chain (e.g., `Water Leak` $\to$ `Road Damage` $\to$ `Pothole` $\to$ `Waterlogging`) connected with arrow badges.
-- Prominently displays the safety disclaimer badge:
-  > *"AI-generated civic incident hypothesis. Physical inspection recommended."*
+### 4.3 Multi-Agent Reasoning Pipeline (`AgentPipeline.tsx`)
+- Visualizes 7 core pipeline stages: `Perception` $\to$ `Clustering` $\to$ `Detection` $\to$ `Root Cause` $\to$ `Impact` $\to$ `Response` $\to$ `Filing`.
+- Active executing stage highlights with a cobalt glow ring and spinning loader.
+- Completed stages reveal emerald checkmark badges with stage output previews and confidence ratings.
+- Integrated progress percentage bar transitioning from 0% to 100%.
 
-### 4.4 Response Plan Card (`ResponsePlanCard.tsx`)
-- Displays numbered execution steps with clear department badges (`WATER_BOARD`, `ROADS_DEPT`, `STORM_WATER_DRAINAGE`).
-- Shows step dependencies (e.g., *"Step 2 depends on Step 1 completion"*).
-- Includes the primary **Approve Multi-Department Plan** CTA button with hover elevation.
+### 4.4 Root Cause Investigation Card (`RootCauseCard.tsx`)
+- Displays reasoning execution mode badge: **AI Agentic** (emerald badge) vs **Deterministic Fallback** (amber badge).
+- **Tool Badges:** Interactive tags indicating tools invoked during analysis (`🌧️ Weather checked`, `🏫 Nearby sites checked`, `📊 Dependency graph`, `📜 Historical incidents`, `📏 Distance verified`).
+- **Interactive Causal Chain:** Visual node sequence highlighting the root origin in glowing crimson (e.g., `WATER_LEAKAGE` $\to$ `ROAD_DAMAGE` $\to$ `POTHOLE` $\to$ `WATERLOGGING`).
+- Mandatory civic hypothesis safety disclaimer with alert icon.
 
-### 4.5 Verification Card (`VerificationCard.tsx`)
-- Displays side-by-side "Before" and "After" photos with photo comparison overlays.
-- Displays verification state badges:
-  - `LOCATION_MISMATCH` (Red alert badge with distance indicator e.g. `142m > 100m limit`).
-  - `RESOLUTION_VERIFIED` (Green success badge with confidence score e.g. `95%`).
+### 4.5 Civic Impact Priority Gauge (`ImpactGauge.tsx`)
+- Semi-circular SVG gauge with smooth needle rotation based on score $S \in [0, 100]$.
+- Priority badge transitions dynamically between `CRITICAL` ($S \ge 80$), `HIGH` ($S \ge 65$), `MEDIUM` ($S \ge 45$), and `LOW` ($S < 45$).
+- Expandable 6-factor weight breakdown detailing severity, proximity, population affected, duration, repeat complaints, and secondary risks.
+
+### 4.6 Multi-Department Response Plan (`ResponsePlan.tsx`)
+- Sequenced work order cards displaying assigned municipal department, estimated repair hours, and prerequisite dependencies.
+- Prevents paving over un-repaired underground leaks through topological validation.
+- Prominent **Approve Multi-Department Plan** CTA button transitioning incident status to `ACTION_IN_PROGRESS`.
+
+### 4.7 Resolution Verification & Anti-Fraud Panel (`ResolutionPanel.tsx`)
+- Designed for rehearsed demonstrations with 1-click presets:
+  - **Attempt 1: Mismatched Photo** (`resolved_leak_wrong.jpg` at distant GPS): Triggers red `LOCATION_MISMATCH` alert banner ($>100\text{m}$).
+  - **Attempt 2: Correct Evidence** (`resolved_leak_correct.jpg` at Chakala Junction): Triggers emerald `RESOLUTION_VERIFIED` banner and resolves ticket.
+
+### 4.8 AI Settings & Multi-Provider Manager (`Settings.tsx`)
+- Dedicated interface for configuring LLM providers: **Groq**, **OpenAI**, **Anthropic Claude**, **Google Gemini**, **Hugging Face**, **OpenRouter**, **Ollama**, and **Deterministic Simulation**.
+- 1-click **Authorize Dev Token** button to authenticate with the backend operator token.
+- Provider cards showing model selection, tool capability badges (`✓ Tool Calling` vs `⚠️ Limited Tool Support`), temperature slider, and custom base URL inputs.
+- In-flight **Test Connection** button executing a live 10-second ping test with round-trip latency display in milliseconds.
 
 ---
 
-## 5. Micro-Animations & CSS Glassmorphism Rules
+## 5. Micro-Animations & Glassmorphism Styling
 
-1. **Glassmorphism Backdrop Filter:**
-   ```css
-   background: var(--bg-card);
-   backdrop-filter: blur(12px);
-   border: 1px solid var(--border-glass);
-   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-   ```
+```css
+/* Glassmorphism Surface Container */
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-2. **Hover Elevation & Border Glow:**
-   ```css
-   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+.card:hover {
+  border-color: var(--border-glass-glow);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.12);
+}
 
-   .card:hover {
-     transform: translateY(-2px);
-     border-color: var(--border-glass-glow);
-     box-shadow: 0 12px 40px 0 rgba(59, 130, 246, 0.15);
-   }
-   ```
+/* Pulsing Status Badges */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.15); }
+}
 
-3. **Status Pulse Animation:**
-   ```css
-   @keyframes pulse-glow {
-     0%, 100% { opacity: 1; transform: scale(1); }
-     50% { opacity: 0.6; transform: scale(1.05); }
-   }
-   .status-pulse {
-     animation: pulse-glow 2s infinite ease-in-out;
-   }
-   ```
+.animate-pulse {
+  animation: pulse-dot 1.8s infinite ease-in-out;
+}
+```
+

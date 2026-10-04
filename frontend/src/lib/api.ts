@@ -73,13 +73,47 @@ export interface SensitiveSite {
   distance_m?: number;
 }
 
+export interface AgentTraceStep {
+  step: number;
+  type: 'model_call' | 'tool_call' | 'tool_result' | 'final' | 'deterministic' | 'single_turn' | string;
+  tool?: string;
+  tool_name?: string;
+  args?: Record<string, unknown>;
+  arguments?: Record<string, unknown>;
+  result?: Record<string, unknown> | string;
+  result_summary?: string;
+  latency_ms?: number;
+  summary?: string;
+  error?: string | null;
+  timestamp?: string;
+}
+
+export interface ReflectionCheck {
+  name: string;
+  passed: boolean;
+  detail: string;
+}
+
+export interface ReflectionMetadata {
+  verdict: 'approved' | 'revised' | 'unresolved' | string;
+  iterations: number;
+  issues?: string[];
+  checks: ReflectionCheck[];
+  pass_count?: number;
+  fail_count?: number;
+  revised?: boolean;
+  revisions_applied?: string[];
+}
+
 export interface IncidentContext {
   incident_id: string;
   status: string;
   classification: string;
-  reasoning_mode?: string;
+  reasoning_mode?: 'agentic_multi_turn' | 'single_turn_enriched' | 'deterministic_fallback' | string;
   tools_used?: string[];
   tool_traces?: Array<{ tool_name: string; args: Record<string, unknown>; result: Record<string, unknown>; latency_ms: number }>;
+  agent_trace?: AgentTraceStep[];
+  reflection?: ReflectionMetadata;
   nearby_sites?: SensitiveSite[];
   created_at: string;
   updated_at: string;
@@ -122,6 +156,7 @@ export interface IncidentContext {
     verification_result: string;
     verification_details: string;
     confidence: number;
+    requested_evidence?: string[];
   };
   sla: {
     deadline: string;
@@ -351,5 +386,24 @@ export const api = {
   getScenarios: () => fetchJson('/dev/scenarios'),
   getSeedImages: () => fetchJson('/dev/seed-images'),
   getPerceptionLookup: () => fetchJson('/dev/perception-lookup'),
+
+  // Geocoding Proxy (OSM Nominatim)
+  geocode: (q: string): Promise<GeocodeResponse> =>
+    fetchJson(`/geocode?q=${encodeURIComponent(q)}`),
 };
+
+export interface GeocodeResult {
+  display_name: string;
+  latitude: number;
+  longitude: number;
+  type: string;
+  importance: number;
+  ward?: string;
+}
+
+export interface GeocodeResponse {
+  query: string;
+  results: GeocodeResult[];
+  count: number;
+}
 

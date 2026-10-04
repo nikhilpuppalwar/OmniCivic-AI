@@ -1,4 +1,6 @@
-import { ShieldAlert } from 'lucide-react';
+import { useState } from 'react';
+import { ShieldAlert, CheckCircle2, AlertTriangle, ChevronDown, ChevronRight, Sparkles } from 'lucide-react';
+import type { ReflectionMetadata } from '../lib/api';
 
 interface RootCauseCardProps {
   hypothesis: string;
@@ -9,6 +11,7 @@ interface RootCauseCardProps {
   toolsUsed?: string[];
   reasoningMode?: string;
   reasoningNotes?: string;
+  reflection?: ReflectionMetadata;
 }
 
 export default function RootCauseCard({
@@ -18,28 +21,46 @@ export default function RootCauseCard({
   chain,
   disclaimer,
   toolsUsed = [],
-  reasoningMode = 'agentic',
+  reasoningMode = 'agentic_multi_turn',
   reasoningNotes = '',
+  reflection,
 }: RootCauseCardProps) {
+  const [showReflectionDetails, setShowReflectionDetails] = useState(false);
+
   const getToolBadge = (tool: string) => {
     switch (tool) {
       case 'get_weather_forecast':
-        return { label: '🌧️ Weather checked', bg: 'rgba(59, 130, 246, 0.15)', text: '#60a5fa' };
+        return { label: '🌧️ Weather forecast', bg: 'rgba(59, 130, 246, 0.15)', text: '#60a5fa' };
       case 'find_nearby_sensitive_sites':
-        return { label: '🏫 Nearby sites checked', bg: 'rgba(16, 185, 129, 0.15)', text: '#34d399' };
+        return { label: '🏫 Nearby sensitive sites', bg: 'rgba(16, 185, 129, 0.15)', text: '#34d399' };
       case 'query_dependency_graph':
         return { label: '📊 Dependency graph', bg: 'rgba(139, 92, 246, 0.15)', text: '#a78bfa' };
       case 'get_historical_incidents':
         return { label: '📜 Historical incidents', bg: 'rgba(245, 158, 11, 0.15)', text: '#fbbf24' };
       case 'compute_distance':
-        return { label: '📏 Distance verified', bg: 'rgba(236, 72, 153, 0.15)', text: '#f472b6' };
+        return { label: '📏 Distance verification', bg: 'rgba(236, 72, 153, 0.15)', text: '#f472b6' };
       default:
-        return { label: `🛠️ ${tool}`, bg: 'rgba(107, 114, 128, 0.15)', text: '#9ca3af' };
+        return { label: `🛠️ ${tool.replace(/_/g, ' ')}`, bg: 'rgba(107, 114, 128, 0.15)', text: '#9ca3af' };
     }
   };
 
+  const getModeBadge = (mode?: string) => {
+    switch (mode) {
+      case 'agentic_multi_turn':
+        return { label: 'Autonomous Agentic', bg: 'rgba(16, 185, 129, 0.18)', text: '#10b981', border: 'rgba(16, 185, 129, 0.4)' };
+      case 'single_turn_enriched':
+        return { label: 'Enriched Prompt', bg: 'rgba(59, 130, 246, 0.18)', text: '#60a5fa', border: 'rgba(59, 130, 246, 0.4)' };
+      case 'deterministic_fallback':
+      default:
+        return { label: 'Deterministic Fallback', bg: 'rgba(245, 158, 11, 0.18)', text: '#fbbf24', border: 'rgba(245, 158, 11, 0.4)' };
+    }
+  };
+
+  const modeBadge = getModeBadge(reasoningMode);
+
   return (
     <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+      {/* Header with Title, Mode Badge, and Confidence */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <h3 style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-primary)' }}>
@@ -47,15 +68,16 @@ export default function RootCauseCard({
           </h3>
           <span style={{
             fontSize: 9,
-            padding: '2px 6px',
+            padding: '2px 7px',
             borderRadius: 4,
-            fontWeight: 600,
+            fontWeight: 700,
             textTransform: 'uppercase',
-            background: reasoningMode === 'agentic' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(245, 158, 11, 0.2)',
-            color: reasoningMode === 'agentic' ? 'var(--status-resolved)' : '#fbbf24',
-            border: `1px solid ${reasoningMode === 'agentic' ? 'rgba(16, 185, 129, 0.4)' : 'rgba(245, 158, 11, 0.4)'}`,
+            letterSpacing: '0.03em',
+            background: modeBadge.bg,
+            color: modeBadge.text,
+            border: `1px solid ${modeBadge.border}`,
           }}>
-            {reasoningMode === 'agentic' ? 'AI Agentic' : 'Deterministic Fallback'}
+            {modeBadge.label}
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -70,10 +92,10 @@ export default function RootCauseCard({
         </div>
       </div>
 
-      {/* Tool Badges */}
+      {/* Dynamic Tool Badges (only tools actually invoked) */}
       {toolsUsed.length > 0 && (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 10 }}>
-          {toolsUsed.map((tool, idx) => {
+          {Array.from(new Set(toolsUsed)).map((tool, idx) => {
             const badge = getToolBadge(tool);
             return (
               <span key={idx} style={{
@@ -90,7 +112,6 @@ export default function RootCauseCard({
           })}
         </div>
       )}
-
 
       {/* Causal Chain Visualization */}
       <div style={{
@@ -133,7 +154,6 @@ export default function RootCauseCard({
         ))}
       </div>
 
-
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12 }}>
         <div>
           <span style={{ fontSize: 11, color: 'var(--text-secondary)', fontWeight: 600, display: 'block', marginBottom: 4 }}>
@@ -165,6 +185,99 @@ export default function RootCauseCard({
           </div>
         )}
       </div>
+
+      {/* Critic / Reflection Section */}
+      {reflection && (
+        <div style={{
+          marginTop: 12,
+          padding: '8px 12px',
+          background: 'var(--bg-primary)',
+          borderRadius: 6,
+          border: '1px solid var(--border-primary)',
+        }}>
+          <div
+            onClick={() => setShowReflectionDetails(!showReflectionDetails)}
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              cursor: 'pointer',
+              userSelect: 'none',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <Sparkles size={13} color="var(--accent-blue)" />
+              <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--text-primary)' }}>
+                Critic Self-Reflection
+              </span>
+              <span style={{
+                fontSize: 9,
+                padding: '1px 6px',
+                borderRadius: 4,
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                background: reflection.verdict === 'approved' ? 'rgba(16, 185, 129, 0.15)' :
+                            reflection.verdict === 'revised' ? 'rgba(59, 130, 246, 0.15)' : 'rgba(239, 68, 68, 0.15)',
+                color: reflection.verdict === 'approved' ? '#10b981' :
+                       reflection.verdict === 'revised' ? '#60a5fa' : '#ef4444',
+                border: `1px solid ${reflection.verdict === 'approved' ? 'rgba(16, 185, 129, 0.3)' :
+                                      reflection.verdict === 'revised' ? 'rgba(59, 130, 246, 0.3)' : 'rgba(239, 68, 68, 0.3)'}`,
+              }}>
+                {reflection.verdict}
+              </span>
+              <span style={{ fontSize: 10, color: 'var(--text-tertiary)' }}>
+                ({reflection.iterations || 1} pass{(reflection.iterations || 1) > 1 ? 'es' : ''})
+              </span>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ fontSize: 10, color: 'var(--text-tertiary)' }}>
+                {reflection.checks ? `${reflection.checks.filter(c => c.passed).length}/${reflection.checks.length} checks passed` : ''}
+              </span>
+              {showReflectionDetails ? <ChevronDown size={14} color="var(--text-tertiary)" /> : <ChevronRight size={14} color="var(--text-tertiary)" />}
+            </div>
+          </div>
+
+          {/* Revisions alert if any were applied */}
+          {reflection.revisions_applied && reflection.revisions_applied.length > 0 && (
+            <div style={{
+              marginTop: 6,
+              fontSize: 10,
+              color: '#60a5fa',
+              background: 'rgba(59, 130, 246, 0.08)',
+              padding: '4px 8px',
+              borderRadius: 4,
+              border: '1px dashed rgba(59, 130, 246, 0.3)'
+            }}>
+              <strong>Revisions applied:</strong> {reflection.revisions_applied.join('; ')}
+            </div>
+          )}
+
+          {/* Collapsible Checks detail */}
+          {showReflectionDetails && reflection.checks && reflection.checks.length > 0 && (
+            <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              {reflection.checks.map((check, idx) => (
+                <div key={idx} style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 6,
+                  fontSize: 10,
+                  color: check.passed ? 'var(--text-secondary)' : '#ef4444',
+                }}>
+                  {check.passed ? (
+                    <CheckCircle2 size={12} color="#10b981" style={{ flexShrink: 0, marginTop: 1 }} />
+                  ) : (
+                    <AlertTriangle size={12} color="#ef4444" style={{ flexShrink: 0, marginTop: 1 }} />
+                  )}
+                  <span>
+                    <strong>{check.name}:</strong> {check.detail}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
       {reasoningNotes && (
         <div style={{
@@ -201,4 +314,3 @@ export default function RootCauseCard({
     </div>
   );
 }
-

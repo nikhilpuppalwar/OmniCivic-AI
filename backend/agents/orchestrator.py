@@ -217,6 +217,7 @@ async def run_full_pipeline(report: Dict[str, Any]) -> Dict[str, Any]:
         primary_report=report,
         cluster_reports=cluster["reports"],
         cluster_type=detection_result["classification"],
+        perception_results=all_perception_results,
     )
 
     reasoning_mode = reasoning_output.get("reasoning_mode", "deterministic_fallback")
@@ -231,6 +232,8 @@ async def run_full_pipeline(report: Dict[str, Any]) -> Dict[str, Any]:
     incident["reasoning_mode"] = reasoning_mode
     incident["tools_used"] = tools_used
     incident["tool_traces"] = tool_traces
+    incident["agent_trace"] = reasoning_output.get("agent_trace", [])
+    incident["reflection"] = reasoning_output.get("reflection", {})
 
     nearby_sites = reasoning_output.get("nearby_sites") or rc_data.get("nearby_sites", [])
 
@@ -285,9 +288,29 @@ async def run_full_pipeline(report: Dict[str, Any]) -> Dict[str, Any]:
             "disclaimer": rc_data.get("disclaimer", ""),
             "reasoning_mode": reasoning_mode,
             "tools_used": tools_used,
+            "reflection": incident["reflection"],
+            "agent_trace": incident["agent_trace"],
         },
     }
     pipeline_result["agent_logs"].append(rc_agent_log)
+
+    # Record critic log if reflection occurred
+    if incident["reflection"]:
+        refl = incident["reflection"]
+        critic_agent_log = {
+            "agent": "Critic / Reflection Agent",
+            "timestamp": _now_ist(),
+            "message": f"Evaluated hypothesis & plan. Verdict: {refl.get('verdict', 'approved').upper()} in {refl.get('iterations', 1)} iteration(s).",
+            "decision": f"CRITIC_{refl.get('verdict', 'approved').upper()}",
+            "evidence_used": [
+                f"Issues flagged: {len(refl.get('issues', []))}",
+                f"Checks passed: {sum(1 for c in refl.get('checks', []) if c.get('passed'))}/{len(refl.get('checks', []))}"
+            ],
+            "confidence": rc_data.get("confidence", 0.85),
+            "recommended_action": "Approved for response dispatch" if refl.get("verdict") != "unresolved" else "Manual supervision recommended due to unresolved consistency flags",
+        }
+        _append_agent_log(critic_agent_log)
+        pipeline_result["agent_logs"].append(critic_agent_log)
 
     impact_agent_log = {
         "agent": "Civic Impact Agent",

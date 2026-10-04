@@ -1,6 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 import { api, API_BASE } from '../lib/api';
-import { Landmark, FilePlus, ClipboardCheck, ArrowRight, UploadCloud, Compass, MapPin, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import type { GeocodeResult } from '../lib/api';
+import { 
+  Landmark, 
+  FilePlus, 
+  ClipboardCheck, 
+  ArrowRight, 
+  UploadCloud, 
+  Compass, 
+  MapPin, 
+  AlertTriangle, 
+  CheckCircle2,
+  Search,
+  X,
+  Loader2
+} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import L from 'leaflet';
 
@@ -31,6 +45,14 @@ export default function CitizenReport() {
   const [latitude, setLatitude] = useState<string>('');
   const [longitude, setLongitude] = useState<string>('');
   const [locationStatus, setLocationStatus] = useState<LocationStatus>('idle');
+
+  // Address Search & Geocoding States (Task 8: OSM Nominatim Proxy)
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchResults, setSearchResults] = useState<GeocodeResult[]>([]);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [searchError, setSearchError] = useState<string | null>(null);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
   
   const mapRef = useRef<any>(null);
   const markerRef = useRef<any>(null);
@@ -99,60 +121,137 @@ export default function CitizenReport() {
     }).catch(console.error);
   }, []);
 
-  // Synchronize Leaflet map with coordinate states
+  // Debounced Nominatim Geocoding Search (>= 500ms debounce)
   useEffect(() => {
-    const latVal = parseFloat(latitude);
-
-    const lonVal = parseFloat(longitude);
-
-    if (isNaN(latVal) || isNaN(lonVal)) {
-      // If coordinates are cleared, remove the map
-      if (mapRef.current) {
-        mapRef.current.remove();
-        mapRef.current = null;
-        markerRef.current = null;
-      }
+    if (!searchQuery || searchQuery.trim().length < 2) {
+      setSearchResults([]);
+      setIsSearching(false);
+      setSearchError(null);
       return;
     }
 
+    setIsSearching(true);
+    setSearchError(null);
+    const timer = setTimeout(async () => {
+      try {
+        const res = await api.geocode(searchQuery.trim());
+        const items = res.results || [];
+        setSearchResults(items);
+        setShowDropdown(true);
+        if (items.length === 0) {
+          setSearchError('No matching address found. Try a broader location or click the map directly.');
+        }
+      } catch (err: any) {
+        console.warn('Geocoding service error:', err);
+        setSearchError('Address search service is unreachable. You can use GPS or tap the map directly.');
+        setSearchResults([]);
+      } finally {
+        setIsSearching(false);
+      }
+    }, 550);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
+
+  // Click outside to dismiss search suggestions
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
+  }, []);
+
+  const handleSelectAddress = (item: GeocodeResult) => {
+    const lat = item.latitude.toFixed(6);
+    const lon = item.longitude.toFixed(6);
+    setLatitude(lat);
+    setLongitude(lon);
+    setLocationName(item.display_name);
+    setSearchQuery(item.display_name.split(',')[0]);
+    setShowDropdown(false);
+    setLocationStatus('success');
+  };
+
+  // Synchronize Leaflet map with coordinate states & interactive pin placement
+  useEffect(() => {
     const container = document.getElementById('report-map');
     if (!container) return;
 
-    // Use a premium looking custom circle marker
+    const latVal = parseFloat(latitude);
+    const lonVal = parseFloat(longitude);
+    const hasValidCoords = !isNaN(latVal) && !isNaN(lonVal);
+
+    // Default to Mumbai center if no coordinates selected yet
+    const centerLat = hasValidCoords ? latVal : 19.0760;
+    const centerLon = hasValidCoords ? lonVal : 72.8777;
+    const zoomLevel = hasValidCoords ? 15 : 12;
+
     const customIcon = L.divIcon({
       html: `<div style="
         background-color: var(--accent-blue, #2563eb); 
-        width: 14px; 
-        height: 14px; 
+        width: 16px; 
+        height: 16px; 
         border-radius: 50%; 
         border: 2px solid white; 
-        box-shadow: 0 0 6px rgba(0,0,0,0.3);
+        box-shadow: 0 0 8px rgba(37,99,235,0.6);
+        cursor: grab;
       "></div>`,
       className: 'custom-gps-marker',
-      iconSize: [14, 14],
-      iconAnchor: [7, 7]
+      iconSize: [16, 16],
+      iconAnchor: [8, 8]
     });
 
     if (!mapRef.current) {
-      mapRef.current = L.map('report-map', {
+      const map = L.map('report-map', {
         zoomControl: true,
-      }).setView([latVal, lonVal], 15);
+      }).setView([centerLat, centerLon], zoomLevel);
 
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap &copy; CARTO'
-      }).addTo(mapRef.current);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19,
+      }).addTo(map);
 
+      // Interactive Click-to-Pin on map
+      map.on('click', (e: L.LeafletMouseEvent) => {
+        const clickLat = e.latlng.lat.toFixed(6);
+        const clickLon = e.latlng.lng.toFixed(6);
+        setLatitude(clickLat);
+        setLongitude(clickLon);
+        setLocationStatus('success');
+        setLocationName(`Pinned Location (${e.latlng.lat.toFixed(4)}, ${e.latlng.lng.toFixed(4)})`);
+      });
 
-      markerRef.current = L.marker([latVal, lonVal], { icon: customIcon }).addTo(mapRef.current);
+      mapRef.current = map;
     } else {
-      mapRef.current.setView([latVal, lonVal], 15);
+      mapRef.current.setView([centerLat, centerLon], zoomLevel);
+      setTimeout(() => {
+        if (mapRef.current) mapRef.current.invalidateSize();
+      }, 100);
+    }
+
+    if (hasValidCoords) {
       if (markerRef.current) {
         markerRef.current.setLatLng([latVal, lonVal]);
       } else {
-        markerRef.current = L.marker([latVal, lonVal], { icon: customIcon }).addTo(mapRef.current);
+        const marker = L.marker([latVal, lonVal], { icon: customIcon, draggable: true }).addTo(mapRef.current);
+        marker.on('dragend', (e: any) => {
+          const pos = e.target.getLatLng();
+          setLatitude(pos.lat.toFixed(6));
+          setLongitude(pos.lng.toFixed(6));
+          setLocationStatus('success');
+        });
+        markerRef.current = marker;
+      }
+    } else {
+      if (markerRef.current) {
+        markerRef.current.remove();
+        markerRef.current = null;
       }
     }
-  }, [latitude, longitude]);
+  }, [latitude, longitude, inputMode]);
 
   // Cleanup map on component unmount
   useEffect(() => {
@@ -539,84 +638,178 @@ export default function CitizenReport() {
               <h3 style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-secondary)' }}>Report Location</h3>
 
               {inputMode === 'UPLOAD' ? (
-                /* Auto-detect location for Upload Mode */
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                  {locationStatus === 'idle' && (
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10, padding: '12px 0' }}>
-                      <div style={{ fontSize: 12, color: 'var(--text-tertiary)', textAlign: 'center' }}>
-                        Tap below to automatically detect your current location
-                      </div>
-                      <button
-                        type="button"
-                        className="btn btn-secondary"
-                        onClick={handleGetLocation}
-                        style={{ fontSize: 11, padding: '8px 16px', gap: 6 }}
-                      >
-                        <Compass size={14} />
-                        Use My Current Location
-                      </button>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  {/* Address Search Bar (OpenStreetMap Nominatim via Backend Proxy) */}
+                  <div ref={searchContainerRef} style={{ position: 'relative', width: '100%' }}>
+                    <label style={{ display: 'block', fontSize: 11, color: 'var(--text-secondary)', marginBottom: 4 }}>
+                      Search Address or Landmark (OpenStreetMap Nominatim)
+                    </label>
+                    <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+                      <Search size={14} color="var(--text-tertiary)" style={{ position: 'absolute', left: 10, pointerEvents: 'none' }} />
+                      <input
+                        type="text"
+                        className="input"
+                        value={searchQuery}
+                        onChange={(e) => {
+                          setSearchQuery(e.target.value);
+                          setShowDropdown(true);
+                        }}
+                        onFocus={() => {
+                          if (searchResults.length > 0) setShowDropdown(true);
+                        }}
+                        placeholder="Search street, area or landmark (e.g. Chakala, Bandra West, Dadar)..."
+                        style={{ paddingLeft: 32, paddingRight: 32, fontSize: 12 }}
+                      />
+                      {isSearching && (
+                        <Loader2 size={14} color="var(--accent-blue)" className="animate-spin" style={{ position: 'absolute', right: 10 }} />
+                      )}
+                      {!isSearching && searchQuery && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setSearchQuery('');
+                            setSearchResults([]);
+                            setShowDropdown(false);
+                            setSearchError(null);
+                          }}
+                          style={{
+                            position: 'absolute',
+                            right: 8,
+                            background: 'none',
+                            border: 'none',
+                            color: 'var(--text-tertiary)',
+                            cursor: 'pointer',
+                            padding: 2,
+                            display: 'flex',
+                            alignItems: 'center'
+                          }}
+                        >
+                          <X size={14} />
+                        </button>
+                      )}
                     </div>
-                  )}
 
-                  {locationStatus === 'detecting' && (
+                    {/* Geocoding Suggestions Dropdown */}
+                    {showDropdown && searchResults.length > 0 && (
+                      <div style={{
+                        position: 'absolute',
+                        top: '100%',
+                        left: 0,
+                        right: 0,
+                        zIndex: 1000,
+                        marginTop: 4,
+                        background: 'var(--bg-secondary)',
+                        border: '1px solid var(--border-primary)',
+                        borderRadius: 8,
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+                        maxHeight: 220,
+                        overflowY: 'auto',
+                      }}>
+                        {searchResults.map((item, idx) => (
+                          <div
+                            key={idx}
+                            onClick={() => handleSelectAddress(item)}
+                            style={{
+                              padding: '8px 12px',
+                              cursor: 'pointer',
+                              borderBottom: idx < searchResults.length - 1 ? '1px solid var(--border-secondary)' : 'none',
+                              display: 'flex',
+                              alignItems: 'flex-start',
+                              gap: 8,
+                              transition: 'background 0.15s ease',
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.background = 'var(--bg-tertiary)'}
+                            onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
+                          >
+                            <MapPin size={14} color="var(--accent-blue)" style={{ marginTop: 2, flexShrink: 0 }} />
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: 2, overflow: 'hidden' }}>
+                              <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                                {item.display_name.split(',')[0]}
+                              </span>
+                              <span style={{ fontSize: 10, color: 'var(--text-secondary)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                                {item.display_name}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Friendly Unreachable / Notice Message */}
+                    {searchError && (
+                      <div style={{
+                        marginTop: 6,
+                        padding: '6px 10px',
+                        borderRadius: 6,
+                        background: 'rgba(245, 158, 11, 0.1)',
+                        border: '1px solid rgba(245, 158, 11, 0.25)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 6,
+                        fontSize: 11,
+                        color: '#fbbf24',
+                      }}>
+                        <AlertTriangle size={13} style={{ flexShrink: 0 }} />
+                        <span>{searchError}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Actions: GPS Auto-Detect & Map Pin Instructions */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      onClick={handleGetLocation}
+                      style={{ fontSize: 11, padding: '6px 14px', gap: 6 }}
+                    >
+                      <Compass size={14} />
+                      {locationStatus === 'detecting' ? 'Detecting GPS…' : 'Use My Current Location'}
+                    </button>
+                    <span style={{ fontSize: 10, color: 'var(--text-tertiary)' }}>
+                      📍 Or tap/drag the map pin below
+                    </span>
+                  </div>
+
+                  {/* Selected Coordinates Status Pill */}
+                  {latitude && longitude && (
                     <div style={{
                       display: 'flex',
+                      justifyContent: 'space-between',
                       alignItems: 'center',
-                      gap: 10,
-                      padding: '12px 14px',
-                      borderRadius: 8,
-                      background: 'rgba(37, 99, 235, 0.06)',
-                      border: '1px solid rgba(37, 99, 235, 0.15)',
+                      padding: '8px 12px',
+                      background: 'rgba(34, 197, 94, 0.08)',
+                      border: '1px solid rgba(34, 197, 94, 0.25)',
+                      borderRadius: 6,
+                      fontSize: 11,
                     }}>
-                      <Compass size={16} color="var(--accent-blue)" className="animate-spin" />
-                      <span style={{ fontSize: 12, color: 'var(--accent-blue)', fontWeight: 500 }}>Detecting your location…</span>
-                    </div>
-                  )}
-
-                  {locationStatus === 'success' && (
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 10,
-                      padding: '12px 14px',
-                      borderRadius: 8,
-                      background: 'rgba(34, 197, 94, 0.06)',
-                      border: '1px solid rgba(34, 197, 94, 0.2)',
-                    }}>
-                      <CheckCircle2 size={18} color="#22c55e" />
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                        <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)' }}>📍 Location Detected</span>
-                        <span style={{ fontSize: 11, color: 'var(--text-secondary)' }}>Current location captured successfully</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                        <CheckCircle2 size={14} color="#22c55e" style={{ flexShrink: 0 }} />
+                        <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Selected Pin:</span>
+                        <span className="font-mono" style={{ color: 'var(--accent-blue)', fontWeight: 600 }}>
+                          {latitude}, {longitude}
+                        </span>
                       </div>
+                      <span style={{ fontSize: 10, color: 'var(--text-secondary)', maxWidth: 180, textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                        {locationName || 'Custom Coordinate'}
+                      </span>
                     </div>
                   )}
 
                   {locationStatus === 'denied' && (
                     <div style={{
+                      padding: '8px 10px',
+                      borderRadius: 6,
+                      background: 'rgba(239, 68, 68, 0.08)',
+                      border: '1px solid rgba(239, 68, 68, 0.25)',
+                      fontSize: 11,
+                      color: '#ef4444',
                       display: 'flex',
-                      flexDirection: 'column',
-                      gap: 10,
-                      padding: '12px 14px',
-                      borderRadius: 8,
-                      background: 'rgba(239, 68, 68, 0.06)',
-                      border: '1px solid rgba(239, 68, 68, 0.2)',
+                      alignItems: 'center',
+                      gap: 6
                     }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <AlertTriangle size={16} color="#ef4444" />
-                        <span style={{ fontSize: 12, fontWeight: 600, color: '#ef4444' }}>Location Access Denied</span>
-                      </div>
-                      <span style={{ fontSize: 11, color: 'var(--text-secondary)' }}>
-                        Location access is required to connect this report with nearby civic incidents.
-                      </span>
-                      <button
-                        type="button"
-                        className="btn btn-secondary"
-                        onClick={handleGetLocation}
-                        style={{ fontSize: 10, padding: '5px 12px', gap: 4, width: 'fit-content' }}
-                      >
-                        <Compass size={12} />
-                        Retry Location Access
-                      </button>
+                      <AlertTriangle size={13} />
+                      <span>Location permission denied. Please search an address above or tap the map directly.</span>
                     </div>
                   )}
                 </div>
@@ -648,17 +841,18 @@ export default function CitizenReport() {
                 )
               )}
 
-              {/* Leaflet Map Integration */}
-              {latitude && longitude && (
+              {/* Leaflet Interactive Map */}
+              {(inputMode === 'UPLOAD' || (latitude && longitude)) && (
                 <div 
                   id="report-map" 
                   style={{ 
-                    height: '200px', 
+                    height: '210px', 
                     width: '100%', 
                     borderRadius: '8px', 
-                    marginTop: '12px',
+                    marginTop: '6px',
                     border: '1px solid var(--border-primary)',
-                    zIndex: 10
+                    zIndex: 10,
+                    cursor: 'crosshair',
                   }}
                 />
               )}
@@ -751,7 +945,7 @@ export default function CitizenReport() {
             <button
               className="btn btn-primary"
               onClick={() => {
-                navigate('/', { state: { autoAnalyzeId: submittedReport.report_id } });
+                navigate('/dashboard', { state: { autoAnalyzeId: submittedReport.report_id } });
               }}
             >
               Go to Dashboard and Analyze

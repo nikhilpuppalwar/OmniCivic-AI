@@ -16,7 +16,7 @@
       "status": "LINKED_TO_INCIDENT",
       "ward": "Ward 7 - Andheri East",
       "scenario_id": 1,
-      "linked_incident_id": "INC-2026-001"
+      "linked_incident_id": "INC-2026-009"
     },
     {
       "report_id": "CIV-2026-1002",
@@ -34,7 +34,7 @@
       "status": "LINKED_TO_INCIDENT",
       "ward": "Ward 7 - Andheri East",
       "scenario_id": 1,
-      "linked_incident_id": "INC-2026-001"
+      "linked_incident_id": "INC-2026-009"
     },
     {
       "report_id": "CIV-2026-1003",
@@ -52,7 +52,7 @@
       "status": "LINKED_TO_INCIDENT",
       "ward": "Ward 7 - Andheri East",
       "scenario_id": 1,
-      "linked_incident_id": "INC-2026-001"
+      "linked_incident_id": "INC-2026-009"
     },
     {
       "report_id": "CIV-2026-1004",
@@ -70,7 +70,7 @@
       "status": "LINKED_TO_INCIDENT",
       "ward": "Ward 7 - Andheri East",
       "scenario_id": 1,
-      "linked_incident_id": "INC-2026-001"
+      "linked_incident_id": "INC-2026-009"
     },
     {
       "report_id": "CIV-2026-1005",
@@ -88,7 +88,7 @@
       "status": "LINKED_TO_INCIDENT",
       "ward": "Ward 7 - Andheri East",
       "scenario_id": 1,
-      "linked_incident_id": "INC-2026-001"
+      "linked_incident_id": "INC-2026-009"
     },
     {
       "report_id": "CIV-2026-1006",
@@ -106,7 +106,7 @@
       "status": "LINKED_TO_INCIDENT",
       "ward": "Ward 7 - Andheri East",
       "scenario_id": 1,
-      "linked_incident_id": "INC-2026-001"
+      "linked_incident_id": "INC-2026-009"
     },
     {
       "report_id": "CIV-2026-1007",
@@ -121,10 +121,10 @@
       },
       "description": "The main drain in Tilak Nagar market area is completely blocked. I can see plastic waste and construction debris clogging the drain mouth. Water is already starting to accumulate on the road even without rain.",
       "image_filename": "drain_01.jpg",
-      "status": "LINKED_TO_INCIDENT",
+      "status": "SUBMITTED",
       "ward": "Ward 6 - Kurla",
       "scenario_id": 2,
-      "linked_incident_id": "INC-2026-002"
+      "linked_incident_id": null
     },
     {
       "report_id": "CIV-2026-1008",
@@ -139,10 +139,10 @@
       },
       "description": "Heavy waterlogging behind Tilak Nagar market. The blocked drain is causing all the water to stay on the road. Shopkeepers are unable to open their shops. Water is entering ground floor homes.",
       "image_filename": "waterlogging_02.jpg",
-      "status": "LINKED_TO_INCIDENT",
+      "status": "SUBMITTED",
       "ward": "Ward 6 - Kurla",
       "scenario_id": 2,
-      "linked_incident_id": "INC-2026-002"
+      "linked_incident_id": null
     },
     {
       "report_id": "CIV-2026-1009",
@@ -157,10 +157,10 @@
       },
       "description": "Garbage is piling up near the blocked drain. The collection truck has not come for 3 days. The waterlogging is mixing with the garbage creating a terrible smell. Health hazard for residents.",
       "image_filename": "garbage_01.jpg",
-      "status": "LINKED_TO_INCIDENT",
+      "status": "SUBMITTED",
       "ward": "Ward 6 - Kurla",
       "scenario_id": 2,
-      "linked_incident_id": "INC-2026-002"
+      "linked_incident_id": null
     },
     {
       "report_id": "CIV-2026-1010",
@@ -175,10 +175,10 @@
       },
       "description": "Another drain near the bus stop is also getting blocked now. The garbage from the waterlogged area is floating and entering this drain too. Situation is getting worse every day.",
       "image_filename": "drain_02.jpg",
-      "status": "LINKED_TO_INCIDENT",
+      "status": "SUBMITTED",
       "ward": "Ward 6 - Kurla",
       "scenario_id": 2,
-      "linked_incident_id": "INC-2026-002"
+      "linked_incident_id": null
     },
     {
       "report_id": "CIV-2026-1011",
@@ -193,10 +193,10 @@
       },
       "description": "Stagnant water on Tilak Nagar main road for the 3rd day. It is turning green and mosquitoes are breeding. Children in the area are falling sick. Dengue risk is very high. Please take action immediately.",
       "image_filename": "waterlogging_03.jpg",
-      "status": "LINKED_TO_INCIDENT",
+      "status": "SUBMITTED",
       "ward": "Ward 6 - Kurla",
       "scenario_id": 2,
-      "linked_incident_id": "INC-2026-002"
+      "linked_incident_id": null
     },
     {
       "report_id": "CIV-2026-1012",
@@ -283,10 +283,10 @@
       },
       "description": "The pothole on Hill Road was supposedly repaired last week but the patch has already come off! The pothole is back and even bigger now. Poor quality repair work. Need proper permanent fix this time.",
       "image_filename": "pothole_04.jpg",
-      "status": "SUBMITTED",
+      "status": "LINKED_TO_INCIDENT",
       "ward": "Ward 5 - Bandra West",
       "scenario_id": 4,
-      "linked_incident_id": null
+      "linked_incident_id": "INC-2026-010"
     },
     {
       "report_id": "CIV-2026-1017",
@@ -301,10 +301,10 @@
       },
       "description": "Road around the pothole area on Hill Road is completely damaged now. The failed repair made things worse. Large chunks of road surface have broken off. The whole stretch of 20 meters needs resurfacing.",
       "image_filename": "pothole_05.jpg",
-      "status": "SUBMITTED",
+      "status": "LINKED_TO_INCIDENT",
       "ward": "Ward 5 - Bandra West",
       "scenario_id": 4,
-      "linked_incident_id": null
+      "linked_incident_id": "INC-2026-010"
     },
     {
       "report_id": "CIV-2026-1018",
@@ -373,7 +373,7 @@
       "description": "Pothole on Kala Ghoda road. Not very large but positioned right at a turn. Vehicles swerving to avoid it are creating more danger.",
       "image_filename": "pothole_06.jpg",
       "ward": "Ward 2 - Fort",
-      "status": "SUBMITTED",
+      "status": "UNDER_REVIEW",
       "phone": "+91-98200-10021",
       "scenario_id": null,
       "linked_incident_id": null
@@ -718,7 +718,7 @@
       "ward": "Ward 7 - Andheri East",
       "scenario_id": 1,
       "phone": "+91-98200-10040",
-      "linked_incident_id": "INC-2026-001"
+      "linked_incident_id": "INC-2026-009"
     },
     {
       "report_id": "CIV-2026-1041",
@@ -902,40 +902,112 @@
     },
     {
       "report_id": "CIV-2026-1051",
-      "timestamp": "2026-09-03T09:38:15.878154+05:30",
-      "citizen_name": "Anonymous",
-      "phone": "+91-98200-11111",
+      "timestamp": "2026-10-04T11:15:24.577367+05:30",
+      "citizen_name": "Test Citizen",
+      "phone": "+91-99999-88888",
       "location": {
-        "latitude": 19.076,
-        "longitude": 72.878,
-        "address": "Near St. Xavier's School Gate, Marine Lines",
-        "ward": "Ward 3 - Marine Lines"
+        "latitude": 19.119,
+        "longitude": 72.847,
+        "address": "Chakala Junction, Andheri East",
+        "ward": "Ward 7 - Andheri East"
       },
-      "description": "Exposed electrical wires hanging low. Extremely hazardous.",
-      "image_filename": "exposed_wire_01.jpg",
+      "description": "A large deep pothole in the middle of the road causing traffic blockage.",
+      "image_filename": "report_75e33ca4.png",
       "status": "UNDER_REVIEW",
       "linked_incident_id": null,
-      "ward": "Ward 3 - Marine Lines",
+      "ward": "Ward 7 - Andheri East",
       "scenario_id": null
     },
     {
       "report_id": "CIV-2026-1052",
-      "timestamp": "2026-09-04T10:38:33.582620+05:30",
-      "citizen_name": "Anonymous",
-      "phone": "+91-98200-11111",
+      "timestamp": "2026-10-04T11:40:24.957887+05:30",
+      "citizen_name": "Test Citizen",
+      "phone": "+91-99999-88888",
       "location": {
-        "latitude": 19.072,
-        "longitude": 72.856,
-        "address": "Tilak Nagar Market Road, Kurla",
-        "ward": "Ward 6 - Kurla"
+        "latitude": 19.119,
+        "longitude": 72.847,
+        "address": "Chakala Junction, Andheri East",
+        "ward": "Ward 7 - Andheri East"
       },
-      "description": "Drainage grate blocked by plastic waste and trash.",
-      "image_filename": "drain_01.jpg",
+      "description": "A large deep pothole in the middle of the road causing traffic blockage.",
+      "image_filename": "report_9dd0004a.png",
       "status": "UNDER_REVIEW",
       "linked_incident_id": null,
-      "ward": "Ward 6 - Kurla",
+      "ward": "Ward 7 - Andheri East",
+      "scenario_id": null
+    },
+    {
+      "report_id": "CIV-2026-1053",
+      "timestamp": "2026-07-06T19:30:00+05:30",
+      "citizen_name": "Kavita Shah",
+      "phone": "+91-98200-10053",
+      "location": {
+        "latitude": 19.0178,
+        "longitude": 72.8478,
+        "address": "Dadar Station Plaza West",
+        "ward": "Ward 4 - Dadar"
+      },
+      "description": "Broken streetlight outside Dadar station plaza. Lamp is shattered and fixture is dark all night. Danger for commuters.",
+      "image_filename": "streetlight_01.jpg",
+      "status": "SUBMITTED",
+      "ward": "Ward 4 - Dadar",
+      "scenario_id": 5,
+      "linked_incident_id": null
+    },
+    {
+      "report_id": "CIV-2026-1054",
+      "timestamp": "2026-07-06T19:45:00+05:30",
+      "citizen_name": "Prakash Shinde",
+      "phone": "+91-98200-10054",
+      "location": {
+        "latitude": 19.0179,
+        "longitude": 72.8479,
+        "address": "Dadar Station Plaza West",
+        "ward": "Ward 4 - Dadar"
+      },
+      "description": "Commercial garbage bin overflowing with market vegetable waste right outside Dadar station plaza. Rotten smell.",
+      "image_filename": "garbage_01.jpg",
+      "status": "SUBMITTED",
+      "ward": "Ward 4 - Dadar",
+      "scenario_id": 5,
+      "linked_incident_id": null
+    },
+    {
+      "report_id": "CIV-2026-1055",
+      "timestamp": "2026-10-04T11:55:03.791211+05:30",
+      "citizen_name": "Test Citizen",
+      "phone": "+91-99999-88888",
+      "location": {
+        "latitude": 19.119,
+        "longitude": 72.847,
+        "address": "Chakala Junction, Andheri East",
+        "ward": "Ward 7 - Andheri East"
+      },
+      "description": "A large deep pothole in the middle of the road causing traffic blockage.",
+      "image_filename": "report_47d49cec.png",
+      "status": "UNDER_REVIEW",
+      "linked_incident_id": null,
+      "ward": "Ward 7 - Andheri East",
+      "scenario_id": null
+    },
+    {
+      "report_id": "CIV-2026-1056",
+      "timestamp": "2026-10-04T12:09:20.917328+05:30",
+      "citizen_name": "Test Citizen",
+      "phone": "+91-99999-88888",
+      "location": {
+        "latitude": 19.119,
+        "longitude": 72.847,
+        "address": "Chakala Junction, Andheri East",
+        "ward": "Ward 7 - Andheri East"
+      },
+      "description": "A large deep pothole in the middle of the road causing traffic blockage.",
+      "image_filename": "report_2061383f.png",
+      "status": "UNDER_REVIEW",
+      "linked_incident_id": null,
+      "ward": "Ward 7 - Andheri East",
       "scenario_id": null
     }
   ],
-  "total": 52
+  "total": 56
 }

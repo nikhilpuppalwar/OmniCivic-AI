@@ -75,14 +75,35 @@ async def detect_incident(
         classification, cluster_count + 1, unique_type_count
     )
 
+    autonomous_checks = []
+    # Autonomous secondary check for low confidence POSSIBLE_CONNECTED
+    if classification == "POSSIBLE_CONNECTED_INCIDENT" and confidence < 0.75:
+        from services.external_tools import get_historical_incidents
+        primary_loc = report.get("location", {})
+        plat = primary_loc.get("latitude", 0.0)
+        plon = primary_loc.get("longitude", 0.0)
+        priors = get_historical_incidents(plat, plon, 180)
+        prior_count = priors.get("total_nearby", 0)
+
+        if prior_count > 0:
+            confidence = min(0.85, confidence + 0.10)
+            check_msg = f"Autonomous secondary check: Found {prior_count} prior incidents within 180m; elevated connectivity confidence to {confidence:.2f}"
+            autonomous_checks.append(check_msg)
+            reasoning += f" Secondary tool check revealed {prior_count} prior incidents in immediate vicinity, reinforcing localized causal link."
+        else:
+            check_msg = f"Autonomous secondary check: Checked historical incidents within 180m; no repeats found; confidence maintained at {confidence:.2f}"
+            autonomous_checks.append(check_msg)
+
+    evidence_used = [
+        f"Cluster size: {cluster_count + 1} reports",
+        f"Unique issue types: {unique_type_count} ({type_list})",
+        f"Same-type reports: {same_type_count}",
+    ] + autonomous_checks
+
     agent_log = {
         "agent": "INCIDENT_DETECTION_AGENT",
         "decision": classification,
-        "evidence_used": [
-            f"Cluster size: {cluster_count + 1} reports",
-            f"Unique issue types: {unique_type_count} ({type_list})",
-            f"Same-type reports: {same_type_count}",
-        ],
+        "evidence_used": evidence_used,
         "confidence": confidence,
         "recommended_action": (
             "Create incident and proceed to root cause analysis"
@@ -97,6 +118,7 @@ async def detect_incident(
         "reasoning": reasoning,
         "confidence": confidence,
         "agent_log": agent_log,
+        "autonomous_checks": autonomous_checks,
     }
 
 

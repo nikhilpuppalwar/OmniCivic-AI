@@ -156,10 +156,10 @@ export const MapView: React.FC<MapViewProps> = ({
 
   const { theme } = useTheme();
 
-  // Dynamic Tile URL based on Active Theme
+  // Dynamic Tile URL based on Active Theme — no API key required
   const tileUrl = theme === 'light'
-    ? 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
-    : 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+    ? 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+    : 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png';
 
   return (
     <div
@@ -175,13 +175,16 @@ export const MapView: React.FC<MapViewProps> = ({
         <RecenterMap center={mapCenter} zoom={mapZoom} />
         <MapResizer />
 
-        {/* Theme-Adaptive CartoDB tile layer */}
+        {/* Theme-Adaptive tile layer — no API key required */}
         <TileLayer
           key={theme}
           url={tileUrl}
-          subdomains="abcd"
           maxZoom={19}
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+          attribution={
+            theme === 'light'
+              ? '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              : '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          }
         />
 
 

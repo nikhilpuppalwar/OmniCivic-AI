@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import { Activity, FileText, Settings as SettingsIcon, Sun, Moon } from 'lucide-react';
+import { Activity, FileText, Settings as SettingsIcon, Sun, Moon, Sparkles } from 'lucide-react';
+import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import CitizenReport from './pages/CitizenReport';
 import Settings from './pages/Settings';
@@ -27,7 +28,7 @@ function AppShell() {
         zIndex: 50,
         transition: 'all 0.2s ease',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginRight: 32 }}>
+        <NavLink to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 10, marginRight: 24 }}>
           <div style={{
             width: 32,
             height: 32,
@@ -62,11 +63,29 @@ function AppShell() {
               Autonomous Municipal Incident Operations
             </span>
           </div>
-        </div>
+        </NavLink>
 
 
         <div style={{ display: 'flex', gap: 6 }}>
           <NavLink to="/" end style={({ isActive }) => ({
+            padding: '7px 14px',
+            borderRadius: 6,
+            fontSize: 13,
+            fontWeight: 600,
+            color: isActive ? '#ffffff' : 'var(--text-secondary)',
+            background: isActive ? 'var(--accent-blue)' : 'transparent',
+            border: `1px solid ${isActive ? 'var(--accent-blue)' : 'transparent'}`,
+            boxShadow: isActive ? '0 0 12px rgba(37, 99, 235, 0.3)' : 'none',
+            textDecoration: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 6,
+            transition: 'all 0.15s ease',
+          })}>
+            <Sparkles size={14} />
+            Overview
+          </NavLink>
+          <NavLink to="/dashboard" style={({ isActive }) => ({
             padding: '7px 14px',
             borderRadius: 6,
             fontSize: 13,
@@ -164,7 +183,8 @@ function AppShell() {
       {/* Routes */}
       <main style={{ flex: 1, padding: '20px 24px' }}>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/report" element={<CitizenReport />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>

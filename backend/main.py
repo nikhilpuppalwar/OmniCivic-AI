@@ -31,6 +31,16 @@ UPLOADS_DIR = os.path.join(BASE_DIR, "uploads")
 os.makedirs(UPLOADS_DIR, exist_ok=True)
 os.makedirs(SEED_IMAGES_DIR, exist_ok=True)
 
+ENABLE_DEV_ENDPOINTS = os.getenv("ENABLE_DEV_ENDPOINTS", "true").lower() in ("true", "1", "yes")
+
+
+def require_dev_endpoints():
+    if not ENABLE_DEV_ENDPOINTS:
+        raise HTTPException(
+            status_code=403,
+            detail="Development endpoints are disabled in this environment (ENABLE_DEV_ENDPOINTS=false)."
+        )
+
 # ── IST timezone helper ─────────────────────────────────────────────────────
 
 IST = timezone(timedelta(hours=5, minutes=30))
@@ -603,6 +613,7 @@ async def get_dashboard_stats():
 @app.post("/dev/reset-demo")
 async def reset_demo():
     """Reset all data to pre-demo state."""
+    require_dev_endpoints()
     from scripts.seed_data import generate_seed_data
     generate_seed_data()
     return {"message": "Demo data reset successfully.", "timestamp": now_ist()}
@@ -628,6 +639,15 @@ async def list_seed_images():
 async def get_perception_lookup():
     """Get the perception lookup table (for demo transparency)."""
     return load_perception_lookup()
+
+
+@app.get("/geocode")
+@app.get("/api/geocode")
+async def geocode_query(q: str = ""):
+    """Free geocoding proxy using OpenStreetMap Nominatim with rate-limiting, caching, and offline fallback."""
+    from services.external_tools import geocode_address
+    results = await geocode_address(q)
+    return {"query": q, "results": results, "count": len(results)}
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -689,6 +709,7 @@ class LLMTestRequest(BaseModel):
 @app.get("/api/settings/dev-token")
 async def get_dev_token():
     """Development helper: returns the active local operator access token for 1-click UI authorization."""
+    require_dev_endpoints()
     return {"token": get_operator_token()}
 
 

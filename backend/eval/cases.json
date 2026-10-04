@@ -1,0 +1,334 @@
+{
+  "description": "OmniCivic AI Evaluation Dataset: 20 labeled municipal civic incident clusters for quantitative evaluation and ablation.",
+  "cases": [
+    {
+      "case_id": "CASE-01",
+      "name": "Scenario 1: Water Infrastructure Cascade",
+      "cluster_type": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "primary_issue": "WATER_LEAKAGE",
+      "reports": [
+        {"issue_type": "WATER_LEAKAGE", "severity": "HIGH", "description": "Major water main burst leaking under road surface", "lat": 19.1136, "lon": 72.8697},
+        {"issue_type": "ROAD_DAMAGE", "severity": "MEDIUM", "description": "Road surface softening and asphalt cracking", "lat": 19.1137, "lon": 72.8698},
+        {"issue_type": "POTHOLE", "severity": "MEDIUM", "description": "Large cavity opened on arterial lane", "lat": 19.1135, "lon": 72.8696},
+        {"issue_type": "WATERLOGGING", "severity": "HIGH", "description": "Extensive flooding across two lanes", "lat": 19.1138, "lon": 72.8699}
+      ],
+      "expected_classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "expected_root_cause": "WATER_LEAKAGE",
+      "expected_chain": ["WATER_LEAKAGE", "ROAD_DAMAGE", "POTHOLE", "WATERLOGGING"],
+      "expected_priority": "CRITICAL",
+      "expected_score": 86.0,
+      "expected_department_order": ["WATER_BOARD", "STORM_WATER_DRAINAGE", "ROADS_DEPT"]
+    },
+    {
+      "case_id": "CASE-02",
+      "name": "Scenario 2: Drainage-Waste Cycle",
+      "cluster_type": "CONNECTED",
+      "primary_issue": "DRAIN_BLOCKAGE",
+      "reports": [
+        {"issue_type": "DRAIN_BLOCKAGE", "severity": "HIGH", "description": "Culvert clogged with plastic bags and solid debris", "lat": 19.0720, "lon": 72.8560},
+        {"issue_type": "WATERLOGGING", "severity": "HIGH", "description": "Stagnant stormwater on market street", "lat": 19.0722, "lon": 72.8562},
+        {"issue_type": "GARBAGE_OVERFLOW", "severity": "MEDIUM", "description": "Floating garbage bags accumulating at corner", "lat": 19.0719, "lon": 72.8558}
+      ],
+      "expected_classification": "POSSIBLE_CONNECTED_INCIDENT",
+      "expected_root_cause": "DRAIN_BLOCKAGE",
+      "expected_chain": ["DRAIN_BLOCKAGE", "WATERLOGGING", "GARBAGE_OVERFLOW"],
+      "expected_priority": "HIGH",
+      "expected_score": 72.0,
+      "expected_department_order": ["STORM_WATER_DRAINAGE", "SOLID_WASTE_MGMT"]
+    },
+    {
+      "case_id": "CASE-03",
+      "name": "Scenario 3: School Proximity Electrical Hazard",
+      "cluster_type": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "primary_issue": "BROKEN_STREETLIGHT",
+      "reports": [
+        {"issue_type": "BROKEN_STREETLIGHT", "severity": "MEDIUM", "description": "Streetlight pole struck and damaged 30m from school gate", "lat": 19.0760, "lon": 72.8780},
+        {"issue_type": "EXPOSED_WIRES", "severity": "CRITICAL", "description": "Live dangling power cable sparking near children footpath", "lat": 19.0762, "lon": 72.8782}
+      ],
+      "expected_classification": "POSSIBLE_CONNECTED_INCIDENT",
+      "expected_root_cause": "BROKEN_STREETLIGHT",
+      "expected_chain": ["BROKEN_STREETLIGHT", "EXPOSED_WIRES"],
+      "expected_priority": "CRITICAL",
+      "expected_score": 91.0,
+      "expected_department_order": ["ELECTRICAL_DEPT"]
+    },
+    {
+      "case_id": "CASE-04",
+      "name": "Scenario 4: Recurring Pothole Failure",
+      "cluster_type": "CONNECTED",
+      "primary_issue": "POTHOLE",
+      "reports": [
+        {"issue_type": "POTHOLE", "severity": "MEDIUM", "description": "Fresh pothole formed at exact site of last month cold patch repair", "lat": 19.0540, "lon": 72.8400},
+        {"issue_type": "ROAD_DAMAGE", "severity": "HIGH", "description": "Surface crumbling and peeling across entire intersection", "lat": 19.0539, "lon": 72.8402}
+      ],
+      "expected_classification": "POSSIBLE_CONNECTED_INCIDENT",
+      "expected_root_cause": "POTHOLE",
+      "expected_chain": ["POTHOLE", "ROAD_DAMAGE"],
+      "expected_priority": "HIGH",
+      "expected_score": 68.0,
+      "expected_department_order": ["ROADS_DEPT"]
+    },
+    {
+      "case_id": "CASE-05",
+      "name": "Scenario 5: Ambiguous Co-Located Reports (Hard Negative)",
+      "cluster_type": "INDEPENDENT_COMPLAINTS",
+      "primary_issue": "BROKEN_STREETLIGHT",
+      "reports": [
+        {"issue_type": "BROKEN_STREETLIGHT", "severity": "LOW", "description": "Dark streetlight outside Dadar station plaza", "lat": 19.0178, "lon": 72.8478},
+        {"issue_type": "GARBAGE_OVERFLOW", "severity": "LOW", "description": "Commercial garbage bin overflowing with vegetable peelings", "lat": 19.0179, "lon": 72.8479}
+      ],
+      "expected_classification": "INDEPENDENT_COMPLAINTS",
+      "expected_root_cause": "BROKEN_STREETLIGHT",
+      "expected_chain": ["BROKEN_STREETLIGHT"],
+      "expected_priority": "LOW",
+      "expected_score": 35.0,
+      "expected_department_order": ["ELECTRICAL_DEPT"]
+    },
+    {
+      "case_id": "CASE-06",
+      "name": "Pure Duplicate Pothole Reports",
+      "cluster_type": "DUPLICATE_REPORTS",
+      "primary_issue": "POTHOLE",
+      "reports": [
+        {"issue_type": "POTHOLE", "severity": "MEDIUM", "description": "Big pothole opposite bus stop", "lat": 19.1200, "lon": 72.8500},
+        {"issue_type": "POTHOLE", "severity": "MEDIUM", "description": "Deep hole in road in front of bus stand", "lat": 19.1201, "lon": 72.8501},
+        {"issue_type": "POTHOLE", "severity": "MEDIUM", "description": "Pothole damaging cars near bus shelter", "lat": 19.1200, "lon": 72.8500}
+      ],
+      "expected_classification": "DUPLICATE_REPORTS",
+      "expected_root_cause": "POTHOLE",
+      "expected_chain": ["POTHOLE"],
+      "expected_priority": "MEDIUM",
+      "expected_score": 52.0,
+      "expected_department_order": ["ROADS_DEPT"]
+    },
+    {
+      "case_id": "CASE-07",
+      "name": "High-Volume Cosmetic Defect",
+      "cluster_type": "DUPLICATE_REPORTS",
+      "primary_issue": "ROAD_DAMAGE",
+      "reports": [
+        {"issue_type": "ROAD_DAMAGE", "severity": "LOW", "description": "Cosmetic median paint peeling along promenade", "lat": 18.9300, "lon": 72.8200},
+        {"issue_type": "ROAD_DAMAGE", "severity": "LOW", "description": "Paint faded on divider", "lat": 18.9302, "lon": 72.8201},
+        {"issue_type": "ROAD_DAMAGE", "severity": "LOW", "description": "Faded curb paint needs touch-up", "lat": 18.9301, "lon": 72.8200},
+        {"issue_type": "ROAD_DAMAGE", "severity": "LOW", "description": "Divider coloring worn out", "lat": 18.9303, "lon": 72.8202}
+      ],
+      "expected_classification": "DUPLICATE_REPORTS",
+      "expected_root_cause": "ROAD_DAMAGE",
+      "expected_chain": ["ROAD_DAMAGE"],
+      "expected_priority": "LOW",
+      "expected_score": 38.0,
+      "expected_department_order": ["ROADS_DEPT"]
+    },
+    {
+      "case_id": "CASE-08",
+      "name": "Hard Negative: Tree Branch & Water Leakage",
+      "cluster_type": "INDEPENDENT_COMPLAINTS",
+      "primary_issue": "WATER_LEAKAGE",
+      "reports": [
+        {"issue_type": "WATER_LEAKAGE", "severity": "LOW", "description": "Minor meter tap dripping at private residential compound wall", "lat": 19.0400, "lon": 72.8600},
+        {"issue_type": "ROAD_DAMAGE", "severity": "LOW", "description": "Overgrown neem branch touching garden fence 40m away", "lat": 19.0403, "lon": 72.8603}
+      ],
+      "expected_classification": "INDEPENDENT_COMPLAINTS",
+      "expected_root_cause": "WATER_LEAKAGE",
+      "expected_chain": ["WATER_LEAKAGE"],
+      "expected_priority": "LOW",
+      "expected_score": 30.0,
+      "expected_department_order": ["WATER_BOARD"]
+    },
+    {
+      "case_id": "CASE-09",
+      "name": "Sewage Backflow & Disease Vector Cascade",
+      "cluster_type": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "primary_issue": "SEWAGE_OVERFLOW",
+      "reports": [
+        {"issue_type": "SEWAGE_OVERFLOW", "severity": "HIGH", "description": "Manhole surcharging dark foul wastewater onto road", "lat": 19.0800, "lon": 72.8900},
+        {"issue_type": "WATERLOGGING", "severity": "HIGH", "description": "Contaminated effluent pooling across sidewalk and residential entrances", "lat": 19.0802, "lon": 72.8902},
+        {"issue_type": "GARBAGE_OVERFLOW", "severity": "MEDIUM", "description": "Sanitary waste washed out and stranded on roadside berm", "lat": 19.0801, "lon": 72.8901}
+      ],
+      "expected_classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "expected_root_cause": "SEWAGE_OVERFLOW",
+      "expected_chain": ["SEWAGE_OVERFLOW", "WATERLOGGING", "GARBAGE_OVERFLOW"],
+      "expected_priority": "CRITICAL",
+      "expected_score": 84.0,
+      "expected_department_order": ["WATER_BOARD", "STORM_WATER_DRAINAGE", "SOLID_WASTE_MGMT"]
+    },
+    {
+      "case_id": "CASE-10",
+      "name": "Drainage Problem Road Sub-base Softening",
+      "cluster_type": "CONNECTED",
+      "primary_issue": "DRAINAGE_PROBLEM",
+      "reports": [
+        {"issue_type": "DRAINAGE_PROBLEM", "severity": "HIGH", "description": "Broken roadside masonry drain leaking subterranean water", "lat": 19.1300, "lon": 72.8300},
+        {"issue_type": "WATERLOGGING", "severity": "HIGH", "description": "Perennial puddle in lane even during dry weather", "lat": 19.1302, "lon": 72.8301},
+        {"issue_type": "ROAD_DAMAGE", "severity": "MEDIUM", "description": "Road surface wavy and crumbling above failed drain line", "lat": 19.1303, "lon": 72.8302}
+      ],
+      "expected_classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "expected_root_cause": "DRAINAGE_PROBLEM",
+      "expected_chain": ["DRAINAGE_PROBLEM", "WATERLOGGING", "ROAD_DAMAGE"],
+      "expected_priority": "HIGH",
+      "expected_score": 74.0,
+      "expected_department_order": ["STORM_WATER_DRAINAGE", "ROADS_DEPT"]
+    },
+    {
+      "case_id": "CASE-11",
+      "name": "Hospital Zone Pipe Failure",
+      "cluster_type": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "primary_issue": "WATER_LEAKAGE",
+      "reports": [
+        {"issue_type": "WATER_LEAKAGE", "severity": "HIGH", "description": "Ruptured supply line 40m from Emergency Ambulance Bay", "lat": 18.9900, "lon": 72.8300},
+        {"issue_type": "WATERLOGGING", "severity": "HIGH", "description": "Ambulance driveway partially submerged", "lat": 18.9902, "lon": 72.8301}
+      ],
+      "expected_classification": "POSSIBLE_CONNECTED_INCIDENT",
+      "expected_root_cause": "WATER_LEAKAGE",
+      "expected_chain": ["WATER_LEAKAGE", "WATERLOGGING"],
+      "expected_priority": "CRITICAL",
+      "expected_score": 88.0,
+      "expected_department_order": ["WATER_BOARD", "STORM_WATER_DRAINAGE"]
+    },
+    {
+      "case_id": "CASE-12",
+      "name": "Hard Negative: Distant Broken Streetlight & Isolated Pothole",
+      "cluster_type": "INDEPENDENT_COMPLAINTS",
+      "primary_issue": "POTHOLE",
+      "reports": [
+        {"issue_type": "POTHOLE", "severity": "LOW", "description": "Small pothole in alleyway", "lat": 19.1500, "lon": 72.8500},
+        {"issue_type": "BROKEN_STREETLIGHT", "severity": "LOW", "description": "Bulb out on cross road pole", "lat": 19.1502, "lon": 72.8503}
+      ],
+      "expected_classification": "INDEPENDENT_COMPLAINTS",
+      "expected_root_cause": "POTHOLE",
+      "expected_chain": ["POTHOLE"],
+      "expected_priority": "LOW",
+      "expected_score": 32.0,
+      "expected_department_order": ["ROADS_DEPT"]
+    },
+    {
+      "case_id": "CASE-13",
+      "name": "Water Pipe Burst Road Cavitation",
+      "cluster_type": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "primary_issue": "WATER_LEAKAGE",
+      "reports": [
+        {"issue_type": "WATER_LEAKAGE", "severity": "HIGH", "description": "Pressurized water gusher from main header under highway", "lat": 19.0600, "lon": 72.8700},
+        {"issue_type": "ROAD_DAMAGE", "severity": "HIGH", "description": "Asphalt slab dislodged and washed away", "lat": 19.0602, "lon": 72.8701},
+        {"issue_type": "POTHOLE", "severity": "HIGH", "description": "Crater 2 feet deep threatening bus traffic", "lat": 19.0603, "lon": 72.8702}
+      ],
+      "expected_classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "expected_root_cause": "WATER_LEAKAGE",
+      "expected_chain": ["WATER_LEAKAGE", "ROAD_DAMAGE", "POTHOLE"],
+      "expected_priority": "CRITICAL",
+      "expected_score": 85.0,
+      "expected_department_order": ["WATER_BOARD", "ROADS_DEPT"]
+    },
+    {
+      "case_id": "CASE-14",
+      "name": "Solid Waste Drain Ingress Flood",
+      "cluster_type": "CONNECTED",
+      "primary_issue": "GARBAGE_OVERFLOW",
+      "reports": [
+        {"issue_type": "GARBAGE_OVERFLOW", "severity": "HIGH", "description": "Uncollected municipal garbage spilled into stormwater nullah", "lat": 19.0900, "lon": 72.8400},
+        {"issue_type": "DRAIN_BLOCKAGE", "severity": "HIGH", "description": "Trash mattress and plastic bags jammed in intake screen", "lat": 19.0902, "lon": 72.8401},
+        {"issue_type": "WATERLOGGING", "severity": "HIGH", "description": "Water overflowing culvert onto road", "lat": 19.0903, "lon": 72.8402}
+      ],
+      "expected_classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "expected_root_cause": "GARBAGE_OVERFLOW",
+      "expected_chain": ["GARBAGE_OVERFLOW", "DRAIN_BLOCKAGE", "WATERLOGGING"],
+      "expected_priority": "HIGH",
+      "expected_score": 76.0,
+      "expected_department_order": ["SOLID_WASTE_MGMT", "STORM_WATER_DRAINAGE"]
+    },
+    {
+      "case_id": "CASE-15",
+      "name": "Single Report Isolated Drain Odor",
+      "cluster_type": "INDEPENDENT_COMPLAINTS",
+      "primary_issue": "DRAINAGE_PROBLEM",
+      "reports": [
+        {"issue_type": "DRAINAGE_PROBLEM", "severity": "LOW", "description": "Foul smell coming from closed residential inspection chamber", "lat": 19.0200, "lon": 72.8400}
+      ],
+      "expected_classification": "INDEPENDENT_COMPLAINTS",
+      "expected_root_cause": "DRAINAGE_PROBLEM",
+      "expected_chain": ["DRAINAGE_PROBLEM"],
+      "expected_priority": "LOW",
+      "expected_score": 25.0,
+      "expected_department_order": ["STORM_WATER_DRAINAGE"]
+    },
+    {
+      "case_id": "CASE-16",
+      "name": "Duplicate Broken Streetlight Filings",
+      "cluster_type": "DUPLICATE_REPORTS",
+      "primary_issue": "BROKEN_STREETLIGHT",
+      "reports": [
+        {"issue_type": "BROKEN_STREETLIGHT", "severity": "LOW", "description": "Lamp dark near society gate", "lat": 19.1000, "lon": 72.8800},
+        {"issue_type": "BROKEN_STREETLIGHT", "severity": "LOW", "description": "Streetlight #44 not glowing at night", "lat": 19.1001, "lon": 72.8801}
+      ],
+      "expected_classification": "DUPLICATE_REPORTS",
+      "expected_root_cause": "BROKEN_STREETLIGHT",
+      "expected_chain": ["BROKEN_STREETLIGHT"],
+      "expected_priority": "LOW",
+      "expected_score": 30.0,
+      "expected_department_order": ["ELECTRICAL_DEPT"]
+    },
+    {
+      "case_id": "CASE-17",
+      "name": "Hard Negative: Separate Commercial Complaints",
+      "cluster_type": "INDEPENDENT_COMPLAINTS",
+      "primary_issue": "POTHOLE",
+      "reports": [
+        {"issue_type": "POTHOLE", "severity": "LOW", "description": "Minor depression in lane behind shopping plaza", "lat": 19.0650, "lon": 72.8350},
+        {"issue_type": "SEWAGE_OVERFLOW", "severity": "LOW", "description": "Private hotel restaurant grease trap leak in back alley", "lat": 19.0654, "lon": 72.8354}
+      ],
+      "expected_classification": "INDEPENDENT_COMPLAINTS",
+      "expected_root_cause": "POTHOLE",
+      "expected_chain": ["POTHOLE"],
+      "expected_priority": "LOW",
+      "expected_score": 35.0,
+      "expected_department_order": ["ROADS_DEPT"]
+    },
+    {
+      "case_id": "CASE-18",
+      "name": "Monsoon Surcharge Drainage Cascade",
+      "cluster_type": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "primary_issue": "DRAIN_BLOCKAGE",
+      "reports": [
+        {"issue_type": "DRAIN_BLOCKAGE", "severity": "HIGH", "description": "Storm drain outfall obstructed by sediment berm", "lat": 19.1100, "lon": 72.8700},
+        {"issue_type": "WATERLOGGING", "severity": "HIGH", "description": "Highway underpass flooded with 3 feet water", "lat": 19.1102, "lon": 72.8702},
+        {"issue_type": "ROAD_DAMAGE", "severity": "MEDIUM", "description": "Submerged road bituminous layer stripping off", "lat": 19.1104, "lon": 72.8703}
+      ],
+      "expected_classification": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "expected_root_cause": "DRAIN_BLOCKAGE",
+      "expected_chain": ["DRAIN_BLOCKAGE", "WATERLOGGING", "ROAD_DAMAGE"],
+      "expected_priority": "HIGH",
+      "expected_score": 78.0,
+      "expected_department_order": ["STORM_WATER_DRAINAGE", "ROADS_DEPT"]
+    },
+    {
+      "case_id": "CASE-19",
+      "name": "Recurring Water Main Burst at Repaired Joint",
+      "cluster_type": "HIGH_CONFIDENCE_CONNECTED_INCIDENT",
+      "primary_issue": "WATER_LEAKAGE",
+      "reports": [
+        {"issue_type": "WATER_LEAKAGE", "severity": "HIGH", "description": "Repeated rupture at collar joint repaired last fortnight", "lat": 19.1150, "lon": 72.8650},
+        {"issue_type": "ROAD_DAMAGE", "severity": "HIGH", "description": "Ground subsidence and pavement crater around repair trench", "lat": 19.1152, "lon": 72.8651}
+      ],
+      "expected_classification": "POSSIBLE_CONNECTED_INCIDENT",
+      "expected_root_cause": "WATER_LEAKAGE",
+      "expected_chain": ["WATER_LEAKAGE", "ROAD_DAMAGE"],
+      "expected_priority": "CRITICAL",
+      "expected_score": 82.0,
+      "expected_department_order": ["WATER_BOARD", "ROADS_DEPT"]
+    },
+    {
+      "case_id": "CASE-20",
+      "name": "Isolated Pothole Single Citizen Report",
+      "cluster_type": "INDEPENDENT_COMPLAINTS",
+      "primary_issue": "POTHOLE",
+      "reports": [
+        {"issue_type": "POTHOLE", "severity": "LOW", "description": "Small pothole in quiet residential lane", "lat": 19.0300, "lon": 72.8500}
+      ],
+      "expected_classification": "INDEPENDENT_COMPLAINTS",
+      "expected_root_cause": "POTHOLE",
+      "expected_chain": ["POTHOLE"],
+      "expected_priority": "LOW",
+      "expected_score": 28.0,
+      "expected_department_order": ["ROADS_DEPT"]
+    }
+  ]
+}

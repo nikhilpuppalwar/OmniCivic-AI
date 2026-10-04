@@ -6,6 +6,7 @@ import StatCards from '../components/StatCards';
 import AgentPipeline, { buildPipelineStages } from '../components/AgentPipeline';
 import ImpactGauge from '../components/ImpactGauge';
 import RootCauseCard from '../components/RootCauseCard';
+import ToolTraceCard from '../components/ToolTraceCard';
 import ResponsePlan from '../components/ResponsePlan';
 import ResolutionPanel from '../components/ResolutionPanel';
 import DemoControls from '../components/DemoControls';
@@ -502,9 +503,17 @@ export default function Dashboard() {
                   toolsUsed={selectedIncident.root_cause.tools_used || selectedIncident.tools_used}
                   reasoningMode={selectedIncident.reasoning_mode}
                   reasoningNotes={selectedIncident.root_cause.reasoning_notes}
+                  reflection={selectedIncident.reflection}
                 />
-
               </div>
+
+              {/* Agent Execution Trace Timeline */}
+              {selectedIncident.agent_trace && selectedIncident.agent_trace.length > 0 && (
+                <ToolTraceCard
+                  trace={selectedIncident.agent_trace}
+                  reasoningMode={selectedIncident.reasoning_mode}
+                />
+              )}
 
               {/* Department Response Plan & Resolution verification beat panel */}
               <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 16 }}>

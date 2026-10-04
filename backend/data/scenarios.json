@@ -80,6 +80,21 @@
       ],
       "expected_impact_score": 68,
       "expected_priority": "HIGH"
+    },
+    {
+      "scenario_id": 5,
+      "title": "Ambiguous Co-Located Reports (Non-Causal)",
+      "description": "Two unrelated issues (broken streetlight and commercial garbage overflow) at the exact same location (Dadar Station Plaza). Demonstrates that spatial proximity alone does NOT trigger incident merging without causal dependency.",
+      "ward": "Ward 4 - Dadar",
+      "report_ids": [
+        "CIV-2026-1053",
+        "CIV-2026-1054"
+      ],
+      "expected_incident_id": null,
+      "expected_classification": "INDEPENDENT_COMPLAINTS",
+      "expected_chain": [],
+      "expected_impact_score": 35,
+      "expected_priority": "LOW"
     }
   ]
 }

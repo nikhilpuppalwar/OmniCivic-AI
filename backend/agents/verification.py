@@ -60,11 +60,14 @@ async def verify_resolution(incident: Dict[str, Any]) -> Dict[str, Any]:
     base_details = tool_result["verification_details"]
     confidence = tool_result["confidence"]
 
+    requested_evidence: List[str] = []
+
     # Step 3: For seed images, check if the image content matches the incident type
     if after_perception and verification_result == "RESOLUTION_VERIFIED":
         # Check if the "resolved" image shows the same issue type
         incident_types = [p.get("issue_type", "") for p in incident.get("perception_results", [])]
         after_type = after_perception.get("issue_type", "")
+        after_conf = after_perception.get("confidence", 0.85)
 
         # If the after photo shows a DIFFERENT issue type, it might be wrong location
         if after_type and after_type not in incident_types and after_perception.get("severity", "LOW") != "LOW":
@@ -77,6 +80,23 @@ async def verify_resolution(incident: Dict[str, Any]) -> Dict[str, Any]:
                 "Please submit evidence from the correct location. "
                 "DO NOT CLOSE this incident."
             )
+            requested_evidence = [
+                "Photo of repaired infrastructure taken at the actual incident location",
+                "Ensure landmark or road junction is visible in frame",
+            ]
+        # Ambiguous visual match condition: GPS matches (<=100m) but visual match is low/ambiguous
+        elif after_conf < 0.65 or "ambiguous" in after_photo.lower():
+            verification_result = "AWAITING_RESOLUTION_EVIDENCE"
+            confidence = 0.50
+            base_details = (
+                "Location match confirmed within 100m threshold, but image clarity or visual alignment "
+                "is ambiguous. Supplementary evidence requested prior to incident closure."
+            )
+            requested_evidence = [
+                "Wider shot including adjacent permanent landmark",
+                "Close-up photograph of restored road surface or repaired utility pipe",
+                "Timestamped photo taken within 100m of incident coordinates",
+            ]
 
     # Step 4: Generate LLM narrative for the verification
     narrative = await generate_narrative(
@@ -103,12 +123,13 @@ async def verify_resolution(incident: Dict[str, Any]) -> Dict[str, Any]:
             f"GPS check: {'PASS' if tool_result['location_check']['within_threshold'] else 'FAIL'}",
             f"Distance: {tool_result['location_check']['distance_m']}m",
             f"New complaints post-resolution: {len(tool_result.get('new_complaints', []))}",
-        ],
+        ] + ([f"Requested evidence: {', '.join(requested_evidence)}"] if requested_evidence else []),
         "confidence": confidence,
         "recommended_action": {
             "RESOLUTION_VERIFIED": "Incident can be closed. Risk level reduced.",
             "LOCATION_MISMATCH": "DO NOT CLOSE. Request correct evidence from resolution team.",
             "POSSIBLE_FAILED_RESOLUTION": "REQUIRES HUMAN REVIEW. Consider reopening incident.",
+            "AWAITING_RESOLUTION_EVIDENCE": "Request supplementary visual evidence from field crew before closing.",
         }.get(verification_result, "Further investigation needed"),
     }
 
@@ -118,5 +139,6 @@ async def verify_resolution(incident: Dict[str, Any]) -> Dict[str, Any]:
         "confidence": confidence,
         "location_check": tool_result["location_check"],
         "new_complaints": tool_result.get("new_complaints", []),
+        "requested_evidence": requested_evidence,
         "agent_log": agent_log,
     }
